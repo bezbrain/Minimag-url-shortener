@@ -5,6 +5,7 @@ export default {
   theme: {
     extend: {
       screens: {
+        iPad: "950px",
         surfaceDuo: "540px",
         iPhone: "420px",
         smallPhone: "330px",
