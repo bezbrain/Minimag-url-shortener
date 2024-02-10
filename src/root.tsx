@@ -1,10 +1,15 @@
-import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HomePage, SharedLayouts } from "./pages";
 
 const App = () => {
   return (
-    <div className="text-3xl">
-      <p>Entry Point</p>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SharedLayouts />}>
+          <Route index element={<HomePage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 };
 
