@@ -78,4 +78,10 @@ export const HeaderWrapper = styled.header`
       border-bottom: none;
     }
   }
+
+  @media screen and (max-width: 420px) {
+    > nav {
+      width: 100%;
+    }
+  }
 `;

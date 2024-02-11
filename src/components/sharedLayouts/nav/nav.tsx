@@ -26,7 +26,7 @@ const Nav = () => {
   return (
     <HeaderWrapper>
       <div className="w-[120px] iPad:w-[10%]">
-        <Link to="/">
+        <Link to="/about" className="z-50">
           <img src={minimagLogo} alt="Logo" className="w-full" />
         </Link>
         <FaBarsProgress
