@@ -7,15 +7,17 @@ import { HeaderWrapper } from "./navStyles";
 const Nav = () => {
   return (
     <HeaderWrapper>
-      <div className="w-[120px] iPad:w-[10%] iPad:">
+      <div className="w-[120px] iPad:w-[10%]">
         <Link to="/">
           <img src={minimagLogo} alt="Logo" className="w-full" />
         </Link>
-        <FaBarsProgress className="absolute right-[5vw] top-[10px] text-2xl iPad:hidden cursor-pointer text-white" />
+        <FaBarsProgress
+          className={`absolute right-[5vw] top-[15px] text-2xl iPad:hidden cursor-pointer`}
+        />
       </div>
 
       <nav className="flex justify-items-start lg:w-[75%] iPad:justify-between">
-        <TiTimesOutline className="absolute right-[5vw] top-[10px] text-3xl iPad:hidden cursor-pointer" />
+        <TiTimesOutline className="absolute right-[5vw] top-[10px] text-3xl iPad:hidden cursor-pointer text-white" />
 
         <ul
           className={`first__nav__items space-y-4 font-semibold iPad:space-y-0`}

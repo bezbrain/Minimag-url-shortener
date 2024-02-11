@@ -45,23 +45,24 @@ export const HeaderWrapper = styled.header`
     > nav {
       /* border: 2px solid red; */
       flex-direction: column;
-      position: absolute;
+      position: fixed;
       top: 0;
-      right: 0;
+      right: 0px;
+      /* right: -400px; */
       width: 300px;
       min-height: 100vh;
       background-color: #005ae2cc;
-      z-index: 999;
+      z-index: 10;
     }
     .first__nav__items {
       flex-direction: column;
-      margin-top: 5rem;
+      margin-top: 12vh;
       width: 100%;
     }
     .second__nav__items {
       flex-direction: column;
       width: 100%;
-      margin-top: 20px;
+      margin-top: 8vh;
     }
     ul li a {
       color: #fff;
