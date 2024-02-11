@@ -27,7 +27,7 @@ const Nav = () => {
   return (
     <HeaderWrapper>
       <div className="w-[120px] iPad:w-[10%]">
-        <Link to="/about" className="z-50">
+        <Link to="/" className="z-50">
           <img src={minimagLogo} alt="Logo" className="w-full" />
         </Link>
         <FaBarsProgress
@@ -77,7 +77,7 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-            <LinkBtn />
+            <LinkBtn btnContent="Try for free" />
           </li>
         </ul>
       </nav>

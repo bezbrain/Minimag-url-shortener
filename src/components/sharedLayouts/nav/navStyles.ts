@@ -11,6 +11,9 @@ export const HeaderWrapper = styled.header`
   height: 60px;
   width: 100%;
   padding-inline: 5vw;
+  backdrop-filter: blur(20px);
+  /* background: ; */
+  /* filter: blur(20px); */
 
   > nav {
     /* border: 2px solid red; */

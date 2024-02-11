@@ -1,11 +1,15 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const LinkBtn = () => {
+interface LinkBtnProps {
+  btnContent: string;
+  btnStyles?: string;
+}
+
+const LinkBtn = ({ btnContent, btnStyles }: LinkBtnProps) => {
   return (
-    <LinkBtnWrapper>
-      <Link to="">Try for free</Link>
+    <LinkBtnWrapper className={btnStyles}>
+      <Link to="">{btnContent}</Link>
     </LinkBtnWrapper>
   );
 };

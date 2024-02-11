@@ -1,11 +1,10 @@
-import React from "react";
-import { Hero } from "../components/home";
+import { Hero } from "../components/routes/home";
 
 const HomePage = () => {
   return (
-    <div className="pt-24">
+    <main className="pt-[60px]">
       <Hero />
-    </div>
+    </main>
   );
 };
 
