@@ -72,7 +72,7 @@ const Nav = () => {
           className={`second__nav__items space-y-4 font-semibold iPad:space-y-0`}
         >
           <li>
-            <Link to="" className="iPad:text-blue-600">
+            <Link to="/login" className="iPad:text-blue-600">
               Log in
             </Link>
           </li>
