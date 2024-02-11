@@ -47,12 +47,19 @@ export const HeaderWrapper = styled.header`
       flex-direction: column;
       position: fixed;
       top: 0;
-      right: 0px;
-      /* right: -400px; */
+      /* right: 0px; */
+      right: -400px;
       width: 300px;
       min-height: 100vh;
       background-color: #005ae2cc;
+      transition: ease 1s all;
       z-index: 10;
+    }
+    .add__nav {
+      right: 0px;
+    }
+    .add__color {
+      color: #fff;
     }
     .first__nav__items {
       flex-direction: column;

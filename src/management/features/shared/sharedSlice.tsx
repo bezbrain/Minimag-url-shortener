@@ -13,11 +13,14 @@ const sharedSlice = createSlice({
   initialState,
   reducers: {
     isOpenNav: (state) => {
-      console.log(state);
+      state.isOpen = true;
+    },
+    isCloseNav: (state) => {
+      state.isOpen = false;
     },
   },
 });
 
 export default sharedSlice.reducer;
 
-export const { isOpenNav } = sharedSlice.actions;
+export const { isOpenNav, isCloseNav } = sharedSlice.actions;
