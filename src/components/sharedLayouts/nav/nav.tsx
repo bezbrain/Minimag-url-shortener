@@ -9,6 +9,7 @@ import {
   isCloseNav,
   isOpenNav,
 } from "../../../management/features/shared/sharedSlice";
+import { LinkBtn } from "../../general";
 
 const Nav = () => {
   const { isOpen } = useSelector((store: RootState) => store.sharedStore);
@@ -76,9 +77,7 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-3xl">
-              Try for free
-            </button>
+            <LinkBtn />
           </li>
         </ul>
       </nav>
