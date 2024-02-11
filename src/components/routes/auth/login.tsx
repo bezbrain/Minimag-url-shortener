@@ -1,23 +1,12 @@
-import { FcGoogle } from "react-icons/fc";
-import { FaApple } from "react-icons/fa";
 import { Button } from "../../general";
 import { InputField } from "../../general/input";
 import { Link } from "react-router-dom";
+import { AuthHeader } from ".";
 
 const Login = () => {
   return (
     <div className="text-center w-[400px]">
-      <p className="mb-4 text-sm font-semibold opacity-70">Log in with:</p>
-      <div className="flex space-x-4 w-fit mx-auto">
-        <Button content="Google" icon={<FcGoogle />} />
-        <Button content="Apple" icon={<FaApple />} />
-      </div>
-
-      <div className="flex items-center space-x-4 mt-2">
-        <span className="bg-slate-300 h-[2px] w-full block"></span>{" "}
-        <span>Or</span>
-        <span className="bg-slate-300 h-[2px] w-full block"></span>
-      </div>
+      <AuthHeader authHeaderContent="Log in with:" />
 
       <div className="mt-8">
         <InputField
@@ -41,7 +30,7 @@ const Login = () => {
 
         <p className="my-2">
           Don't have an account?{" "}
-          <Link to="/sign-up" className="text-[#005ae2]">
+          <Link to="/register" className="text-[#005ae2]">
             Sign up
           </Link>
         </p>

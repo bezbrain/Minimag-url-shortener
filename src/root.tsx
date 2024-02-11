@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { HomePage, LoginPage, SharedLayouts } from "./pages";
+import { HomePage, LoginPage, RegisterPage, SharedLayouts } from "./pages";
 
 const App = () => {
   return (
@@ -8,6 +8,7 @@ const App = () => {
         <Route path="/" element={<SharedLayouts />}>
           <Route index element={<HomePage />} />
           <Route path="login" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
