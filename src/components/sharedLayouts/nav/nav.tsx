@@ -10,6 +10,7 @@ import {
   isOpenNav,
 } from "../../../management/features/shared/sharedSlice";
 import { LinkBtn } from "../../general";
+import { getAuthToken } from "../../../utils/authToken";
 
 const Nav = () => {
   const { isOpen } = useSelector((store: RootState) => store.sharedStore);
@@ -73,11 +74,11 @@ const Nav = () => {
         >
           <li>
             <Link
-              to="/login"
+              to={getAuthToken() ? "" : "/login"}
               className="iPad:text-blue-600"
               onClick={() => dispatch(isCloseNav())}
             >
-              Log in
+              {getAuthToken() ? "Logout" : "Log in"}
             </Link>
           </li>
           <li>
