@@ -1,5 +1,4 @@
 import React from "react";
-import { FaApple } from "react-icons/fa";
 import styled from "styled-components";
 
 interface ButtonProps {
@@ -7,12 +6,19 @@ interface ButtonProps {
   icon?: React.ReactNode;
   btnCon?: string;
   btnCss?: string;
+  handleClick: (e: React.FormEvent) => void;
 }
 
-const Button = ({ content, icon, btnCon, btnCss }: ButtonProps) => {
+const Button = ({
+  content,
+  icon,
+  btnCon,
+  btnCss,
+  handleClick,
+}: ButtonProps) => {
   return (
     <ButtonWrapper className={btnCon}>
-      <button className={btnCss}>
+      <button className={btnCss} onClick={handleClick}>
         <span>{icon}</span>
         <span>{content}</span>
       </button>

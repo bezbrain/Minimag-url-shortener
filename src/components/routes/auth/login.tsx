@@ -1,14 +1,17 @@
 import { Button } from "../../general";
 import { InputField } from "../../general/input";
-import { Link } from "react-router-dom";
 import { AuthFooter, AuthHeader } from ".";
 
 const Login = () => {
+  const handleLoginSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="text-center w-[400px]">
       <AuthHeader authHeaderContent="Log in with:" />
 
-      <div className="mt-8">
+      <form className="mt-8">
         <InputField
           inputType="text"
           inputPlaceholder="Email address or username"
@@ -26,6 +29,7 @@ const Login = () => {
           content="Log in"
           btnCon="w-full"
           btnCss="w-full rounded-2xl py-2"
+          handleClick={handleLoginSubmit}
         />
 
         <AuthFooter
@@ -36,7 +40,7 @@ const Login = () => {
           agreementThree=" Acceptable Use Policy"
           route="/register"
         />
-      </div>
+      </form>
     </div>
   );
 };

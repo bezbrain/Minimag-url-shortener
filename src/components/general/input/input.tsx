@@ -1,19 +1,32 @@
+import { ChangeEvent } from "react";
 import styled from "styled-components";
 
 interface InputProps {
   inputType: string;
   inputPlaceholder: string;
   inputStyle?: string;
+  inputValue: string;
+  inputName: string;
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const InputField = ({
   inputType,
   inputPlaceholder,
   inputStyle,
+  inputValue,
+  inputName,
+  handleChange,
 }: InputProps) => {
   return (
     <InputWrapper className={inputStyle}>
-      <input type={inputType} placeholder={inputPlaceholder} />
+      <input
+        type={inputType}
+        placeholder={inputPlaceholder}
+        value={inputValue}
+        name={inputName}
+        onChange={handleChange}
+      />
     </InputWrapper>
   );
 };
