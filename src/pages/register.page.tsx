@@ -3,11 +3,13 @@ import { Register } from "../components/routes/auth";
 import { AppDispatch, RootState } from "../store";
 import { toast } from "react-toastify";
 import { register } from "../management/actions/auth";
+import { NavigateFunction, useNavigate } from "react-router-dom";
 
 const RegisterPage = () => {
   const { regUser } = useSelector((store: RootState) => store.regStore);
 
   const dispatch = useDispatch<AppDispatch>();
+  const navigate: NavigateFunction = useNavigate();
 
   const { username, email, password, retypePassword } = regUser;
 
@@ -18,7 +20,7 @@ const RegisterPage = () => {
     if (!username || !email || !password || !retypePassword) {
       toast.error("No field should be empty");
     } else {
-      dispatch(register({ regUser }));
+      dispatch(register({ regUser, navigate }));
     }
   };
 

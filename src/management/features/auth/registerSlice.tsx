@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { register } from "../../actions/auth";
 import { RegUser } from "../../types";
 import { toast } from "react-toastify";
+import clearAuthFields from "../../../utils/clearAuthField";
 
 const initialState: RegUser = {
   regUser: {
@@ -38,6 +39,7 @@ const regSlice = createSlice({
         toast.success(payload.message);
         state.isLoading = false;
         state.isDisable = false;
+        clearAuthFields(state.regUser);
       })
       .addCase(register.rejected, (state, { payload }: any) => {
         toast.error(payload.response.data.message);
