@@ -9,3 +9,12 @@ export interface RegUser {
   isDisable: boolean;
   isMessage: string;
 }
+
+export interface LoginUser {
+  loginUser: {
+    email: string;
+    password: string;
+  };
+  isLoading: boolean;
+  isDisable: boolean;
+}

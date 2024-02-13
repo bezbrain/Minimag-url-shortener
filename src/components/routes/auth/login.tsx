@@ -1,10 +1,28 @@
 import { Button } from "../../general";
 import { InputField } from "../../general/input";
 import { AuthFooter, AuthHeader } from ".";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../../../store";
+import { ChangeEvent } from "react";
+import { loginInputs } from "../../../management/features/auth/loginSlice";
 
-const Login = () => {
-  const handleLoginSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+interface LoginProps {
+  handleLoginSubmit: (e: React.FormEvent) => void;
+}
+
+const Login = ({ handleLoginSubmit }: LoginProps) => {
+  const { loginUser, isLoading, isDisable } = useSelector(
+    (store: RootState) => store.loginStore
+  );
+
+  const { email, password } = loginUser;
+
+  const dispatch = useDispatch<AppDispatch>();
+
+  // FUNCTION TO HANDLE LOGIN INPUT CHANGE
+  const handleLoginChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    dispatch(loginInputs({ name, value }));
   };
 
   return (
@@ -15,20 +33,28 @@ const Login = () => {
         <InputField
           inputType="text"
           inputPlaceholder="Email address or username"
+          inputName="email"
+          inputValue={email}
+          handleChange={handleLoginChange}
         />
         <InputField
           inputType="password"
           inputPlaceholder="Password"
           inputStyle="mt-4"
+          inputName="password"
+          inputValue={password}
+          handleChange={handleLoginChange}
         />
         <p className="text-right my-2 text-[#005ae2] text-sm">
           Forget your password?
         </p>
 
         <Button
-          content="Log in"
+          content={isLoading ? "Logging in..." : "Log in"}
           btnCon="w-full"
-          btnCss="w-full rounded-2xl py-2"
+          btnCss={`w-full rounded-2xl py-2 ${
+            isDisable ? "cursor-not-allowed" : ""
+          }`}
           handleClick={handleLoginSubmit}
         />
 

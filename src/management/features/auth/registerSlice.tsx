@@ -42,9 +42,15 @@ const regSlice = createSlice({
         clearAuthFields(state.regUser);
       })
       .addCase(register.rejected, (state, { payload }: any) => {
-        toast.error(payload.response.data.message);
         state.isLoading = false;
         state.isDisable = false;
+        if (payload.message === "Network Error") {
+          toast.error(
+            `${payload.message}! Please check your network and try again!`
+          );
+        } else {
+          toast.error(payload.response.data.message);
+        }
       });
   },
 });
