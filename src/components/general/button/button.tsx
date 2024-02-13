@@ -7,6 +7,7 @@ interface ButtonProps {
   btnCon?: string;
   btnCss?: string;
   handleClick: (e: React.FormEvent) => void;
+  isDisable?: boolean;
 }
 
 const Button = ({
@@ -15,10 +16,11 @@ const Button = ({
   btnCon,
   btnCss,
   handleClick,
+  isDisable,
 }: ButtonProps) => {
   return (
     <ButtonWrapper className={btnCon}>
-      <button className={btnCss} onClick={handleClick}>
+      <button className={btnCss} onClick={handleClick} disabled={isDisable}>
         <span>{icon}</span>
         <span>{content}</span>
       </button>

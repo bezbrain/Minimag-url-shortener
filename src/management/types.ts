@@ -6,5 +6,6 @@ export interface RegUser {
     retypePassword: string;
   };
   isLoading: boolean;
+  isDisable: boolean;
   isMessage: string;
 }

@@ -4,9 +4,12 @@ import { RegUser } from "../types";
 
 export const register = createAsyncThunk(
   "action/register",
-  async (regUser: RegUser["regUser"], thunkAPI) => {
+  async (details: any, thunkAPI) => {
+    const { regUser } = details;
     try {
-      await registerUser(regUser);
+      const { data } = await registerUser(regUser);
+      console.log(data);
+      return data;
     } catch (error) {
       console.log(error);
       return thunkAPI.rejectWithValue(error);

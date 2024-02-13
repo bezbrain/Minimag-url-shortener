@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { register } from "../../actions/auth";
 import { RegUser } from "../../types";
+import { toast } from "react-toastify";
 
 const initialState: RegUser = {
   regUser: {
@@ -10,6 +11,7 @@ const initialState: RegUser = {
     retypePassword: "",
   },
   isLoading: false,
+  isDisable: false,
   isMessage: "",
 };
 
@@ -30,12 +32,17 @@ const regSlice = createSlice({
     builder
       .addCase(register.pending, (state) => {
         state.isLoading = true;
+        state.isDisable = true;
       })
-      .addCase(register.fulfilled, (state) => {
+      .addCase(register.fulfilled, (state, { payload }) => {
+        toast.success(payload.message);
         state.isLoading = false;
+        state.isDisable = false;
       })
-      .addCase(register.rejected, (state) => {
+      .addCase(register.rejected, (state, { payload }: any) => {
+        toast.error(payload.response.data.message);
         state.isLoading = false;
+        state.isDisable = false;
       });
   },
 });

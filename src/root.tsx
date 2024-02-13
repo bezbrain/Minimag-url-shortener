@@ -22,7 +22,7 @@ const App = () => {
           backgroundColor: "#005ae2",
           marginInline: "10px",
         }}
-        progressStyle={{ backgroundColor: "red" }}
+        autoClose={7000}
       />
     </BrowserRouter>
   );
