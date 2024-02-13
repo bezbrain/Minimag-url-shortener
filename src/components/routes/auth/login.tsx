@@ -1,7 +1,7 @@
 import { Button } from "../../general";
 import { InputField } from "../../general/input";
 import { Link } from "react-router-dom";
-import { AuthHeader } from ".";
+import { AuthFooter, AuthHeader } from ".";
 
 const Login = () => {
   return (
@@ -28,20 +28,14 @@ const Login = () => {
           btnCss="w-full rounded-2xl py-2"
         />
 
-        <p className="my-2">
-          Don't have an account?{" "}
-          <Link to="/register" className="text-[#005ae2]">
-            Sign up
-          </Link>
-        </p>
-
-        <p className="text-sm opacity-60">
-          By signing in with an account, you agree to Minimag's{" "}
-          <span className="font-semibold">
-            Terms of Service, Privacy Policy
-          </span>{" "}
-          and <span className="font-semibold">Acceptable Use Policy</span>.
-        </p>
+        <AuthFooter
+          userStatus="Don't have an account?"
+          linkContent=" Sign up"
+          agreementOne="By signing in with an account, you agree to Minimag's"
+          agreementTwo=" Terms of Service, Privacy Policy"
+          agreementThree=" Acceptable Use Policy"
+          route="/register"
+        />
       </div>
     </div>
   );
