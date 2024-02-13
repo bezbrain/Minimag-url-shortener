@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { logUser, registerUser } from "../services/auth";
+import { setAuthToken } from "../../utils/authToken";
 
 export const register = createAsyncThunk(
   "action/register",
@@ -29,10 +30,9 @@ export const login = createAsyncThunk(
     const { loginUser, navigate } = details;
     try {
       const { data } = await logUser(loginUser);
-      console.log(data);
-
+      setAuthToken(data?.token);
       setTimeout(() => {
-        // navigate("/"); //   Navigate to home page
+        navigate("/"); //   Navigate to home page
       }, 1500);
 
       return data;
