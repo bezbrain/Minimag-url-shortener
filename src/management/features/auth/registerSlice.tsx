@@ -1,15 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-interface RegUser {
-  regUser: {
-    username: string;
-    email: string;
-    password: string;
-    retypePassword: string;
-  };
-  isLoading: boolean;
-  isMessage: string;
-}
+import { register } from "../../actions/auth";
+import { RegUser } from "../../types";
 
 const initialState: RegUser = {
   regUser: {
@@ -33,6 +24,19 @@ const regSlice = createSlice({
         [name]: value,
       };
     },
+  },
+
+  extraReducers: (builder) => {
+    builder
+      .addCase(register.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(register.fulfilled, (state) => {
+        state.isLoading = false;
+      })
+      .addCase(register.rejected, (state) => {
+        state.isLoading = false;
+      });
   },
 });
 

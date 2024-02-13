@@ -5,9 +5,13 @@ import { InputField } from "../../general/input";
 import { AppDispatch, RootState } from "../../../store";
 import { ChangeEvent } from "react";
 import { regInputs } from "../../../management/features/auth/registerSlice";
+import { register } from "../../../management/actions/auth";
+import { toast } from "react-toastify";
 
 const Register = () => {
-  const { regUser } = useSelector((store: RootState) => store.regStore);
+  const { regUser, isLoading } = useSelector(
+    (store: RootState) => store.regStore
+  );
 
   const { username, email, password, retypePassword } = regUser;
 
@@ -20,6 +24,12 @@ const Register = () => {
 
   const handleRegSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!username || !email || !password || !retypePassword) {
+      toast.error("No field should be empty");
+    } else {
+      dispatch(register(regUser));
+    }
   };
 
   return (
@@ -58,12 +68,13 @@ const Register = () => {
           inputValue={retypePassword}
           handleChange={handleRegChange}
         />
-        <p className="text-left my-2 text-[11px]">
-          6 or more characters, one number, one uppercase & one lower case.
+        <p className="text-left my-2 text-[14px]">
+          6 or more characters, atleast one number, one uppercase & one special
+          character.
         </p>
 
         <Button
-          content="Sign up with Email"
+          content={isLoading ? "Signin up..." : "Sign up with Email"}
           btnCon="w-full"
           btnCss="w-full rounded-2xl py-2 my-6"
           handleClick={handleRegSubmit}
