@@ -20,7 +20,7 @@ const RegisterPage = () => {
     if (!username || !email || !password || !retypePassword) {
       toast.error("No field should be empty");
     } else {
-      dispatch(register({ regUser, navigate }));
+      dispatch(register({ regUser, navigate, toast }));
     }
   };
 
