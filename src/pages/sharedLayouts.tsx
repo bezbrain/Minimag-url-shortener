@@ -1,11 +1,12 @@
 import { Outlet } from "react-router-dom";
-import { Nav } from "../components/sharedLayouts";
+import { Footer, Nav } from "../components/sharedLayouts";
 
 const SharedLayouts = () => {
   return (
     <section>
       <Nav />
       <Outlet />
+      <Footer />
     </section>
   );
 };

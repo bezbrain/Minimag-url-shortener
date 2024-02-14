@@ -21,7 +21,7 @@ const Hero = () => {
           <LinkBtn btnContent="Learn More" link="" />
         </div>
 
-        <div className="mt-12 shadow-lg shadow-slate-800">
+        <div className="hero__img mt-12 shadow-lg shadow-slate-800">
           <img src={shortenerImg} alt="Shortener" className="rounded-md" />
         </div>
       </div>
@@ -34,9 +34,19 @@ export default Hero;
 const HeroWrapper = styled.section`
   background: radial-gradient(blue, #005ae2cc);
   min-height: 80vh;
-  /* mix-blend-mode: color-burn; */
 
-  > div > h1 {
-    /* mix-blend-mode: lighten; */
+  .hero__img > img {
+    animation: card 1s ease-in-out 2;
+  }
+  @keyframes card {
+    0% {
+      transform: rotate(-5deg);
+    }
+    50% {
+      transform: rotate(5deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
   }
 `;
