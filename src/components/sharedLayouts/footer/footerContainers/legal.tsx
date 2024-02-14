@@ -1,6 +1,6 @@
 const Legal = () => {
   return (
-    <div>
+    <div className="w-full">
       <h2>Legal</h2>
     </div>
   );

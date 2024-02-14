@@ -7,7 +7,7 @@ export default {
       screens: {
         iPad: "951px",
         surfaceDuo: "540px",
-        iPhone: "420px",
+        iPhone: "435px",
         smallPhone: "330px",
       },
     },

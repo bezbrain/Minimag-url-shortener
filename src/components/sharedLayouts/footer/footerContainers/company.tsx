@@ -1,6 +1,6 @@
 const Company = () => {
   return (
-    <div>
+    <div className="w-full">
       <h1>Company</h1>
     </div>
   );

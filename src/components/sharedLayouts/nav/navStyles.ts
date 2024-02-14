@@ -12,7 +12,7 @@ export const HeaderWrapper = styled.header`
   width: 100%;
   padding-inline: 5vw;
   backdrop-filter: blur(20px);
-  mix-blend-mode: multiply;
+  /* mix-blend-mode: multiply; */
 
   > nav {
     /* border: 2px solid red; */

@@ -1,6 +1,6 @@
 const Resources = () => {
   return (
-    <div>
+    <div className="w-full">
       <p>Resources</p>
     </div>
   );

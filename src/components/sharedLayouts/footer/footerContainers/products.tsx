@@ -1,8 +1,6 @@
-import React from "react";
-
 const Products = () => {
   return (
-    <div>
+    <div className="w-full">
       <p>Products</p>
     </div>
   );
