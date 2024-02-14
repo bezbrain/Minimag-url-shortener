@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Media = () => {
   return (
-    <div className="iPhone:w-1/10 border-2">
+    <div className="iPhone:w-1/10">
       <img src={minimagLogo} alt="Minimag" className="w-[150px]" />
 
       <div className="flex text-xl space-x-4 mt-8">
