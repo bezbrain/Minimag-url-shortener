@@ -32,7 +32,7 @@ const Hero = () => {
 export default Hero;
 
 const HeroWrapper = styled.section`
-  background: radial-gradient(blue, #005ae2cc);
+  background: radial-gradient(#73a4ee, #005ae2cc);
   min-height: 80vh;
 
   .hero__img > img {
