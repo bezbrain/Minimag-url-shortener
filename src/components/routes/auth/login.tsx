@@ -15,7 +15,7 @@ const Login = ({ handleLoginSubmit }: LoginProps) => {
     (store: RootState) => store.loginStore
   );
 
-  const { email, username, password } = loginUser;
+  const { email, password } = loginUser;
 
   const dispatch = useDispatch<AppDispatch>();
 
@@ -33,8 +33,8 @@ const Login = ({ handleLoginSubmit }: LoginProps) => {
         <InputField
           inputType="text"
           inputPlaceholder="Email address or username"
-          inputName={"email" || "username"}
-          inputValue={email || username}
+          inputName="email"
+          inputValue={email}
           handleChange={handleLoginChange}
         />
         <InputField

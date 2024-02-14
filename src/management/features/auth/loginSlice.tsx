@@ -6,7 +6,6 @@ import { toast } from "react-toastify";
 const initialState: LoginUser = {
   loginUser: {
     email: "",
-    username: "",
     password: "",
   },
   isLoading: false,

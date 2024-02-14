@@ -17,8 +17,8 @@ const Hero = () => {
         </p>
 
         <div className="flex w-fit mx-auto space-x-4 sm:space-x-8">
-          <LinkBtn btnContent="Sign Up" />
-          <LinkBtn btnContent="Learn More" />
+          <LinkBtn btnContent="Sign Up" link="/register" />
+          <LinkBtn btnContent="Learn More" link="" />
         </div>
 
         <div className="mt-12 shadow-lg shadow-slate-800">

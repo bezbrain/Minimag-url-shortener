@@ -13,7 +13,6 @@ export interface RegUser {
 export interface LoginUser {
   loginUser: {
     email: string;
-    username: string;
     password: string;
   };
   isLoading: boolean;

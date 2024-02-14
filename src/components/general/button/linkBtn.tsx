@@ -4,12 +4,13 @@ import styled from "styled-components";
 interface LinkBtnProps {
   btnContent: string;
   btnStyles?: string;
+  link: string;
 }
 
-const LinkBtn = ({ btnContent, btnStyles }: LinkBtnProps) => {
+const LinkBtn = ({ btnContent, btnStyles, link }: LinkBtnProps) => {
   return (
     <LinkBtnWrapper className={btnStyles}>
-      <Link to="">{btnContent}</Link>
+      <Link to={link}>{btnContent}</Link>
     </LinkBtnWrapper>
   );
 };

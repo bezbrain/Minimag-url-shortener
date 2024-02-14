@@ -103,7 +103,7 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-            <LinkBtn btnContent="Try for free" />
+            <LinkBtn btnContent="Try for free" link="" />
           </li>
         </ul>
       </nav>

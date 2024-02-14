@@ -29,12 +29,17 @@ export const login = createAsyncThunk(
   "action/login",
   async (details: any, thunkAPI) => {
     const { loginUser, navigate } = details;
+    const newLoginUser = {
+      email: loginUser.email,
+      username: loginUser.email,
+      password: loginUser.password,
+    };
     try {
-      const { data } = await logUser(loginUser);
+      const { data } = await logUser(newLoginUser);
       setAuthToken(data?.token);
-      setTimeout(() => {
-        navigate("/"); //   Navigate to home page
-      }, 1500);
+      // setTimeout(() => {
+      navigate("/"); //   Navigate to home page
+      // }, 1500);
 
       return data;
     } catch (error) {
@@ -49,9 +54,8 @@ export const logout = createAsyncThunk(
   async (navigate: NavigateFunction, thunkAPI) => {
     try {
       const { data } = await logoutUser();
-      console.log(data);
       navigate("/");
-      // removeAuthToken()
+      removeAuthToken();
       return data;
     } catch (error) {
       console.log(error);
