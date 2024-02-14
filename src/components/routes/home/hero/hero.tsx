@@ -33,7 +33,11 @@ export default Hero;
 
 const HeroWrapper = styled.section`
   background: radial-gradient(#73a4ee, #005ae2cc);
-  min-height: 80vh;
+  min-height: 90vh;
+
+  @media screen and (max-width: 640px) {
+    min-height: 70vh;
+  }
 
   .hero__img > img {
     animation: card 1s ease-in-out 2;
