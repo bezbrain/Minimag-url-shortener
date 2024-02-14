@@ -1,10 +1,13 @@
-import { RegUser } from "../management/types";
+import { LoginUser, RegUser } from "../management/types";
 
-const clearAuthFields = (state: RegUser["regUser"]) => {
+export const clearRegisterFields = (state: RegUser["regUser"]) => {
   state.username = "";
   state.email = "";
   state.password = "";
   state.retypePassword = "";
 };
 
-export default clearAuthFields;
+export const clearLoginFields = (state: LoginUser["loginUser"]) => {
+  state.email = "";
+  state.password = "";
+};

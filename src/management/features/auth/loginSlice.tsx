@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { LoginUser } from "../../types";
 import { login } from "../../actions/auth";
 import { toast } from "react-toastify";
+import { clearLoginFields } from "../../../utils/clearAuthField";
 
 const initialState: LoginUser = {
   loginUser: {
@@ -35,6 +36,7 @@ const loginSlice = createSlice({
         toast.success(payload.message);
         state.isLoading = false;
         state.isDisable = false;
+        clearLoginFields(state.loginUser);
       })
       .addCase(login.rejected, (state, { payload }: any) => {
         state.isLoading = false;
