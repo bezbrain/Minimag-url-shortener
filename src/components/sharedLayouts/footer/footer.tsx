@@ -1,9 +1,9 @@
-import React from "react";
+import { Media } from "..";
 
 const Footer = () => {
   return (
     <section>
-      <p>Footer</p>
+      <Media />
     </section>
   );
 };
