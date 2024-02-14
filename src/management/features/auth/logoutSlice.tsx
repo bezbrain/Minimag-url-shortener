@@ -1,43 +1,32 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { LoginUser } from "../../types";
-import { login } from "../../actions/auth";
+import { logout } from "../../actions/auth";
 import { toast } from "react-toastify";
+import { Logout } from "../../types";
 
-const initialState: LoginUser = {
-  loginUser: {
-    email: "",
-    username: "",
-    password: "",
-  },
+const initialState: Logout = {
   isLoading: false,
   isDisable: false,
 };
 
-const loginSlice = createSlice({
-  name: "login",
+const logoutSlice = createSlice({
+  name: "logout",
   initialState,
   reducers: {
-    loginInputs: (state, { payload }) => {
-      const { name, value } = payload;
-      state.loginUser = {
-        ...state.loginUser,
-        [name]: value,
-      };
-    },
+    //
   },
 
   extraReducers: (builder) => {
     builder
-      .addCase(login.pending, (state) => {
+      .addCase(logout.pending, (state) => {
         state.isLoading = true;
         state.isDisable = true;
       })
-      .addCase(login.fulfilled, (state, { payload }) => {
+      .addCase(logout.fulfilled, (state, { payload }) => {
         toast.success(payload.message);
         state.isLoading = false;
         state.isDisable = false;
       })
-      .addCase(login.rejected, (state, { payload }: any) => {
+      .addCase(logout.rejected, (state, { payload }: any) => {
         state.isLoading = false;
         state.isDisable = false;
 
@@ -52,6 +41,4 @@ const loginSlice = createSlice({
   },
 });
 
-export default loginSlice.reducer;
-
-export const { loginInputs } = loginSlice.actions;
+export default logoutSlice.reducer;

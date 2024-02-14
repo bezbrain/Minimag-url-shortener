@@ -1,5 +1,5 @@
 import { minimagLogo } from "../../../assets/logo";
-import { Link } from "react-router-dom";
+import { Link, NavigateFunction, useNavigate } from "react-router-dom";
 import { FaBarsProgress } from "react-icons/fa6";
 import { TiTimesOutline } from "react-icons/ti";
 import { HeaderWrapper } from "./navStyles";
@@ -11,11 +11,19 @@ import {
 } from "../../../management/features/shared/sharedSlice";
 import { LinkBtn } from "../../general";
 import { getAuthToken } from "../../../utils/authToken";
+import { useRef } from "react";
+import { logout } from "../../../management/actions/auth";
 
 const Nav = () => {
   const { isOpen } = useSelector((store: RootState) => store.sharedStore);
+  const { isLoading, isDisable } = useSelector(
+    (store: RootState) => store.logoutStore
+  );
+
+  const loginLogout = useRef<HTMLAnchorElement | null>(null);
 
   const dispatch = useDispatch<AppDispatch>();
+  const navigate: NavigateFunction = useNavigate();
 
   const handleOpenNavClick = () => {
     dispatch(isOpenNav());
@@ -23,6 +31,16 @@ const Nav = () => {
 
   const handleCloseNavClick = () => {
     dispatch(isCloseNav());
+  };
+
+  // LOGOUT A USER
+  const handleLogoutClick = () => {
+    dispatch(isCloseNav());
+    if (loginLogout.current?.textContent === "Log in") {
+      navigate("/login");
+    } else {
+      dispatch(logout(navigate));
+    }
   };
 
   return (
@@ -75,10 +93,13 @@ const Nav = () => {
           <li>
             <Link
               to={getAuthToken() ? "" : "/login"}
-              className="iPad:text-blue-600"
-              onClick={() => dispatch(isCloseNav())}
+              className={`iPad:text-blue-600 ${
+                isDisable ? "cursor-not-allowed" : ""
+              }`}
+              onClick={handleLogoutClick}
+              ref={loginLogout}
             >
-              {getAuthToken() ? "Logout" : "Log in"}
+              {getAuthToken() ? (isLoading ? "Wait..." : "Logout") : "Log in"}
             </Link>
           </li>
           <li>

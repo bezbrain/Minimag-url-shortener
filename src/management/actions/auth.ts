@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { logUser, registerUser } from "../services/auth";
-import { setAuthToken } from "../../utils/authToken";
+import { logUser, logoutUser, registerUser } from "../services/auth";
+import { removeAuthToken, setAuthToken } from "../../utils/authToken";
+import { NavigateFunction } from "react-router-dom";
 
 export const register = createAsyncThunk(
   "action/register",
@@ -35,6 +36,22 @@ export const login = createAsyncThunk(
         navigate("/"); //   Navigate to home page
       }, 1500);
 
+      return data;
+    } catch (error) {
+      console.log(error);
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);
+
+export const logout = createAsyncThunk(
+  "action/logout",
+  async (navigate: NavigateFunction, thunkAPI) => {
+    try {
+      const { data } = await logoutUser();
+      console.log(data);
+      navigate("/");
+      // removeAuthToken()
       return data;
     } catch (error) {
       console.log(error);
