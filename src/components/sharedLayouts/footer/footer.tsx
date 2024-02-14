@@ -46,7 +46,9 @@ const FooterWrapper = styled.section`
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
   }
-  @media screen and (min-width: 1024px) {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  @media screen and (max-width: 1024px) {
+    .containers {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
   }
 `;
