@@ -25,7 +25,7 @@ const LoginPage = () => {
   };
 
   return (
-    <main className="pt-[15vh] px-4 flex justify-center items-center">
+    <main className="pt-[15vh] min-h-[100vh] px-4 flex justify-center">
       <Login handleLoginSubmit={handleLoginSubmit} />
     </main>
   );
