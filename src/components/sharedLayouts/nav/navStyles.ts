@@ -49,7 +49,7 @@ export const HeaderWrapper = styled.header`
       flex-direction: column;
       position: fixed;
       top: 0;
-      right: -400px;
+      right: -500px;
       width: 300px;
       min-height: 100vh;
       background-color: #005ae2cc;
