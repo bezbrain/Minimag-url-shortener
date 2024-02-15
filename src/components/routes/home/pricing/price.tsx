@@ -52,11 +52,11 @@ const Price = () => {
       <div className="w-fit mt-8 mx-auto flex gap-2 md:my-16">
         <Button
           content="Get Custom Price"
-          btnCss="w-[160px] rounded-3xl py-2 bg-white text-[#005ae2cc] border-[1px] border-[#005ae2cc]"
+          btnCss="w-[130px] text-sm rounded-3xl py-2 bg-white text-[#005ae2cc] border-[1px] border-[#005ae2cc] iPhone:w-[160px] iPhone:text-md"
         />
         <Button
           content="Select Pricing"
-          btnCss="w-[160px] rounded-3xl py-2 border-[1px] border-[#005ae2cc]"
+          btnCss="w-[130px] text-sm rounded-3xl py-2 border-[1px] border-[#005ae2cc] iPhone:w-[160px] iPhone:text-md"
         />
       </div>
     </PriceWrapper>

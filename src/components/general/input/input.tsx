@@ -5,6 +5,7 @@ interface InputProps {
   inputType: string;
   inputPlaceholder: string;
   inputStyle?: string;
+  inputCss?: string;
   inputValue: string;
   inputName: string;
   handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -14,6 +15,7 @@ const InputField = ({
   inputType,
   inputPlaceholder,
   inputStyle,
+  inputCss,
   inputValue,
   inputName,
   handleChange,
@@ -25,6 +27,7 @@ const InputField = ({
         placeholder={inputPlaceholder}
         value={inputValue}
         name={inputName}
+        className={inputCss}
         onChange={handleChange}
       />
     </InputWrapper>
