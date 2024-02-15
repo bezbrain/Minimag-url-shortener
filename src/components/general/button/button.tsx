@@ -36,10 +36,14 @@ const ButtonWrapper = styled.div`
     align-items: center;
     justify-content: center;
     gap: 3px;
-    background-color: #005ae2;
+    background-color: #005ae2cc;
     color: #fff;
     padding-block: 5px;
     width: 100px;
+  }
+
+  > button:hover {
+    transform: scale(1.05);
   }
 
   > button > span:first-child {

@@ -16,9 +16,9 @@ const Hero = () => {
           combination of characters, to enhance more user experience.
         </p>
 
-        <div className="flex w-fit mx-auto space-x-4 sm:space-x-8">
+        <div className="flex w-fit mx-auto space-x-1 sm:space-x-4">
           <LinkBtn btnContent="Sign Up" link="/register" />
-          <LinkBtn btnContent="Learn More" link="" />
+          <LinkBtn btnContent="Learn More" link="" btnStyles="bg-inherit" />
         </div>
 
         <div className="hero__img mt-12 shadow-lg shadow-slate-800">
