@@ -1,4 +1,10 @@
-import { Hero, Price, Usage, WhyMinimag } from "../components/routes/home";
+import {
+  Hero,
+  Price,
+  TrimUrl,
+  Usage,
+  WhyMinimag,
+} from "../components/routes/home";
 
 const HomePage = () => {
   return (
@@ -7,6 +13,7 @@ const HomePage = () => {
       <Usage />
       <WhyMinimag />
       <Price />
+      <TrimUrl />
     </main>
   );
 };

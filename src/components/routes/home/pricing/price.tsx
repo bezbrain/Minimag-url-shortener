@@ -16,7 +16,7 @@ const Price = () => {
         </p>
       </header>
 
-      <div className="flex w-fit mx-auto mt-12 gap-[20px]">
+      <div className="flex w-full flex-wrap justify-center mx-auto mt-12 gap-[20px] md:flex-nowrap surfaceDuo:w-fit">
         <PriceCard
           type={"Basic"}
           price={"Free"}
@@ -49,7 +49,7 @@ const Price = () => {
         />
       </div>
 
-      <div className="w-fit mx-auto mt-20 flex gap-2">
+      <div className="w-fit mt-8 mx-auto flex gap-2 md:my-16">
         <Button
           content="Get Custom Price"
           btnCss="w-[160px] rounded-3xl py-2 bg-white text-[#005ae2cc] border-[1px] border-[#005ae2cc]"
