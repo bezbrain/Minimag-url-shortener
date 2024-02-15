@@ -3,8 +3,8 @@ import styled from "styled-components";
 const Usage = () => {
   return (
     <UsageWrapper className="bg-[#F9FBFD]">
-      <div className="max-w-[1400px] p-4 mx-auto py-16 justify-between gap-[10vw] lg:px-8 lg:gap-4 sm:gap-[5vw] sm:flex">
-        <h2 className="font-bold text-3xl sm:text-[3vw] lg:text-3xl sm:w-[30%]">
+      <div className="max-w-[1400px] p-4 mx-auto py-16 justify-between gap-[10vw] lg:px-8 lg:gap-4 sm:gap-[3vw] sm:flex">
+        <h2 className="font-bold text-3xl text-center md:text-[3vw] lg:text-3xl md:w-[30%] sm:text-left">
           One Stop. <br />
           Four <span className="text-[#005ae2cc]">Possibilities.</span>
         </h2>
