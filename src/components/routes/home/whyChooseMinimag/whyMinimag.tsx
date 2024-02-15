@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import { FaRegEdit } from "react-icons/fa";
+import { SiNormalizedotcss } from "react-icons/si";
+import { PiSquaresFourLight } from "react-icons/pi";
+import { MdOutlineInsertLink } from "react-icons/md";
 import { WhyMinimagCon } from "..";
 
 const WhyMinimag = () => {
@@ -20,7 +23,7 @@ const WhyMinimag = () => {
 
       <div className="summary__con mt-6 md:mt-0 md:w-[65%]">
         <WhyMinimagCon
-          icon={<FaRegEdit />}
+          icon={<MdOutlineInsertLink />}
           title={"URL Shortening"}
           summary={
             "With little to no stress, you can get your short URLs for long links and enjoy better experience personally and with your virtual customers."
@@ -34,14 +37,14 @@ const WhyMinimag = () => {
           }
         />
         <WhyMinimagCon
-          icon={<FaRegEdit />}
+          icon={<PiSquaresFourLight />}
           title={"QR Codes"}
           summary={
             "Generate QR codes to your business, events. Bring your audience and customers to your doorstep with this scan and go solution."
           }
         />
         <WhyMinimagCon
-          icon={<FaRegEdit />}
+          icon={<SiNormalizedotcss />}
           title={"Data Analytics"}
           summary={
             "Receive data on the usage of either your shortened URL, custom URLs or generated QR codes. Embedded to monitor progress."

@@ -1,5 +1,7 @@
+import React from "react";
+
 interface WhyMinimagConProps {
-  icon: any;
+  icon: React.ReactNode;
   title: string;
   summary: string;
 }
