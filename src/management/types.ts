@@ -23,3 +23,14 @@ export interface Logout {
   isLoading: boolean;
   isDisable: boolean;
 }
+
+export interface Link {
+  urls: {
+    originalUrl: string;
+    fullShortUrl: string;
+    domainType: string;
+  };
+  isLoading: boolean;
+  isDisable: boolean;
+  isCustomize: boolean;
+}

@@ -8,6 +8,7 @@ interface InputProps {
   inputCss?: string;
   inputValue: string;
   inputName: string;
+  readInput?: boolean;
   handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -18,6 +19,7 @@ const InputField = ({
   inputCss,
   inputValue,
   inputName,
+  readInput,
   handleChange,
 }: InputProps) => {
   return (
@@ -28,6 +30,7 @@ const InputField = ({
         value={inputValue}
         name={inputName}
         className={inputCss}
+        readOnly={readInput}
         onChange={handleChange}
       />
     </InputWrapper>

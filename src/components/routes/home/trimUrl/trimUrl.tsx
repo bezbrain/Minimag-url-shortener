@@ -2,9 +2,34 @@ import styled from "styled-components";
 import { InputField } from "../../../general/input";
 import { Button } from "../../../general";
 import { BsArrowUpShort } from "react-icons/bs";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../../../../store";
+import {
+  urlInput,
+  urlSelect,
+} from "../../../../management/features/link/linkSlice";
+import { ChangeEvent } from "react";
 
 const TrimUrl = () => {
-  const handleUrlChange = () => {
+  const { urls, isCustomize } = useSelector(
+    (store: RootState) => store.linkStore
+  );
+
+  const { originalUrl, fullShortUrl, domainType } = urls;
+
+  const dispatch = useDispatch<AppDispatch>();
+
+  const handleUrlChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    dispatch(urlInput({ name, value }));
+  };
+
+  const handleDomainSelect = (e: ChangeEvent<HTMLSelectElement>) => {
+    const urlSelectValue = e.target.value;
+    dispatch(urlSelect(urlSelectValue));
+  };
+
+  const handleShortUrlClick = () => {
     //
   };
 
@@ -14,8 +39,8 @@ const TrimUrl = () => {
         <InputField
           inputType={"text"}
           inputPlaceholder={"Paste URL Here"}
-          inputValue={""}
-          inputName={""}
+          inputValue={originalUrl}
+          inputName={"originalUrl"}
           inputCss="text-[#005ae2] placeholder:text-[#005ae2]"
           handleChange={handleUrlChange}
         />
@@ -23,29 +48,43 @@ const TrimUrl = () => {
         <div className="gap-0 iPhone:flex iPhone:gap-2">
           <select
             name=""
-            id=""
+            value={domainType}
             className="h-[40px] w-full border-[1px] border-[#005ae2] rounded-[6px] focus:border-[#005ae2] focus:border-2 outline-none text-[#005ae2] px-2 cursor-pointer iPhone:w-[50%]"
+            onChange={handleDomainSelect}
           >
             <option value="">Choose Domain</option>
-            <option value="">Minimag.com</option>
-            <option value="">Custom Domain</option>
+            <option value="Minimag.com">Minimag.com</option>
+            <option value="Custom Domain">Custom Domain</option>
           </select>
 
-          <InputField
-            inputType={"text"}
-            inputPlaceholder={"Type custom URL here"}
-            inputValue={""}
-            inputName={""}
-            inputStyle="mt-6 iPhone:w-[50%] iPhone:mt-0"
-            inputCss="text-[#005ae2] placeholder:text-[#005ae2]"
-            handleChange={handleUrlChange}
-          />
+          <div className="mt-6 iPhone:w-[50%] iPhone:mt-0">
+            <InputField
+              inputType={"text"}
+              inputPlaceholder={
+                domainType === "" || domainType === "Minimag.com"
+                  ? "Your short URL here"
+                  : "Type custom URL here"
+              }
+              inputValue={fullShortUrl}
+              inputName={"fullShortUrl"}
+              inputCss="text-[#005ae2] placeholder:text-[#005ae2]"
+              handleChange={handleUrlChange}
+            />
+            <p
+              className={`text-[#005ae2] text-sm font-semibold ${
+                fullShortUrl ? "block" : "hidden"
+              }`}
+            >
+              Click the link to copy
+            </p>
+          </div>
         </div>
 
         <Button
           content={"Shorten URL"}
           icon={<BsArrowUpShort className="text-3xl" />}
           btnCss="w-full py-2 rounded-2xl flex-row-reverse"
+          handleClick={handleShortUrlClick}
         />
 
         <p className="text-[#005ae2] text-xs">
