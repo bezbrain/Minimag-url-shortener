@@ -18,17 +18,18 @@ const linkSlice = createSlice({
   name: "link",
   initialState,
   reducers: {
-    urlInput: (state, { payload }) => {
-      const { name, value } = payload;
-
-      state.urls = {
-        ...state.urls,
-        [name]: value,
-      };
+    originalUrlInput: (state, { payload }) => {
+      state.urls.originalUrl = payload;
     },
 
     urlSelect: (state, { payload }) => {
       state.urls.domainType = payload;
+    },
+
+    shortUrlInput: (state, { payload }) => {
+      if (state.urls.domainType === "Custom Domain") {
+        state.urls.fullShortUrl = payload;
+      }
     },
   },
 
@@ -42,6 +43,9 @@ const linkSlice = createSlice({
         toast.success(payload.message);
         state.isLoading = false;
         state.isDisable = false;
+        state.urls.fullShortUrl = payload.url.fullUrl;
+        state.urls.originalUrl = "";
+        state.urls.domainType = "";
       })
       .addCase(createLink.rejected, (state, { payload }: any) => {
         state.isLoading = false;
@@ -60,4 +64,4 @@ const linkSlice = createSlice({
 
 export default linkSlice.reducer;
 
-export const { urlInput, urlSelect } = linkSlice.actions;
+export const { originalUrlInput, urlSelect, shortUrlInput } = linkSlice.actions;

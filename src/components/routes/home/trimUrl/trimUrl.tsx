@@ -5,7 +5,8 @@ import { BsArrowUpShort } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../../../store";
 import {
-  urlInput,
+  originalUrlInput,
+  shortUrlInput,
   urlSelect,
 } from "../../../../management/features/link/linkSlice";
 import { ChangeEvent } from "react";
@@ -22,8 +23,8 @@ const TrimUrl = () => {
   const dispatch = useDispatch<AppDispatch>();
 
   const handleUrlChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    dispatch(urlInput({ name, value }));
+    // const { name, value } = e.target;
+    // dispatch(originalUrlInput({ name, value }));
   };
 
   const handleDomainSelect = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -53,7 +54,7 @@ const TrimUrl = () => {
           inputValue={originalUrl}
           inputName={"originalUrl"}
           inputCss="text-[#005ae2] placeholder:text-[#005ae2]"
-          handleChange={handleUrlChange}
+          handleChange={(e) => dispatch(originalUrlInput(e.target.value))}
         />
 
         <div className="gap-0 iPhone:flex iPhone:gap-2">
@@ -79,7 +80,7 @@ const TrimUrl = () => {
               inputValue={fullShortUrl}
               inputName={"fullShortUrl"}
               inputCss="text-[#005ae2] placeholder:text-[#005ae2]"
-              handleChange={handleUrlChange}
+              handleChange={(e) => dispatch(shortUrlInput(e.target.value))}
             />
             <p
               className={`text-[#005ae2] text-sm font-semibold ${
