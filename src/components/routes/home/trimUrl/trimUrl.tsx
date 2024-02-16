@@ -22,11 +22,6 @@ const TrimUrl = () => {
 
   const dispatch = useDispatch<AppDispatch>();
 
-  const handleUrlChange = (e: ChangeEvent<HTMLInputElement>) => {
-    // const { name, value } = e.target;
-    // dispatch(originalUrlInput({ name, value }));
-  };
-
   const handleDomainSelect = (e: ChangeEvent<HTMLSelectElement>) => {
     const urlSelectValue = e.target.value;
     dispatch(urlSelect(urlSelectValue));
