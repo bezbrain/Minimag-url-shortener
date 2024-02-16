@@ -13,7 +13,7 @@ import { toast } from "react-toastify";
 import { createLink } from "../../../../management/actions/link.action";
 
 const TrimUrl = () => {
-  const { urls, isCustomize } = useSelector(
+  const { urls, isCustomize, isLoading, isDisable } = useSelector(
     (store: RootState) => store.linkStore
   );
 
@@ -39,7 +39,7 @@ const TrimUrl = () => {
       toast.error("URL must start with http");
     } else if (!domainType) {
       toast.error("Choose Domain type");
-    } else {
+    } else if (domainType === "Minimag.com") {
       dispatch(createLink(originalUrl));
     }
   };
@@ -93,10 +93,16 @@ const TrimUrl = () => {
 
         <Button
           content={
-            domainType === "Custom Domain" ? "Customize URL" : "Shorten URL"
+            isLoading
+              ? "Generating..."
+              : domainType === "Custom Domain"
+              ? "Customize URL"
+              : "Shorten URL"
           }
           icon={<BsArrowUpShort className="text-3xl" />}
-          btnCss="w-full py-2 rounded-2xl flex-row-reverse"
+          btnCss={`w-full py-2 rounded-2xl flex-row-reverse ${
+            isDisable ? "cursor-not-allowed" : ""
+          }`}
           handleClick={handleShortUrlClick}
         />
 
