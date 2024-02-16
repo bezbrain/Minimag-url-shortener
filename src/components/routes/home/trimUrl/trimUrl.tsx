@@ -9,6 +9,8 @@ import {
   urlSelect,
 } from "../../../../management/features/link/linkSlice";
 import { ChangeEvent } from "react";
+import { toast } from "react-toastify";
+import { createLink } from "../../../../management/actions/link.action";
 
 const TrimUrl = () => {
   const { urls, isCustomize } = useSelector(
@@ -29,8 +31,17 @@ const TrimUrl = () => {
     dispatch(urlSelect(urlSelectValue));
   };
 
-  const handleShortUrlClick = () => {
-    //
+  const handleShortUrlClick = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!originalUrl) {
+      toast.error("Please paste URL that needs to be shortened");
+    } else if (!originalUrl.startsWith("http")) {
+      toast.error("URL must start with http");
+    } else if (!domainType) {
+      toast.error("Choose Domain type");
+    } else {
+      dispatch(createLink(originalUrl));
+    }
   };
 
   return (
@@ -61,9 +72,9 @@ const TrimUrl = () => {
             <InputField
               inputType={"text"}
               inputPlaceholder={
-                domainType === "" || domainType === "Minimag.com"
-                  ? "Your short URL here"
-                  : "Type custom URL here"
+                domainType === "Custom Domain"
+                  ? "Type custom URL here"
+                  : "Your short URL here"
               }
               inputValue={fullShortUrl}
               inputName={"fullShortUrl"}
@@ -81,7 +92,9 @@ const TrimUrl = () => {
         </div>
 
         <Button
-          content={"Shorten URL"}
+          content={
+            domainType === "Custom Domain" ? "Customize URL" : "Shorten URL"
+          }
           icon={<BsArrowUpShort className="text-3xl" />}
           btnCss="w-full py-2 rounded-2xl flex-row-reverse"
           handleClick={handleShortUrlClick}
