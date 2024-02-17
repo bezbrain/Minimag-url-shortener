@@ -12,6 +12,7 @@ import {
 import { ChangeEvent } from "react";
 import { toast } from "react-toastify";
 import { createLink } from "../../../../management/actions/link.action";
+import { getAuthToken } from "../../../../utils/authToken";
 
 const TrimUrl = () => {
   const { urls, isCustomize, isLoading, isDisable } = useSelector(
@@ -35,7 +36,9 @@ const TrimUrl = () => {
       toast.error("URL must start with http");
     } else if (!domainType) {
       toast.error("Choose Domain type");
-    } else if (domainType === "Minimag.com") {
+    } else if (!getAuthToken()) {
+      toast.error("Please login to use service");
+    } else if (domainType === "Minimag.com" && getAuthToken()) {
       dispatch(createLink(originalUrl));
     }
   };
