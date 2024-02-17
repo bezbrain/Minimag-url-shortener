@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { Link } from "../../types";
 import { createLink } from "../../actions/link.action";
 import { toast } from "react-toastify";
+import { serverMessage } from "../../../utils/serverMessage";
 
 const initialState: Link = {
   urls: {
@@ -50,14 +51,7 @@ const linkSlice = createSlice({
       .addCase(createLink.rejected, (state, { payload }: any) => {
         state.isLoading = false;
         state.isDisable = false;
-
-        if (payload.message === "Network Error") {
-          toast.error(
-            `${payload.message}! Please check your network and try again!`
-          );
-        } else {
-          toast.error(payload.response.data.message);
-        }
+        serverMessage(payload, toast);
       });
   },
 });
