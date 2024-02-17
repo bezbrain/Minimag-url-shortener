@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Link } from "../../types";
-import { createLink } from "../../actions/link.action";
+import { createCusLink, createLink } from "../../actions/link.action";
 import { toast } from "react-toastify";
 import { serverMessage } from "../../../utils/serverMessage";
 
@@ -25,6 +25,7 @@ const linkSlice = createSlice({
 
     urlSelect: (state, { payload }) => {
       state.urls.domainType = payload;
+      state.urls.fullShortUrl = "";
     },
 
     shortUrlInput: (state, { payload }) => {
@@ -36,6 +37,7 @@ const linkSlice = createSlice({
 
   extraReducers: (builder) => {
     builder
+      // Extrareducer for shortening link
       .addCase(createLink.pending, (state) => {
         state.isLoading = true;
         state.isDisable = true;
@@ -49,6 +51,25 @@ const linkSlice = createSlice({
         state.urls.domainType = "";
       })
       .addCase(createLink.rejected, (state, { payload }: any) => {
+        state.isLoading = false;
+        state.isDisable = false;
+        serverMessage(payload, toast);
+      })
+
+      // Extrareducer for customizing link
+      .addCase(createCusLink.pending, (state) => {
+        state.isLoading = true;
+        state.isDisable = true;
+      })
+      .addCase(createCusLink.fulfilled, (state, { payload }) => {
+        toast.success(payload.message);
+        state.isLoading = false;
+        state.isDisable = false;
+        state.urls.fullShortUrl = payload.cusUrl.fullUrl;
+        state.urls.originalUrl = "";
+        state.urls.domainType = "";
+      })
+      .addCase(createCusLink.rejected, (state, { payload }: any) => {
         state.isLoading = false;
         state.isDisable = false;
         serverMessage(payload, toast);

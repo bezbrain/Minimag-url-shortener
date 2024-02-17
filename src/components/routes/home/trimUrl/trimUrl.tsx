@@ -11,7 +11,10 @@ import {
 } from "../../../../management/features/link/linkSlice";
 import { ChangeEvent } from "react";
 import { toast } from "react-toastify";
-import { createLink } from "../../../../management/actions/link.action";
+import {
+  createCusLink,
+  createLink,
+} from "../../../../management/actions/link.action";
 import { getAuthToken } from "../../../../utils/authToken";
 
 const TrimUrl = () => {
@@ -40,6 +43,8 @@ const TrimUrl = () => {
       toast.error("Please login to use service");
     } else if (domainType === "Minimag.com" && getAuthToken()) {
       dispatch(createLink(originalUrl));
+    } else if (domainType === "Custom Domain" && getAuthToken()) {
+      dispatch(createCusLink({ originalUrl, fullShortUrl }));
     }
   };
 
