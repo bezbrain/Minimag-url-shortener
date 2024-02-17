@@ -1,7 +1,7 @@
-export const serverError = (payload: any) => {
+export const serverMessage = (payload: any, toast: any) => {
   if (payload.message === "Network Error") {
-    return `${payload.message}. Please, check your network and try again!`;
+    toast.error(`${payload.message}! Please check your network and try again!`);
   } else {
-    return payload.response.data.message;
+    toast.error(payload.response.data.message);
   }
 };

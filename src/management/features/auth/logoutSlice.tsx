@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { logout } from "../../actions/auth";
 import { toast } from "react-toastify";
 import { Logout } from "../../types";
+import { serverMessage } from "../../../utils/serverMessage";
 
 const initialState: Logout = {
   isLoading: false,
@@ -29,14 +30,7 @@ const logoutSlice = createSlice({
       .addCase(logout.rejected, (state, { payload }: any) => {
         state.isLoading = false;
         state.isDisable = false;
-
-        if (payload.message === "Network Error") {
-          toast.error(
-            `${payload.message}! Please check your network and try again!`
-          );
-        } else {
-          toast.error(payload.response.data.message);
-        }
+        serverMessage(payload, toast);
       });
   },
 });

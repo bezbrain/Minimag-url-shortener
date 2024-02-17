@@ -3,6 +3,7 @@ import { LoginUser } from "../../types";
 import { login } from "../../actions/auth";
 import { toast } from "react-toastify";
 import { clearLoginFields } from "../../../utils/clearAuthField";
+import { serverMessage } from "../../../utils/serverMessage";
 
 const initialState: LoginUser = {
   loginUser: {
@@ -41,14 +42,7 @@ const loginSlice = createSlice({
       .addCase(login.rejected, (state, { payload }: any) => {
         state.isLoading = false;
         state.isDisable = false;
-
-        if (payload.message === "Network Error") {
-          toast.error(
-            `${payload.message}! Please check your network and try again!`
-          );
-        } else {
-          toast.error(payload.response.data.message);
-        }
+        serverMessage(payload, toast);
       });
   },
 });
