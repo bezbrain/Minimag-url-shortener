@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { LinkBtn } from "../../../general";
 import { shortenerImg } from "../../../../assets/images";
+import { getAuthToken } from "../../../../utils/authToken";
 
 const Hero = () => {
   return (
@@ -17,8 +18,12 @@ const Hero = () => {
         </p>
 
         <div className="flex w-fit mx-auto space-x-1 sm:space-x-4">
-          <LinkBtn btnContent="Sign Up" link="/register" />
-          <LinkBtn btnContent="Learn More" link="" btnStyles="bg-inherit" />
+          {getAuthToken() ? (
+            ""
+          ) : (
+            <LinkBtn btnContent="Sign Up" link="/register" />
+          )}
+          <LinkBtn btnContent="Learn More" link="" />
         </div>
 
         <div className="hero__img mt-12 shadow-lg shadow-slate-800">

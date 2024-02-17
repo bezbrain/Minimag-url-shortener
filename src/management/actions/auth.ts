@@ -55,7 +55,7 @@ export const logout = createAsyncThunk(
     try {
       const { data } = await logoutUser();
       navigate("/");
-      removeAuthToken();
+      removeAuthToken(); // Remove token from storage
       return data;
     } catch (error) {
       console.log(error);
