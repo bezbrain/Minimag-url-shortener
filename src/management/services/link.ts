@@ -14,21 +14,16 @@ export const mainLink = async (link: Object) => {
 };
 
 export const mainCusLink = async (links: any) => {
-  console.log(links);
   const newLinks = {
     originalUrl: links.originalUrl,
-    customizeUrl: links.fullShortUrl,
+    shortUrl: links.fullShortUrl,
   };
   const token = getAuthToken();
-  const data = await axios.post(
-    `${urlConfig.urlBaseUrl}/customizeUrl`,
-    newLinks,
-    {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
+  const data = await axios.post(`${urlConfig.urlBaseUrl}/customUrl`, newLinks, {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
   return data;
 };
