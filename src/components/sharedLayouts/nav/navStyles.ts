@@ -17,6 +17,10 @@ export const HeaderWrapper = styled.header`
   z-index: 9999;
   /* mix-blend-mode: multiply; */
 
+  @media screen and (max-width: 539px) {
+    background-color: #fff;
+  }
+
   > nav {
     /* border: 2px solid red; */
   }
