@@ -13,7 +13,7 @@ const Price = () => {
 
   return (
     <PriceWrapper
-      className="max-w-[1400px] p-4 mx-auto my-20 py-16 bg-[#fff]"
+      className="max-w-[1400px] p-4 mx-auto py-16 bg-[#fff]"
       id="pricing"
     >
       <header className="max-w-[500px] mx-auto text-center">
