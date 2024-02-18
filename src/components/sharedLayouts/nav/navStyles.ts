@@ -12,7 +12,6 @@ export const HeaderWrapper = styled.header`
   width: 100%;
   padding-inline: 5vw;
   backdrop-filter: blur(20px);
-  /* background: #fff; */
   box-shadow: 0px 11px 20px 4px rgba(0, 0, 0, 0.1);
   z-index: 9999;
   /* mix-blend-mode: multiply; */
