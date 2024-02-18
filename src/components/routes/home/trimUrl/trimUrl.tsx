@@ -18,7 +18,7 @@ import {
 import { getAuthToken } from "../../../../utils/authToken";
 
 const TrimUrl = () => {
-  const { urls, isCustomize, isLoading, isDisable } = useSelector(
+  const { urls, isLoading, isDisable } = useSelector(
     (store: RootState) => store.linkStore
   );
 

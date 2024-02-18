@@ -3,6 +3,14 @@ import { PriceCard } from "..";
 import { Button } from "../../../general";
 
 const Price = () => {
+  const handleCustomClick = () => {
+    //
+  };
+
+  const handleSelectClick = () => {
+    //
+  };
+
   return (
     <PriceWrapper
       className="max-w-[1400px] p-4 mx-auto my-20 py-16 bg-[#fff]"
@@ -56,10 +64,12 @@ const Price = () => {
         <Button
           content="Get Custom Price"
           btnCss="w-[130px] text-sm rounded-3xl py-2 bg-white text-[#005ae2cc] border-[1px] border-[#005ae2cc] iPhone:w-[160px] iPhone:text-md"
+          handleClick={handleCustomClick}
         />
         <Button
           content="Select Pricing"
           btnCss="w-[130px] text-sm rounded-3xl py-2 border-[1px] border-[#005ae2cc] iPhone:w-[160px] iPhone:text-md"
+          handleClick={handleSelectClick}
         />
       </div>
     </PriceWrapper>

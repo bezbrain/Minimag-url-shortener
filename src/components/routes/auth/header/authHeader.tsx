@@ -7,14 +7,30 @@ interface AuthHeaderProps {
 }
 
 const AuthHeader = ({ authHeaderContent }: AuthHeaderProps) => {
+  const handleGoogleClick = () => {
+    //
+  };
+
+  const handleAppleClick = () => {
+    //
+  };
+
   return (
     <div>
       <p className="mb-4 text-sm font-semibold opacity-70">
         {authHeaderContent}
       </p>
       <div className="flex space-x-4 w-fit mx-auto">
-        <Button content="Google" icon={<FcGoogle />} />
-        <Button content="Apple" icon={<FaApple />} />
+        <Button
+          content="Google"
+          icon={<FcGoogle />}
+          handleClick={handleGoogleClick}
+        />
+        <Button
+          content="Apple"
+          icon={<FaApple />}
+          handleClick={handleAppleClick}
+        />
       </div>
 
       <div className="flex items-center space-x-4 mt-2">
