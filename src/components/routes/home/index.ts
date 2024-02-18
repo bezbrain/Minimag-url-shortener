@@ -7,6 +7,7 @@ import PriceCard from "./pricing/priceCon/priceCard";
 import TrimUrl from "./trimUrl/trimUrl";
 import Faqs from "./faqs/faqs";
 import FaqCard from "./faqs/faqCard/faqCard";
+import LinkOpt from "./cta/linkOpt";
 
 export {
   Hero,
@@ -18,4 +19,5 @@ export {
   TrimUrl,
   Faqs,
   FaqCard,
+  LinkOpt,
 };

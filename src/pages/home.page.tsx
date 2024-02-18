@@ -1,6 +1,7 @@
 import {
   Faqs,
   Hero,
+  LinkOpt,
   Price,
   TrimUrl,
   Usage,
@@ -16,6 +17,7 @@ const HomePage = () => {
       <Price />
       <TrimUrl />
       <Faqs />
+      <LinkOpt />
     </main>
   );
 };
