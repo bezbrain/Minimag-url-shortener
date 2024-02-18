@@ -50,7 +50,7 @@ const TrimUrl = () => {
 
   return (
     <TrimUrlWrapper>
-      <div className="max-w-[500px] mx-auto py-12 px-[5vw] bg-white rounded-lg space-y-6 surfaceDuo:p-12">
+      <div className="form__container max-w-[500px] mx-auto py-12 px-[5vw] bg-white rounded-lg space-y-6 surfaceDuo:p-12">
         <InputField
           inputType={"text"}
           inputPlaceholder={"Paste URL Here"}
@@ -126,4 +126,25 @@ export default TrimUrl;
 const TrimUrlWrapper = styled.form`
   background: radial-gradient(#304a63, #e2e0e0);
   padding: 5rem 1rem;
+
+  .form__container {
+    animation: scaleInOut ease-in-out 2s infinite;
+  }
+
+  @keyframes scaleInOut {
+    0% {
+      transform: scale(1.05);
+    }
+    50% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.05);
+    }
+  }
+
+  .form__container:hover {
+    animation: none;
+    transform: scale(1);
+  }
 `;
