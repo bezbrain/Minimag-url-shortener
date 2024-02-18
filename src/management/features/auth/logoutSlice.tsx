@@ -26,6 +26,9 @@ const logoutSlice = createSlice({
         toast.success(payload.message);
         state.isLoading = false;
         state.isDisable = false;
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
       })
       .addCase(logout.rejected, (state, { payload }: any) => {
         state.isLoading = false;
