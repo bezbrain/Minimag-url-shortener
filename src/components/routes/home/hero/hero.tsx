@@ -26,7 +26,7 @@ const Hero = () => {
           <LinkBtn btnContent="Learn More" link="" />
         </div>
 
-        <div className="hero__img mt-12 max-w-[600px] mx-auto shadow-lg shadow-slate-800">
+        <div className="hero__img mt-12 max-w-[600px] mx-auto shadow-lg shadow-slate-800 rounded-md">
           <img src={shortenerImg} alt="Shortener" className="rounded-md" />
         </div>
       </div>
