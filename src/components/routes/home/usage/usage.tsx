@@ -51,6 +51,13 @@ const UsageWrapper = styled.section`
     .summary__con {
       /* border: 2px solid red; */
       text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .summary__con > div {
+      /* border: 2px solid green; */
+      width: 150px;
     }
   }
 `;
