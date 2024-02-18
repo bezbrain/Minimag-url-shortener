@@ -74,10 +74,10 @@ const Nav = () => {
             <Link to="">My URLs</Link>
           </li>
           <li>
-            <Link to="">Features</Link>
+            <a href="#features">Features</a>
           </li>
           <li>
-            <Link to="">Pricing</Link>
+            <a href="#pricing">Pricing</a>
           </li>
           <li>
             <Link to="">Analytics</Link>

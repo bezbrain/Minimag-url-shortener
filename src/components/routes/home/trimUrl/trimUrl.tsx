@@ -49,7 +49,7 @@ const TrimUrl = () => {
   };
 
   return (
-    <TrimUrlWrapper>
+    <TrimUrlWrapper id="features">
       <div className="form__container max-w-[500px] mx-auto py-12 px-[5vw] bg-white rounded-lg space-y-6 surfaceDuo:p-12">
         <InputField
           inputType={"text"}

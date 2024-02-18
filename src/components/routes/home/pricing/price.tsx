@@ -4,7 +4,7 @@ import { Button } from "../../../general";
 
 const Price = () => {
   return (
-    <PriceWrapper className="max-w-[1400px] p-4 mx-auto py-16">
+    <PriceWrapper className="max-w-[1400px] p-4 mx-auto py-16" id="pricing">
       <header className="max-w-[500px] mx-auto text-center">
         <h2 className="font-bold text-3xl md:text-[3vw] lg:text-3xl mb-4">
           A <span className="text-[#005ae2cc]">price perfect</span> for your
