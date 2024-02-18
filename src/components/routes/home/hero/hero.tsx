@@ -6,8 +6,8 @@ import { getAuthToken } from "../../../../utils/authToken";
 const Hero = () => {
   return (
     <HeroWrapper>
-      <div className="max-w-[600px] mx-auto px-4 py-[10vh] text-center">
-        <h1 className="text-[5vw] font-bold leading-snug text-[#cfcece] sm:text-3xl">
+      <div className="max-w-[900px] mx-auto px-4 py-[15vh] text-center">
+        <h1 className="text-[5vw] font-bold leading-snug text-[#cfcece] sm:text-4xl">
           Have a Better Experience with Our Advanced{" "}
           <span className="text-[#E25000]">URLs Shortening</span> and
           Customization Tools
