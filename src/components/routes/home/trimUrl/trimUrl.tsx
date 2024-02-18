@@ -127,8 +127,10 @@ const TrimUrlWrapper = styled.form`
   background: radial-gradient(#304a63, #e2e0e0);
   padding: 5rem 1rem;
 
-  .form__container {
-    animation: scaleInOut ease-in-out 2s infinite;
+  @media screen and (min-width: 540px) {
+    .form__container {
+      animation: scaleInOut ease-in-out 2s infinite;
+    }
   }
 
   @keyframes scaleInOut {
