@@ -16,7 +16,7 @@ const Faqs = () => {
     <section className="max-w-[850px] mx-auto my-20 py-12 px-[5vw] bg-white rounded-lg space-y-6 surfaceDuo:p-12">
       <h2 className="text-3xl font-semibold text-center">FAQs</h2>
 
-      {faqData.map((each, i) => {
+      {faqData.map((each) => {
         const { id } = each;
         return (
           <FaqCard key={id} {...each} handleClick={() => handleFaqClick(id)} />
