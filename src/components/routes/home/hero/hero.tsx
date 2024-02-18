@@ -49,13 +49,16 @@ const HeroWrapper = styled.section`
   }
   @keyframes card {
     0% {
-      transform: rotate(-5deg);
+      transform: rotate(0deg);
     }
     50% {
+      transform: rotate(-5deg);
+    }
+    75% {
       transform: rotate(5deg);
     }
     100% {
-      transform: rotate(0);
+      transform: rotate(0deg);
     }
   }
 `;
