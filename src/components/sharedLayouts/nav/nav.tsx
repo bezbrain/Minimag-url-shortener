@@ -83,7 +83,7 @@ const Nav = () => {
             <Link to="">Analytics</Link>
           </li>
           <li>
-            <Link to="">FAQs</Link>
+            <a href="#faq">FAQs</a>
           </li>
         </ul>
 
