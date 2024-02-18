@@ -1,4 +1,5 @@
 import {
+  Faqs,
   Hero,
   Price,
   TrimUrl,
@@ -14,6 +15,7 @@ const HomePage = () => {
       <WhyMinimag />
       <Price />
       <TrimUrl />
+      <Faqs />
     </main>
   );
 };
