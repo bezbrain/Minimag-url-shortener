@@ -72,8 +72,8 @@ const Register = ({ handleRegSubmit }: RegisterProps) => {
           btnCss={`w-full rounded-2xl py-2 my-6 ${
             isDisable ? "cursor-not-allowed" : ""
           }`}
-          handleClick={handleRegSubmit}
           isDisable={isDisable}
+          handleClick={handleRegSubmit}
         />
 
         <AuthFooter

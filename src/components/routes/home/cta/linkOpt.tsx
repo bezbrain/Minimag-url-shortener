@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { LinkBtn } from "../../../general";
+import { getAuthToken } from "../../../../utils/authToken";
 
 const LinkOpt = () => {
   return (
@@ -8,11 +9,13 @@ const LinkOpt = () => {
         <h2 className="text-white text-xl font-bold mix-blend-overlay sm:text-4xl">
           Revolutionizing Link Optimization
         </h2>
-        <LinkBtn
-          btnContent="Get Started"
-          link="/register"
-          btnStyles="w-fit mx-auto mt-8"
-        />
+        {!getAuthToken() && (
+          <LinkBtn
+            btnContent="Get Started"
+            link="/register"
+            btnStyles="w-fit mx-auto mt-8"
+          />
+        )}
       </div>
     </LinkOptWrapper>
   );
@@ -28,5 +31,5 @@ const LinkOptWrapper = styled.section`
     #eee 75%,
     #304a63 75%
   );
-  padding: 7rem 1rem 4rem;
+  padding: 7rem 1rem;
 `;

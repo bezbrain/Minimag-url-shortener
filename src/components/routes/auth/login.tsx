@@ -55,6 +55,7 @@ const Login = ({ handleLoginSubmit }: LoginProps) => {
           btnCss={`w-full rounded-2xl py-2 ${
             isDisable ? "cursor-not-allowed" : ""
           }`}
+          isDisable={isDisable}
           handleClick={handleLoginSubmit}
         />
 

@@ -43,6 +43,10 @@ const Nav = () => {
     }
   };
 
+  const handleEmpty = () => {
+    return;
+  };
+
   return (
     <HeaderWrapper>
       <div className="w-[120px] iPad:w-[10%]">
@@ -96,7 +100,7 @@ const Nav = () => {
               className={`iPad:text-blue-600 ${
                 isDisable ? "cursor-not-allowed" : ""
               }`}
-              onClick={handleLogoutClick}
+              onClick={isDisable ? handleEmpty : handleLogoutClick}
               ref={loginLogout}
             >
               {getAuthToken() ? (isLoading ? "Wait..." : "Logout") : "Log in"}

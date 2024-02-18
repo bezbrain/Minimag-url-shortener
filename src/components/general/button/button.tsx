@@ -40,6 +40,7 @@ const ButtonWrapper = styled.div`
     color: #fff;
     padding-block: 5px;
     width: 100px;
+    /* border: none; */
   }
 
   > button:hover {
