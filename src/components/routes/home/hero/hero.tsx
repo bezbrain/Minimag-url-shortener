@@ -6,13 +6,13 @@ import { getAuthToken } from "../../../../utils/authToken";
 const Hero = () => {
   return (
     <HeroWrapper>
-      <div className="max-w-[900px] mx-auto px-4 py-[10vh] text-center surfaceDuo:py-[15vh]">
-        <h1 className="text-[5vw] font-bold leading-snug text-[#cfcece] sm:text-4xl">
+      <div className="hero__con max-w-[1400px] mx-auto px-4 py-[10vh] text-center">
+        <h1 className="text-[5vw] font-bold  text-[#cfcece] xl:text-6xl">
           Have a Better Experience with Our Advanced{" "}
           <span className="text-[#E25000]">URLs Shortening</span> and
           Customization Tools
         </h1>
-        <p className="my-8 text-sm text-[#cfcece] sm:my-12 sm:text-xl">
+        <p className="my-8 text-sm text-[#cfcece] max-w-[600px] mx-auto sm:my-12 sm:text-xl">
           Personalize and customize URLs to your preferred and most simple
           combination of characters, to enhance more user experience.
         </p>
@@ -26,7 +26,7 @@ const Hero = () => {
           <LinkBtn btnContent="Learn More" link="" />
         </div>
 
-        <div className="hero__img mt-12 shadow-lg shadow-slate-800">
+        <div className="hero__img mt-12 max-w-[600px] mx-auto shadow-lg shadow-slate-800">
           <img src={shortenerImg} alt="Shortener" className="rounded-md" />
         </div>
       </div>
@@ -40,8 +40,16 @@ const HeroWrapper = styled.section`
   background: radial-gradient(#73a4ee, #005ae2cc);
   min-height: 90vh;
 
+  .hero__con > h1 {
+    line-height: 2.5cm !important;
+  }
   @media screen and (max-width: 640px) {
     min-height: 70vh;
+  }
+  @media screen and (max-width: 1280px) {
+    .hero__con > h1 {
+      line-height: 7vw !important;
+    }
   }
 
   .hero__img > img {
