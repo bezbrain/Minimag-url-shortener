@@ -1,5 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { HomePage, LoginPage, RegisterPage, SharedLayouts } from "./pages";
+import {
+  HomePage,
+  LoginPage,
+  NotFound,
+  RegisterPage,
+  SharedLayouts,
+} from "./pages";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -11,6 +17,7 @@ const App = () => {
           <Route index element={<HomePage />} />
           <Route path="register" element={<RegisterPage />} />
           <Route path="login" element={<LoginPage />} />
+          <Route path="/*" element={<NotFound />} />
         </Route>
       </Routes>
 
