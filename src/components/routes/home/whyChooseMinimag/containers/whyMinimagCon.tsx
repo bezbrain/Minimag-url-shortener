@@ -11,8 +11,8 @@ const iconStyles =
 
 const WhyMinimagCon = ({ icon, title, summary }: WhyMinimagConProps) => {
   return (
-    <div>
-      <span className={iconStyles}>{icon}</span>
+    <div className="text-center surfaceDuo:text-left">
+      <span className={`mx-auto surfaceDuo:mx-0 ${iconStyles}`}>{icon}</span>
       <h2 className="font-semibold text-2xl mb-2">{title}</h2>
       <p className="text-sm lg:text-[16px]">{summary}</p>
     </div>

@@ -9,7 +9,7 @@ const WhyMinimag = () => {
   return (
     <WhyMinimagWrapper className="bg-[#fff]">
       <div className="max-w-[1400px] p-4 mx-auto py-16 justify-between gap-[5vw] lg:px-8 lg:gap-[4vw] md:flex">
-        <div className="md:w-[35%]">
+        <div className="text-center md:w-[35%] sm:text-left">
           <h2 className="font-bold text-3xl md:text-[3vw] lg:text-3xl">
             Why choose
             <span className="text-[#005ae2cc]"> Minimag</span>
