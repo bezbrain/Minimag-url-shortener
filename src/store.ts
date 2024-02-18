@@ -4,6 +4,7 @@ import regReducer from "./management/features/auth/registerSlice";
 import loginReducer from "./management/features/auth/loginSlice";
 import logoutReducer from "./management/features/auth/logoutSlice";
 import linkReducer from "./management/features/link/linkSlice";
+import faqReducer from "./management/features/faq/faqSlice";
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
     loginStore: loginReducer,
     logoutStore: logoutReducer,
     linkStore: linkReducer,
+    faqStore: faqReducer,
   },
 
   middleware: (getDefaultMiddleware) =>

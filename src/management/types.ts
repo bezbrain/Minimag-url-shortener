@@ -34,3 +34,7 @@ export interface Link {
   isDisable: boolean;
   isCustomize: boolean;
 }
+
+export interface Faq {
+  openIndex: null;
+}
