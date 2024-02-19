@@ -130,7 +130,7 @@ const TrimUrlWrapper = styled.form`
 
   @media screen and (min-width: 540px) {
     .form__container {
-      animation: scaleInOut ease-in-out 2s infinite;
+      animation: scaleInOut ease-in-out 3s infinite;
     }
   }
 
