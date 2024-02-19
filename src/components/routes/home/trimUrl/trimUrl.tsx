@@ -16,6 +16,7 @@ import {
   createLink,
 } from "../../../../management/actions/link.action";
 import { getAuthToken } from "../../../../utils/authToken";
+import { CopyUrl, GenerateQR } from "..";
 
 const TrimUrl = () => {
   const { urls, isLoading, isDisable } = useSelector(
@@ -85,13 +86,17 @@ const TrimUrl = () => {
               inputCss="text-[#005ae2] placeholder:text-[#005ae2]"
               handleChange={(e) => dispatch(shortUrlInput(e.target.value))}
             />
-            <p
+            {/* <p
               className={`text-[#005ae2] text-sm font-semibold ${
                 fullShortUrl ? "block" : "hidden"
               }`}
             >
               Click the link to copy
-            </p>
+            </p> */}
+            <div className="flex justify-between">
+              <CopyUrl />
+              <GenerateQR />
+            </div>
           </div>
         </div>
 

@@ -8,6 +8,8 @@ import TrimUrl from "./trimUrl/trimUrl";
 import Faqs from "./faqs/faqs";
 import FaqCard from "./faqs/faqCard/faqCard";
 import LinkOpt from "./cta/linkOpt";
+import CopyUrl from "./trimUrl/trimComps/copyUrl";
+import GenerateQR from "./trimUrl/trimComps/generateQR";
 
 export {
   Hero,
@@ -20,4 +22,6 @@ export {
   Faqs,
   FaqCard,
   LinkOpt,
+  CopyUrl,
+  GenerateQR,
 };
