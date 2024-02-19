@@ -93,10 +93,12 @@ const TrimUrl = () => {
             >
               Click the link to copy
             </p> */}
-            <div className="flex justify-between">
-              <CopyUrl />
-              <GenerateQR />
-            </div>
+            {fullShortUrl && (
+              <div className="flex justify-between">
+                <CopyUrl />
+                <GenerateQR />
+              </div>
+            )}
           </div>
         </div>
 
@@ -112,6 +114,7 @@ const TrimUrl = () => {
           btnCss={`w-full py-2 rounded-2xl flex-row-reverse ${
             isDisable ? "cursor-not-allowed" : ""
           }`}
+          isDisable={isDisable}
           handleClick={handleShortUrlClick}
         />
 
