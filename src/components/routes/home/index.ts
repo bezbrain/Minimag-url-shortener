@@ -10,6 +10,7 @@ import FaqCard from "./faqs/faqCard/faqCard";
 import LinkOpt from "./cta/linkOpt";
 import CopyUrl from "./trimUrl/trimComps/copyUrl";
 import GenerateQR from "./trimUrl/trimComps/generateQR";
+import QrCode from "./trimUrl/trimComps/qrCode";
 
 export {
   Hero,
@@ -24,4 +25,5 @@ export {
   LinkOpt,
   CopyUrl,
   GenerateQR,
+  QrCode,
 };

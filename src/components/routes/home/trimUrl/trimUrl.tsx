@@ -16,7 +16,7 @@ import {
   createLink,
 } from "../../../../management/actions/link.action";
 import { getAuthToken } from "../../../../utils/authToken";
-import { CopyUrl, GenerateQR } from "..";
+import { CopyUrl, GenerateQR, QrCode } from "..";
 
 const TrimUrl = () => {
   const { urls, isLoading, isDisable } = useSelector(
@@ -51,6 +51,7 @@ const TrimUrl = () => {
 
   return (
     <TrimUrlWrapper id="features" className="my-20">
+      <QrCode />
       <div className="form__container max-w-[500px] mx-auto py-12 px-[5vw] bg-white rounded-lg space-y-6 surfaceDuo:p-12">
         <InputField
           inputType={"text"}
