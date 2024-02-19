@@ -1,8 +1,9 @@
+import React from "react";
 import { Button } from "../../../../general";
 
 const GenerateQR = () => {
-  const handleQRCodeClick = () => {
-    //
+  const handleQRCodeClick = (e: React.FormEvent) => {
+    e.preventDefault();
   };
 
   return (

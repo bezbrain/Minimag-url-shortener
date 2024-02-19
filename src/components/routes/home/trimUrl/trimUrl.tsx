@@ -86,13 +86,6 @@ const TrimUrl = () => {
               inputCss="text-[#005ae2] placeholder:text-[#005ae2]"
               handleChange={(e) => dispatch(shortUrlInput(e.target.value))}
             />
-            {/* <p
-              className={`text-[#005ae2] text-sm font-semibold ${
-                fullShortUrl ? "block" : "hidden"
-              }`}
-            >
-              Click the link to copy
-            </p> */}
             {fullShortUrl && (
               <div className="flex justify-between">
                 <CopyUrl urlText={fullShortUrl} />

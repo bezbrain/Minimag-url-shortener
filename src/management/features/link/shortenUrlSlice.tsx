@@ -1,23 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 interface ShortenUrl {
-  copyBtnContent: string;
+  isCopy: boolean;
 }
 
 const initialState: ShortenUrl = {
-  copyBtnContent: "Copy",
+  isCopy: false,
 };
 
 const shortenUrlSlice = createSlice({
-  name: "shortenUrl",
+  name: "shorten",
   initialState,
   reducers: {
-    btnContent: (state, { payload }) => {
-      //
+    setCopy: (state) => {
+      state.isCopy = true;
+    },
+    unSetCopy: (state) => {
+      state.isCopy = false;
     },
   },
 });
 
 export default shortenUrlSlice.reducer;
 
-export const { btnContent } = shortenUrlSlice.actions;
+export const { setCopy, unSetCopy } = shortenUrlSlice.actions;
