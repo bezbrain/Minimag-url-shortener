@@ -5,7 +5,7 @@ interface QrCode {
 }
 
 const initialState: QrCode = {
-  isModal: false,
+  isModal: true,
 };
 
 const QrCodeSlice = createSlice({

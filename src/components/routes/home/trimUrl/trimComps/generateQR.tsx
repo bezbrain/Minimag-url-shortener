@@ -11,6 +11,7 @@ const GenerateQR = () => {
   } = useSelector((store: RootState) => store.linkStore);
   const dispatch = useDispatch<AppDispatch>();
 
+  // FUNCTION TO LET THE MODAL POPUP
   const handleQRCodeClick = (e: React.FormEvent) => {
     e.preventDefault();
     if (!fullShortUrl.startsWith("https")) {

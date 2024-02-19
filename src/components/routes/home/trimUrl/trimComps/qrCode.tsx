@@ -6,6 +6,7 @@ import { FaTimes } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../../../../store";
 import { closeModal } from "../../../../../management/features/link/qrCodeSlice";
+import { MdFileDownload } from "react-icons/md";
 
 const QrCode = () => {
   const {
@@ -30,7 +31,7 @@ const QrCode = () => {
 
   return (
     <QrCodeWrapper>
-      <div className="bg-white w-[500px] h-[300px] flex justify-center items-center flex-col relative">
+      <div className="bg-white w-[280px] h-[350px] flex justify-center items-center flex-col relative rounded-md surfaceDuo:w-[500px]">
         <FaTimes
           className="absolute text-5xl text-red-700 -top-12 right-0 cursor-pointer"
           onClick={() => dispatch(closeModal())}
@@ -44,7 +45,12 @@ const QrCode = () => {
           level="H" // high error correction level
         />
 
-        <Button content="Download" handleClick={handleDownloadQRClick} />
+        <Button
+          content="Download"
+          handleClick={handleDownloadQRClick}
+          icon={<MdFileDownload />}
+          btnCss="w-[120px] mt-8 rounded-md"
+        />
       </div>
     </QrCodeWrapper>
   );
