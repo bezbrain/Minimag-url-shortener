@@ -95,7 +95,7 @@ const TrimUrl = () => {
             </p> */}
             {fullShortUrl && (
               <div className="flex justify-between">
-                <CopyUrl />
+                <CopyUrl urlText={fullShortUrl} />
                 <GenerateQR />
               </div>
             )}

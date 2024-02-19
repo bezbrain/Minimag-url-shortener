@@ -5,6 +5,7 @@ import loginReducer from "./management/features/auth/loginSlice";
 import logoutReducer from "./management/features/auth/logoutSlice";
 import linkReducer from "./management/features/link/linkSlice";
 import faqReducer from "./management/features/faq/faqSlice";
+import shortenUrlReducer from "./management/features/link/shortenUrlSlice";
 
 export const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ export const store = configureStore({
     logoutStore: logoutReducer,
     linkStore: linkReducer,
     faqStore: faqReducer,
+    shortenUrlStore: shortenUrlReducer,
   },
 
   middleware: (getDefaultMiddleware) =>
