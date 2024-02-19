@@ -6,6 +6,7 @@ import logoutReducer from "./management/features/auth/logoutSlice";
 import linkReducer from "./management/features/link/linkSlice";
 import faqReducer from "./management/features/faq/faqSlice";
 import shortenUrlReducer from "./management/features/link/shortenUrlSlice";
+import QrCodeReducer from "./management/features/link/qrCodeSlice";
 
 export const store = configureStore({
   reducer: {
@@ -16,6 +17,7 @@ export const store = configureStore({
     linkStore: linkReducer,
     faqStore: faqReducer,
     shortenUrlStore: shortenUrlReducer,
+    QrCodeStore: QrCodeReducer,
   },
 
   middleware: (getDefaultMiddleware) =>

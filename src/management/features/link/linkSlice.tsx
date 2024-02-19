@@ -9,10 +9,11 @@ const initialState: Link = {
     originalUrl: "",
     fullShortUrl: "",
     domainType: "",
+    shortUrl: "",
   },
   isLoading: false,
   isDisable: false,
-  isCustomize: false,
+  // isCustomize: false,
 };
 
 const linkSlice = createSlice({
@@ -47,6 +48,7 @@ const linkSlice = createSlice({
         state.isLoading = false;
         state.isDisable = false;
         state.urls.fullShortUrl = payload.url.fullUrl;
+        state.urls.shortUrl = payload.url.shortUrl;
         state.urls.originalUrl = "";
         state.urls.domainType = "";
       })
@@ -66,6 +68,7 @@ const linkSlice = createSlice({
         state.isLoading = false;
         state.isDisable = false;
         state.urls.fullShortUrl = payload.cusUrl.fullUrl;
+        state.urls.shortUrl = payload.cusUrl.shortUrl;
         state.urls.originalUrl = "";
         state.urls.domainType = "";
       })

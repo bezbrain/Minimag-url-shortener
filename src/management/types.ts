@@ -29,10 +29,11 @@ export interface Link {
     originalUrl: string;
     fullShortUrl: string;
     domainType: string;
+    shortUrl: string;
   };
   isLoading: boolean;
   isDisable: boolean;
-  isCustomize: boolean;
+  // isCustomize: boolean;
 }
 
 export interface Faq {
