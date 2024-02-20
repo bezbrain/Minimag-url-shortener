@@ -11,6 +11,7 @@ import {
 } from "./pages";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ProtectedRoutes } from "./components/sharedLayouts";
 
 const App = () => {
   return (
@@ -21,9 +22,12 @@ const App = () => {
           <Route path="register" element={<RegisterPage />} />
           <Route path="login" element={<LoginPage />} />
 
-          <Route path="my-urls" element={<MyUrlsPage />}>
-            <Route path="short-urls" element={<ShortUrl />} />
-            <Route path="custom-urls" element={<CustomUrl />} />
+          {/* Protected Routes */}
+          <Route path="/" element={<ProtectedRoutes />}>
+            <Route path="my-urls" element={<MyUrlsPage />}>
+              <Route path="short-urls" element={<ShortUrl />} />
+              <Route path="custom-urls" element={<CustomUrl />} />
+            </Route>
           </Route>
 
           <Route path="/*" element={<NotFound />} />

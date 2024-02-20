@@ -9,6 +9,7 @@ import Resources from "./footer/footerContainers/resources";
 import Features from "./footer/footerContainers/features";
 import Legal from "./footer/footerContainers/legal";
 import MyUrls from "./urls/myUrls";
+import ProtectedRoutes from "./protectedRoutes/protectedRoutes";
 
 export {
   Nav,
@@ -22,4 +23,5 @@ export {
   Features,
   Legal,
   MyUrls,
+  ProtectedRoutes,
 };
