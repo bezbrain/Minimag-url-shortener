@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {
   HomePage,
   LoginPage,
+  MyUrlsPage,
   NotFound,
   RegisterPage,
   SharedLayouts,
@@ -17,6 +18,7 @@ const App = () => {
           <Route index element={<HomePage />} />
           <Route path="register" element={<RegisterPage />} />
           <Route path="login" element={<LoginPage />} />
+          <Route path="my-urls" element={<MyUrlsPage />} />
           <Route path="/*" element={<NotFound />} />
         </Route>
       </Routes>
