@@ -1,34 +1,49 @@
 import { BsThreeDots } from "react-icons/bs";
 
-const TableRow = () => {
+interface TableRowProps {
+  createdAt: string;
+  originalUrl: string;
+  shortUrl: string;
+  customUrl: string;
+}
+
+const TableRow = ({
+  createdAt,
+  originalUrl,
+  shortUrl,
+  customUrl,
+}: TableRowProps) => {
   return (
     <tr className="border-b-2">
-      <td className="py-4 px-2 border-2 w-[10%]">Date test</td>
+      <td className="py-4 px-2 border-2 w-[10%]">{createdAt}</td>
       <td className="py-4 px-2 border-2 w-[35%]">
         <a
-          href="https://medium.com/bithubph/payment-integration-with-node-js-express-request-and-paystack-api-8cebf51c1f52"
+          href={originalUrl}
           target="_blank"
           rel="noopener noreferrer"
+          className="underline"
         >
-          https://medium.com/bithubph/payment-integration-with-node-js-express-request-and-paystack-api-8cebf51c1f52
+          {originalUrl}
         </a>
       </td>
       <td className="py-4 px-2 border-2 w-[25%]">
         <a
-          href="https://minimag.onrender.com/X9MJSv_"
+          href={shortUrl}
           target="_blank"
           rel="noopener noreferrer"
+          className="underline"
         >
-          https://minimag.onrender.com/X9MJSv_
+          {shortUrl}
         </a>
       </td>
       <td className="py-4 px-2 border-2 w-[25%]">
         <a
-          href="https://minimag.onrender.com/checking"
+          href={customUrl}
           target="_blank"
           rel="noopener noreferrer"
+          className="underline"
         >
-          https://minimag.onrender.com/checking
+          {customUrl}
         </a>
       </td>
       <td className="py-4 px-2 border-2 w-[5%]">

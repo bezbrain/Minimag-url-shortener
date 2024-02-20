@@ -1,4 +1,4 @@
-import { MyUrls } from "../components/routes/myUrls";
+import { MyUrls } from "../../components/sharedLayouts";
 
 const MyUrlsPage = () => {
   return (

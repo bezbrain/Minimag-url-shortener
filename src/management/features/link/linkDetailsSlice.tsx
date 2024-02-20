@@ -23,12 +23,33 @@ const linkDetailsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getLinks.pending, (state) => {
-        //
+        state.isLoading = true;
       })
-      .addCase(getLinks.fulfilled, (state) => {
-        //
+      .addCase(getLinks.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        const newShortUrlArr = payload.links.map((each) => {
+          const { createdAt, fullUrl, originalUrl, shortUrl } = each;
+          return {
+            shortCreatedAt: createdAt,
+            shortFullUrl: fullUrl,
+            shortOriginalUrl: originalUrl,
+            shortShortUrl: shortUrl,
+          };
+        });
+        const newCustomUrlArr = payload.cusLinks.map((each) => {
+          const { createdAt, fullUrl, originalUrl, shortUrl } = each;
+          return {
+            customCreatedAt: createdAt,
+            customFullUrl: fullUrl,
+            customOriginalUrl: originalUrl,
+            customShortUrl: shortUrl,
+          };
+        });
+
+        state.links = [...newShortUrlArr, ...newCustomUrlArr];
+        // console.log(state.links);
       })
-      .addCase(getLinks.rejected, (state, { payload }) => {
+      .addCase(getLinks.rejected, (state, { payload }: any) => {
         state.isLoading = false;
         serverMessage(payload, toast);
       });

@@ -1,11 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {
+  CustomUrl,
   HomePage,
   LoginPage,
   MyUrlsPage,
   NotFound,
   RegisterPage,
   SharedLayouts,
+  ShortUrl,
 } from "./pages";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -18,7 +20,12 @@ const App = () => {
           <Route index element={<HomePage />} />
           <Route path="register" element={<RegisterPage />} />
           <Route path="login" element={<LoginPage />} />
-          <Route path="my-urls" element={<MyUrlsPage />} />
+
+          <Route path="my-urls" element={<MyUrlsPage />}>
+            <Route path="short-urls" element={<ShortUrl />} />
+            <Route path="custom-urls" element={<CustomUrl />} />
+          </Route>
+
           <Route path="/*" element={<NotFound />} />
         </Route>
       </Routes>

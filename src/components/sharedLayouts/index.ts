@@ -8,6 +8,7 @@ import Company from "./footer/footerContainers/company";
 import Resources from "./footer/footerContainers/resources";
 import Features from "./footer/footerContainers/features";
 import Legal from "./footer/footerContainers/legal";
+import MyUrls from "./urls/myUrls";
 
 export {
   Nav,
@@ -20,4 +21,5 @@ export {
   Resources,
   Features,
   Legal,
+  MyUrls,
 };

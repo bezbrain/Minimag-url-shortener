@@ -1,9 +1,11 @@
 import HomePage from "./home.page";
 import LoginPage from "./login.page";
 import RegisterPage from "./register.page";
-import MyUrlsPage from "./myUrls.page";
+import MyUrlsPage from "./urlPage/myUrls.page";
 import SharedLayouts from "./sharedLayouts";
 import NotFound from "./notFound";
+import ShortUrl from "./urlPage/shortUrl/shortUrl";
+import CustomUrl from "./urlPage/customUrl/customUrl";
 
 export {
   HomePage,
@@ -12,4 +14,6 @@ export {
   MyUrlsPage,
   SharedLayouts,
   NotFound,
+  ShortUrl,
+  CustomUrl,
 };
