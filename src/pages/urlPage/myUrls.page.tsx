@@ -34,7 +34,7 @@ const MyUrlsPage = () => {
   }, [dispatch, pathname]);
 
   return (
-    <main className="pt-[60px]">
+    <main className="pt-[60px] min-h-[100vh]">
       <MyUrls
         handleShortUrlClick={handleFetchShortUrlsClick}
         handleCustomUrlClick={handleFetchCustomUrlClick}

@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { RootState } from "../../../store";
+import { Loader } from "../../helpers";
 
 interface MyUrlsProps {
   handleShortUrlClick: () => void;
@@ -40,7 +41,7 @@ const MyUrls = ({ handleShortUrlClick, handleCustomUrlClick }: MyUrlsProps) => {
       </div>
 
       {isLoading ? (
-        "Loading..."
+        <Loader />
       ) : (
         <table className="w-full">
           <thead>
