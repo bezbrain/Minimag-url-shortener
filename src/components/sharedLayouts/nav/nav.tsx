@@ -14,6 +14,7 @@ import { getAuthToken } from "../../../utils/authToken";
 import { useRef } from "react";
 import { logout } from "../../../management/actions/auth";
 import { getLinks } from "../../../management/actions/linkDetails.action";
+import { toast } from "react-toastify";
 
 const Nav = () => {
   const { isOpen } = useSelector((store: RootState) => store.sharedStore);
@@ -52,7 +53,11 @@ const Nav = () => {
 
   // FETCH SHORT URLS ON CLICK OF 'My URLs' nav item
   const handleFetchShortUrlsClick = () => {
-    dispatch(getLinks());
+    if (getAuthToken()) {
+      dispatch(getLinks());
+    } else {
+      toast.error("Please login to access this page");
+    }
   };
 
   return (
