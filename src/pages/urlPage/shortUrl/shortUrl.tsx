@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { TableRow } from "../../../components/routes/myUrls";
+import { NoUrls, TableRow } from "../../../components/routes/myUrls";
 import { RootState } from "../../../store";
 import { formatDate } from "../../../utils/convertDate";
 
@@ -7,6 +7,10 @@ const ShortUrl = () => {
   const { shortLinks } = useSelector(
     (store: RootState) => store.linkDetailsStore
   );
+
+  if (shortLinks.length === 0) {
+    return <NoUrls />;
+  }
 
   return (
     <tbody>

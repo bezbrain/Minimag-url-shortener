@@ -12,8 +12,10 @@ const TableRow = ({
 
   return (
     <tr className="border-b-2">
-      <td className="py-4 px-2 border-2 w-[10%]">{createdAt}</td>
-      <td className="py-4 px-2 border-2 w-[50%]">
+      <td className="py-4 px-2 border-2 w-[15%] text-center font-semibold">
+        {createdAt}
+      </td>
+      <td className="py-4 px-2 border-2 w-[45%]">
         <a
           href={originalUrl}
           target="_blank"

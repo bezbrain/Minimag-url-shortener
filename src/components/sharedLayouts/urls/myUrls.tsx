@@ -43,7 +43,7 @@ const MyUrls = ({ handleShortUrlClick, handleCustomUrlClick }: MyUrlsProps) => {
       {isLoading ? (
         <Loader />
       ) : (
-        <table className="w-full">
+        <table className="w-full relative">
           <thead>
             <tr className="text-center">
               <th>Date Created</th>
