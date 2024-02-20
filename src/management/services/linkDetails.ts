@@ -13,3 +13,15 @@ export const getAllUrl = async () => {
   });
   return data;
 };
+
+export const getAllCusUrl = async () => {
+  const token = getAuthToken();
+
+  const data = await axios.get(`${config.baseUrl}/allCusLinks`, {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  return data;
+};
