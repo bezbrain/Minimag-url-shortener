@@ -1,12 +1,6 @@
 import { BsThreeDots } from "react-icons/bs";
 import { useLocation } from "react-router-dom";
-
-interface TableRowProps {
-  createdAt: string;
-  originalUrl: string;
-  shortUrl: string;
-  customUrl: string;
-}
+import { TableRowProps } from "../type";
 
 const TableRow = ({
   createdAt,
