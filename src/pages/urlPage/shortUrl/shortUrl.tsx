@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { NoUrls, TableRow } from "../../../components/routes/myUrls";
 import { RootState } from "../../../store";
 import { formatDate } from "../../../utils/convertDate";
+import { limitOriginalUrl } from "../../../utils/limitOriginalUrl";
 
 const ShortUrl = () => {
   const { shortLinks } = useSelector(
@@ -22,6 +23,7 @@ const ShortUrl = () => {
             key={i}
             createdAt={formatDate(createdAt)}
             originalUrl={originalUrl}
+            slicedOriginalUrl={limitOriginalUrl(originalUrl)}
             shortUrl={fullUrl}
           />
         );

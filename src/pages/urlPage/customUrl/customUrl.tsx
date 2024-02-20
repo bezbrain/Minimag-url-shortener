@@ -2,6 +2,7 @@ import { NoUrls, TableRow } from "../../../components/routes/myUrls";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../store";
 import { formatDate } from "../../../utils/convertDate";
+import { limitOriginalUrl } from "../../../utils/limitOriginalUrl";
 
 const CustomUrl = () => {
   const { cusLinks } = useSelector(
@@ -21,6 +22,7 @@ const CustomUrl = () => {
           <TableRow
             key={i}
             createdAt={formatDate(createdAt)}
+            slicedOriginalUrl={limitOriginalUrl(originalUrl)}
             originalUrl={originalUrl}
             customUrl={fullUrl}
           />

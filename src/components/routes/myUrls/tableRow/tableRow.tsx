@@ -5,6 +5,7 @@ import { TableRowProps } from "../type";
 const TableRow = ({
   createdAt,
   originalUrl,
+  slicedOriginalUrl,
   shortUrl,
   customUrl,
 }: TableRowProps) => {
@@ -22,7 +23,12 @@ const TableRow = ({
           rel="noopener noreferrer"
           className="underline"
         >
-          {originalUrl}
+          {slicedOriginalUrl}
+          {originalUrl !== slicedOriginalUrl ? (
+            <span className="font-bold">...</span>
+          ) : (
+            ""
+          )}
         </a>
       </td>
 
