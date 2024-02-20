@@ -75,7 +75,7 @@ const Nav = () => {
           className={`first__nav__items space-y-4 font-semibold iPad:space-y-0`}
         >
           <li>
-            <Link to="/my-urls">My URLs</Link>
+            <Link to="/my-urls/short-urls">My URLs</Link>
           </li>
           <li>
             <a href="#features">Features</a>
