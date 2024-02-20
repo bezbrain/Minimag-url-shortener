@@ -13,6 +13,7 @@ import { LinkBtn } from "../../general";
 import { getAuthToken } from "../../../utils/authToken";
 import { useRef } from "react";
 import { logout } from "../../../management/actions/auth";
+import { getLinks } from "../../../management/actions/linkDetails.action";
 
 const Nav = () => {
   const { isOpen } = useSelector((store: RootState) => store.sharedStore);
@@ -25,10 +26,12 @@ const Nav = () => {
   const dispatch = useDispatch<AppDispatch>();
   const navigate: NavigateFunction = useNavigate();
 
+  // OPEN NAV BAR
   const handleOpenNavClick = () => {
     dispatch(isOpenNav());
   };
 
+  // CLOSE NAV BAR
   const handleCloseNavClick = () => {
     dispatch(isCloseNav());
   };
@@ -45,6 +48,11 @@ const Nav = () => {
 
   const handleEmpty = () => {
     return;
+  };
+
+  // FETCH SHORT URLS ON CLICK OF 'My URLs' nav item
+  const handleFetchShortUrlsClick = () => {
+    dispatch(getLinks());
   };
 
   return (
@@ -75,7 +83,9 @@ const Nav = () => {
           className={`first__nav__items space-y-4 font-semibold iPad:space-y-0`}
         >
           <li>
-            <Link to="/my-urls/short-urls">My URLs</Link>
+            <Link to="/my-urls/short-urls" onClick={handleFetchShortUrlsClick}>
+              My URLs
+            </Link>
           </li>
           <li>
             <a href="#features">Features</a>

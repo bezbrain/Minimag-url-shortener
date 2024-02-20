@@ -1,6 +1,17 @@
+import { useSelector } from "react-redux";
 import { Link, Outlet, useLocation } from "react-router-dom";
+import { RootState } from "../../../store";
 
-const MyUrls = () => {
+interface MyUrlsProps {
+  handleShortUrlClick: () => void;
+  handleCustomUrlClick: () => void;
+}
+
+const MyUrls = ({ handleShortUrlClick, handleCustomUrlClick }: MyUrlsProps) => {
+  const { isLoading } = useSelector(
+    (store: RootState) => store.linkDetailsStore
+  );
+
   const pathname = useLocation().pathname;
 
   return (
@@ -13,6 +24,7 @@ const MyUrls = () => {
           className={`border-[#005ae2cc] ${
             pathname == "/my-urls/short-urls" ? "border-b-2" : ""
           }`}
+          onClick={handleShortUrlClick}
         >
           Short Links
         </Link>
@@ -21,27 +33,32 @@ const MyUrls = () => {
           className={`border-[#005ae2cc] ${
             pathname == "/my-urls/custom-urls" ? "border-b-2" : ""
           }`}
+          onClick={handleCustomUrlClick}
         >
           Custom Links
         </Link>
       </div>
 
-      <table className="w-full">
-        <thead>
-          <tr className="text-center">
-            <th>Date Created</th>
-            <th>Original Links</th>
-            {pathname == "/my-urls/short-urls" ? (
-              <th>Short Link</th>
-            ) : (
-              <th>Custom Link</th>
-            )}
-            <th></th>
-          </tr>
-        </thead>
+      {isLoading ? (
+        "Loading..."
+      ) : (
+        <table className="w-full">
+          <thead>
+            <tr className="text-center">
+              <th>Date Created</th>
+              <th>Original Links</th>
+              {pathname == "/my-urls/short-urls" ? (
+                <th>Short Link</th>
+              ) : (
+                <th>Custom Link</th>
+              )}
+              <th></th>
+            </tr>
+          </thead>
 
-        <Outlet />
-      </table>
+          <Outlet />
+        </table>
+      )}
     </div>
   );
 };

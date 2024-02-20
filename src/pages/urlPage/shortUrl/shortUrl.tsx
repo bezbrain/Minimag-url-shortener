@@ -1,8 +1,6 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { TableRow } from "../../../components/routes/myUrls";
-import { AppDispatch, RootState } from "../../../store";
-import { useEffect } from "react";
-import { getLinks } from "../../../management/actions/linkDetails.action";
+import { RootState } from "../../../store";
 import { formatDate } from "../../../utils/convertDate";
 
 const ShortUrl = () => {
@@ -10,16 +8,11 @@ const ShortUrl = () => {
     (store: RootState) => store.linkDetailsStore
   );
 
-  const dispatch = useDispatch<AppDispatch>();
-
-  useEffect(() => {
-    dispatch(getLinks());
-  }, []);
-
   return (
     <tbody>
       {shortLinks.map((each, i) => {
         const { createdAt, originalUrl, fullUrl }: any = each;
+
         return (
           <TableRow
             key={i}

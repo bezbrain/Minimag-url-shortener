@@ -33,19 +33,21 @@ const linkDetailsSlice = createSlice({
         state.shortLinks = payload.links;
       })
       .addCase(getLinks.rejected, (state, { payload }: any) => {
-        state.isLoading = false;
         serverMessage(payload, toast);
+        state.isLoading = false;
       })
 
       // CustomUrls extrareducers
       .addCase(getCusLinks.pending, (state) => {
-        //
+        state.isLoading = true;
       })
-      .addCase(getCusLinks.fulfilled, (state) => {
-        //
+      .addCase(getCusLinks.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.cusLinks = payload.cusLinks;
       })
-      .addCase(getCusLinks.rejected, (state) => {
-        //
+      .addCase(getCusLinks.rejected, (state, { payload }: any) => {
+        serverMessage(payload, toast);
+        state.isLoading = false;
       });
   },
 });
