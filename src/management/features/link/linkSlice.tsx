@@ -34,6 +34,13 @@ const linkSlice = createSlice({
         state.urls.fullShortUrl = payload;
       }
     },
+
+    setFullShortLink: (state, { payload }) => {
+      // This reducer is used to set the value of fullShortUrl and shortUrl while in short links page
+      const { getFullUrl, getShortUrl } = payload;
+      state.urls.fullShortUrl = getFullUrl;
+      state.urls.shortUrl = getShortUrl;
+    },
   },
 
   extraReducers: (builder) => {
@@ -82,4 +89,5 @@ const linkSlice = createSlice({
 
 export default linkSlice.reducer;
 
-export const { originalUrlInput, urlSelect, shortUrlInput } = linkSlice.actions;
+export const { originalUrlInput, urlSelect, shortUrlInput, setFullShortLink } =
+  linkSlice.actions;

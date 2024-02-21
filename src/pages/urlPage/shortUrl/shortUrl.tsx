@@ -5,24 +5,34 @@ import { formatDate } from "../../../utils/convertDate";
 import { limitOriginalUrl } from "../../../utils/limitOriginalUrl";
 import { openModal } from "../../../management/features/link/qrCodeSlice";
 import { dropdownList } from "../../../management/features/link/linkDetailsSlice";
+import { setFullShortLink } from "../../../management/features/link/linkSlice";
 
 const ShortUrl = () => {
   const { shortLinks, dropdownIndex } = useSelector(
     (store: RootState) => store.linkDetailsStore
   );
-  const { isModal } = useSelector((store: RootState) => store.QrCodeStore);
   const {
     urls: { fullShortUrl, shortUrl },
   } = useSelector((store: RootState) => store.linkStore);
 
   const dispatch = useDispatch<AppDispatch>();
 
+  // FUNCTION TO DISPLAY DROPDOWN LIST
   const handleDropdown = (id: string) => {
-    // const getFullUrl: string = shortLinks[index].fullUrl;
-    // console.log(getFullUrl);
-    // console.log(fullShortUrl);
-    // dispatch(openModal());
     dispatch(dropdownList(dropdownIndex === id ? null : id));
+  };
+
+  const handleGenCodeClick = (id: string, index: number) => {
+    const getFullUrl: string = shortLinks[index].fullUrl;
+    const getShortUrl: string = shortLinks[index].shortUrl;
+    console.log(getFullUrl, getShortUrl);
+    dispatch(setFullShortLink({ getFullUrl, getShortUrl }));
+    console.log(fullShortUrl, shortUrl);
+    dispatch(openModal());
+  };
+
+  const handleDeleteClick = () => {
+    //
   };
 
   if (shortLinks.length === 0) {
@@ -43,6 +53,8 @@ const ShortUrl = () => {
             shortUrl={fullUrl}
             handleDropdown={() => handleDropdown(_id)}
             _id={_id}
+            handleGenCodeClick={() => handleGenCodeClick(_id, i)}
+            handleDeleteClick={handleDeleteClick}
           />
         );
       })}

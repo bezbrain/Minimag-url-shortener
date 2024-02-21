@@ -13,6 +13,8 @@ const TableRow = ({
   shortUrl,
   customUrl,
   handleDropdown,
+  handleGenCodeClick,
+  handleDeleteClick,
 }: TableRowProps) => {
   const { dropdownIndex } = useSelector(
     (store: RootState) => store.linkDetailsStore
@@ -67,7 +69,12 @@ const TableRow = ({
 
       <td className="py-4 px-2 border-2 w-[5%]" onClick={handleDropdown}>
         <BsThreeDots className="cursor-pointer text-2xl ml-auto" />
-        {dropdownIndex === _id && <Dropdown />}
+        {dropdownIndex === _id && (
+          <Dropdown
+            handleGenCodeClick={handleGenCodeClick}
+            handleDeleteClick={handleDeleteClick}
+          />
+        )}
       </td>
     </tr>
   );
