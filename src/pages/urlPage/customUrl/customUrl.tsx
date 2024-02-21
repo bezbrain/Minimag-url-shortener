@@ -4,6 +4,8 @@ import { AppDispatch, RootState } from "../../../store";
 import { formatDate } from "../../../utils/convertDate";
 import { limitOriginalUrl } from "../../../utils/limitOriginalUrl";
 import { dropdownList } from "../../../management/features/link/linkDetailsSlice";
+import { setFullShortLink } from "../../../management/features/link/linkSlice";
+import { openModal } from "../../../management/features/link/qrCodeSlice";
 
 const CustomUrl = () => {
   const { cusLinks, dropdownIndex } = useSelector(
@@ -12,12 +14,21 @@ const CustomUrl = () => {
 
   const dispatch = useDispatch<AppDispatch>();
 
+  // FUNCTION TO DISPLAY DROPDOWN LIST
   const handleDropdown = (id: string) => {
-    // const getFullUrl: string = shortLinks[index].fullUrl;
-    // console.log(getFullUrl);
-    // console.log(fullShortUrl);
-    // dispatch(openModal());
     dispatch(dropdownList(dropdownIndex === id ? null : id));
+  };
+
+  // FUNCTION TO PROVIDE THE VALUES OF FULLURL AND SHORTURL WHILE ON THE SHORT URL PAGE
+  const handleGenCodeClick = (index: number) => {
+    const getFullUrl: string = cusLinks[index].fullUrl;
+    const getShortUrl: string = cusLinks[index].shortUrl;
+    dispatch(setFullShortLink({ getFullUrl, getShortUrl }));
+    dispatch(openModal());
+  };
+
+  const handleDeleteClick = () => {
+    //
   };
 
   if (cusLinks.length === 0) {
@@ -38,6 +49,8 @@ const CustomUrl = () => {
             customUrl={fullUrl}
             _id={_id}
             handleDropdown={() => handleDropdown(_id)}
+            handleGenCodeClick={() => handleGenCodeClick(i)}
+            handleDeleteClick={handleDeleteClick}
           />
         );
       })}

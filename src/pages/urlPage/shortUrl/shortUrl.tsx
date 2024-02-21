@@ -11,9 +11,6 @@ const ShortUrl = () => {
   const { shortLinks, dropdownIndex } = useSelector(
     (store: RootState) => store.linkDetailsStore
   );
-  const {
-    urls: { fullShortUrl, shortUrl },
-  } = useSelector((store: RootState) => store.linkStore);
 
   const dispatch = useDispatch<AppDispatch>();
 
@@ -22,12 +19,11 @@ const ShortUrl = () => {
     dispatch(dropdownList(dropdownIndex === id ? null : id));
   };
 
-  const handleGenCodeClick = (id: string, index: number) => {
+  // FUNCTION TO PROVIDE THE VALUES OF FULLURL AND SHORTURL WHILE ON THE SHORT URL PAGE
+  const handleGenCodeClick = (index: number) => {
     const getFullUrl: string = shortLinks[index].fullUrl;
     const getShortUrl: string = shortLinks[index].shortUrl;
-    console.log(getFullUrl, getShortUrl);
     dispatch(setFullShortLink({ getFullUrl, getShortUrl }));
-    console.log(fullShortUrl, shortUrl);
     dispatch(openModal());
   };
 
@@ -53,7 +49,7 @@ const ShortUrl = () => {
             shortUrl={fullUrl}
             handleDropdown={() => handleDropdown(_id)}
             _id={_id}
-            handleGenCodeClick={() => handleGenCodeClick(_id, i)}
+            handleGenCodeClick={() => handleGenCodeClick(i)}
             handleDeleteClick={handleDeleteClick}
           />
         );
