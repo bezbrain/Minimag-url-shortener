@@ -1,6 +1,9 @@
 import { BsThreeDots } from "react-icons/bs";
 import { useLocation } from "react-router-dom";
 import { TableRowProps } from "../type";
+import { Dropdown } from "..";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../../store";
 
 const TableRow = ({
   _id,
@@ -11,6 +14,10 @@ const TableRow = ({
   customUrl,
   handleDropdown,
 }: TableRowProps) => {
+  const { dropdownIndex } = useSelector(
+    (store: RootState) => store.linkDetailsStore
+  );
+
   const pathname = useLocation().pathname;
 
   return (
@@ -60,6 +67,7 @@ const TableRow = ({
 
       <td className="py-4 px-2 border-2 w-[5%]" onClick={handleDropdown}>
         <BsThreeDots className="cursor-pointer text-2xl ml-auto" />
+        {dropdownIndex === _id && <Dropdown />}
       </td>
     </tr>
   );

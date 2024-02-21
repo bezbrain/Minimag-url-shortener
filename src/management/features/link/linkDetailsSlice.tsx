@@ -4,22 +4,38 @@ import { toast } from "react-toastify";
 import { serverMessage } from "../../../utils/serverMessage";
 
 interface Links {
-  shortLinks: Object[];
-  cusLinks: Object[];
+  shortLinks: {
+    _id: string;
+    createdAt: string;
+    originalUrl: string;
+    fullUrl: string;
+    shortUrl: string;
+  }[];
+  cusLinks: {
+    _id: string;
+    createdAt: string;
+    originalUrl: string;
+    fullUrl: string;
+    shortUrl: string;
+  }[];
   isLoading: boolean;
+  dropdownIndex: null;
 }
 
 const initialState: Links = {
   shortLinks: [],
   cusLinks: [],
   isLoading: false,
+  dropdownIndex: null,
 };
 
 const linkDetailsSlice = createSlice({
   name: "linkDetails",
   initialState,
   reducers: {
-    //
+    dropdownList: (state, { payload }) => {
+      state.dropdownIndex = payload;
+    },
   },
 
   extraReducers: (builder) => {
@@ -53,3 +69,5 @@ const linkDetailsSlice = createSlice({
 });
 
 export default linkDetailsSlice.reducer;
+
+export const { dropdownList } = linkDetailsSlice.actions;
