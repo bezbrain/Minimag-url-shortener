@@ -17,7 +17,7 @@ const ShortUrl = () => {
 
   const dispatch = useDispatch<AppDispatch>();
 
-  const handleDropdown = (id: string, index: number) => {
+  const handleDropdown = (id: string) => {
     // const getFullUrl: string = shortLinks[index].fullUrl;
     // console.log(getFullUrl);
     // console.log(fullShortUrl);
@@ -41,7 +41,7 @@ const ShortUrl = () => {
             originalUrl={originalUrl}
             slicedOriginalUrl={limitOriginalUrl(originalUrl)}
             shortUrl={fullUrl}
-            handleDropdown={() => handleDropdown(_id, i)}
+            handleDropdown={() => handleDropdown(_id)}
             _id={_id}
           />
         );
