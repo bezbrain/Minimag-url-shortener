@@ -3,11 +3,13 @@ import { useLocation } from "react-router-dom";
 import { TableRowProps } from "../type";
 
 const TableRow = ({
+  _id,
   createdAt,
   originalUrl,
   slicedOriginalUrl,
   shortUrl,
   customUrl,
+  handleDropdown,
 }: TableRowProps) => {
   const pathname = useLocation().pathname;
 
@@ -56,7 +58,7 @@ const TableRow = ({
         </td>
       )}
 
-      <td className="py-4 px-2 border-2 w-[5%]">
+      <td className="py-4 px-2 border-2 w-[5%]" onClick={handleDropdown}>
         <BsThreeDots className="cursor-pointer text-2xl ml-auto" />
       </td>
     </tr>
