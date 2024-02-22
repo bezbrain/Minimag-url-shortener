@@ -94,16 +94,24 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-            <a href="#features">Features</a>
+            <a href="#features" onClick={() => dispatch(isCloseNav())}>
+              Features
+            </a>
           </li>
           <li>
-            <a href="#pricing">Pricing</a>
+            <a href="#pricing" onClick={() => dispatch(isCloseNav())}>
+              Pricing
+            </a>
           </li>
           <li>
-            <Link to="">Analytics</Link>
+            <Link to="" onClick={() => dispatch(isCloseNav())}>
+              Analytics
+            </Link>
           </li>
           <li>
-            <a href="#faq">FAQs</a>
+            <a href="#faq" onClick={() => dispatch(isCloseNav())}>
+              FAQs
+            </a>
           </li>
         </ul>
 
