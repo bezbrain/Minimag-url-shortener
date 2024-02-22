@@ -1,3 +1,4 @@
+// @ts-ignore
 import styled from "styled-components";
 import QRCode from "qrcode.react";
 import { Button } from "../../../../general";
