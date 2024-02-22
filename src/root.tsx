@@ -12,10 +12,12 @@ import {
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ProtectedRoutes } from "./components/sharedLayouts";
+import { ScrollTop } from "./components/general";
 
 const App = () => {
   return (
     <BrowserRouter>
+      <ScrollTop /> {/* Render ScrollToTop component */}
       <Routes>
         <Route path="/" element={<SharedLayouts />}>
           <Route index element={<HomePage />} />
@@ -33,7 +35,6 @@ const App = () => {
           <Route path="/*" element={<NotFound />} />
         </Route>
       </Routes>
-
       <ToastContainer
         position="top-center"
         theme="dark"
