@@ -37,6 +37,11 @@ const Nav = () => {
     dispatch(isCloseNav());
   };
 
+  const handleLogoClick = () => {
+    dispatch(isCloseNav());
+    window.scrollTo(0, 0);
+  };
+
   // LOGOUT A USER
   const handleLogoutClick = () => {
     dispatch(isCloseNav());
@@ -64,7 +69,7 @@ const Nav = () => {
   return (
     <HeaderWrapper>
       <div className="w-[120px] iPad:w-[10%]">
-        <Link to="/" className="z-50" onClick={() => dispatch(isCloseNav())}>
+        <Link to="/" className="z-50" onClick={handleLogoClick}>
           <img src={minimagLogo} alt="Logo" className="w-full" />
         </Link>
         <FaBarsProgress
