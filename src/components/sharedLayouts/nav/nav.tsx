@@ -53,6 +53,7 @@ const Nav = () => {
 
   // FETCH SHORT URLS ON CLICK OF 'My URLs' nav item
   const handleFetchShortUrlsClick = () => {
+    dispatch(isCloseNav());
     if (getAuthToken()) {
       dispatch(getLinks());
     } else {
