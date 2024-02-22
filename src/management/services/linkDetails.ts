@@ -25,3 +25,27 @@ export const getAllCusUrl = async () => {
   });
   return data;
 };
+
+export const deleteShortUrl = async (id: string) => {
+  const token = getAuthToken();
+
+  const data = await axios.delete(`${config.baseUrl}/singleLink/${id}`, {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  return data;
+};
+
+export const deleteCustomUrl = async (id: string) => {
+  const token = getAuthToken();
+
+  const data = await axios.delete(`${config.baseUrl}/singleCusLink/${id}`, {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  return data;
+};

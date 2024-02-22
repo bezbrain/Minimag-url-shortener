@@ -6,9 +6,13 @@ import { limitOriginalUrl } from "../../../utils/limitOriginalUrl";
 import { openModal } from "../../../management/features/link/qrCodeSlice";
 import { dropdownList } from "../../../management/features/link/linkDetailsSlice";
 import { setFullShortLink } from "../../../management/features/link/linkSlice";
+import {
+  deleteShort,
+  getLinks,
+} from "../../../management/actions/linkDetails.action";
 
 const ShortUrl = () => {
-  const { shortLinks, dropdownIndex } = useSelector(
+  const { shortLinks, dropdownIndex, isDeleteLoading } = useSelector(
     (store: RootState) => store.linkDetailsStore
   );
 
@@ -27,8 +31,13 @@ const ShortUrl = () => {
     dispatch(openModal());
   };
 
-  const handleDeleteClick = () => {
-    //
+  // FUNCTION TO DELETE SHORT LINK
+  const handleDeleteClick = (id: string) => {
+    if (isDeleteLoading) {
+      return null;
+    }
+    dispatch(deleteShort(id));
+    dispatch(getLinks()); // Call the get all short links function to get the latest data in the db
   };
 
   if (shortLinks.length === 0) {
@@ -50,7 +59,7 @@ const ShortUrl = () => {
             handleDropdown={() => handleDropdown(_id)}
             _id={_id}
             handleGenCodeClick={() => handleGenCodeClick(i)}
-            handleDeleteClick={handleDeleteClick}
+            handleDeleteClick={() => handleDeleteClick(_id)}
           />
         );
       })}

@@ -6,9 +6,13 @@ import { limitOriginalUrl } from "../../../utils/limitOriginalUrl";
 import { dropdownList } from "../../../management/features/link/linkDetailsSlice";
 import { setFullShortLink } from "../../../management/features/link/linkSlice";
 import { openModal } from "../../../management/features/link/qrCodeSlice";
+import {
+  deleteCustom,
+  getCusLinks,
+} from "../../../management/actions/linkDetails.action";
 
 const CustomUrl = () => {
-  const { cusLinks, dropdownIndex } = useSelector(
+  const { cusLinks, dropdownIndex, isDeleteLoading } = useSelector(
     (store: RootState) => store.linkDetailsStore
   );
 
@@ -27,8 +31,13 @@ const CustomUrl = () => {
     dispatch(openModal());
   };
 
-  const handleDeleteClick = () => {
-    //
+  // FUNCTION TO DELETE SHORT LINK
+  const handleDeleteClick = (id: string) => {
+    if (isDeleteLoading) {
+      return null;
+    }
+    dispatch(deleteCustom(id));
+    dispatch(getCusLinks()); // Call the get all custom links function to get the latest data in the db
   };
 
   if (cusLinks.length === 0) {
@@ -50,7 +59,7 @@ const CustomUrl = () => {
             _id={_id}
             handleDropdown={() => handleDropdown(_id)}
             handleGenCodeClick={() => handleGenCodeClick(i)}
-            handleDeleteClick={handleDeleteClick}
+            handleDeleteClick={() => handleDeleteClick(_id)}
           />
         );
       })}
