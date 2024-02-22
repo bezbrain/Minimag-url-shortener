@@ -16,7 +16,7 @@ import {
   createLink,
 } from "../../../../management/actions/link.action";
 import { getAuthToken } from "../../../../utils/authToken";
-import { CopyUrl, GenerateQR, QrCode } from "..";
+import { CopyUrl, GenerateQR } from "..";
 
 const TrimUrl = () => {
   const { urls, isLoading, isDisable } = useSelector(
