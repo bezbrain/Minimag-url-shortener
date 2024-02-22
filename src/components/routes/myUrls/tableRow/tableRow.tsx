@@ -24,10 +24,10 @@ const TableRow = ({
 
   return (
     <tr className="border-b-2">
-      <td className="py-4 px-2 border-2 w-[15%] text-center font-semibold">
+      <td className="py-4 px-2 w-[15%] text-center font-semibold">
         {createdAt}
       </td>
-      <td className="py-4 px-2 border-2 w-[45%]">
+      <td className="py-4 px-2 w-[45%]">
         <a
           href={originalUrl}
           target="_blank"
@@ -44,7 +44,7 @@ const TableRow = ({
       </td>
 
       {pathname === "/my-urls/short-urls" ? (
-        <td className="py-4 px-2 border-2 w-[35%]">
+        <td className="py-4 px-2 w-[35%]">
           <a
             href={shortUrl}
             target="_blank"
@@ -55,7 +55,7 @@ const TableRow = ({
           </a>
         </td>
       ) : (
-        <td className="py-4 px-2 border-2 w-[35%]">
+        <td className="py-4 px-2 w-[35%] text-center">
           <a
             href={customUrl}
             target="_blank"
@@ -67,7 +67,7 @@ const TableRow = ({
         </td>
       )}
 
-      <td className="py-4 px-2 border-2 w-[5%]" onClick={handleDropdown}>
+      <td className="py-4 px-2 w-[5%] relative" onClick={handleDropdown}>
         <BsThreeDots className="cursor-pointer text-2xl ml-auto" />
         {dropdownIndex === _id && (
           <Dropdown

@@ -16,7 +16,7 @@ const Dropdown = ({ handleGenCodeClick, handleDeleteClick }: DropdownProps) => {
   );
 
   return (
-    <ul className="absolute right-2 z-[999] bg-[#005ae2cc] shadow-slate-500 shadow-lg py-2 px-2 rounded-lg">
+    <ul className="absolute right-2 top-14 w-[200px] z-[999] bg-[#005ae2cc] shadow-slate-500 shadow-lg py-2 px-2 rounded-lg">
       <li
         className={`cursor-pointer ${listStyle}`}
         onClick={handleGenCodeClick}

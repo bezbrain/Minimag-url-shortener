@@ -32,11 +32,12 @@ const ShortUrl = () => {
   };
 
   // FUNCTION TO DELETE SHORT LINK
-  const handleDeleteClick = (id: string) => {
+  const handleDeleteClick = async (id: string) => {
     if (isDeleteLoading) {
       return null;
     }
-    dispatch(deleteShort(id));
+    await dispatch(deleteShort(id));
+    console.log("Checking");
     dispatch(getLinks()); // Call the get all short links function to get the latest data in the db
   };
 
