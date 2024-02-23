@@ -13,11 +13,16 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ProtectedRoutes } from "./components/sharedLayouts";
 import { ScrollTop } from "./components/general";
+import { useState } from "react";
+import { ComingSoon } from "./components/helpers";
 
 const App = () => {
+  const [isComingSoon, setIsComingSoon] = useState<boolean>(true);
+
   return (
     <BrowserRouter>
       <ScrollTop /> {/* Render ScrollToTop component */}
+      {isComingSoon && <ComingSoon setIsComingSoon={setIsComingSoon} />}
       <Routes>
         <Route path="/" element={<SharedLayouts />}>
           <Route index element={<HomePage />} />
