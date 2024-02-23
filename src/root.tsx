@@ -33,7 +33,10 @@ const App = () => {
             index
             element={<HomePage setIsComingSoon={setIsComingSoon} />}
           />
-          <Route path="register" element={<RegisterPage />} />
+          <Route
+            path="register"
+            element={<RegisterPage setIsComingSoon={setIsComingSoon} />}
+          />
           <Route
             path="login"
             element={<LoginPage setIsComingSoon={setIsComingSoon} />}
