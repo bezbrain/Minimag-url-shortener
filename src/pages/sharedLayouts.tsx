@@ -6,7 +6,11 @@ import { AppDispatch, RootState } from "../store";
 import { useEffect } from "react";
 import { clearFullShortLink } from "../management/features/link/linkSlice";
 
-const SharedLayouts = () => {
+interface SharedLayoutsProps {
+  setIsComingSoon: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const SharedLayouts = ({ setIsComingSoon }: SharedLayoutsProps) => {
   const { isModal } = useSelector((store: RootState) => store.QrCodeStore);
 
   const pathname = useLocation().pathname;
@@ -29,7 +33,7 @@ const SharedLayouts = () => {
       <section>
         <Nav />
         <Outlet />
-        <Footer />
+        <Footer setIsComingSoon={setIsComingSoon} />
       </section>
     </>
   );

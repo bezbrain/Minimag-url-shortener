@@ -11,14 +11,18 @@ import {
 } from "..";
 import { Link } from "react-router-dom";
 
-const Footer = () => {
+interface FooterProps {
+  setIsComingSoon: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Footer = ({ setIsComingSoon }: FooterProps) => {
   return (
     <FooterWrapper>
       <section className="max-w-[1400px] relative p-4 mx-auto py-16 justify-between gap-[15vw] lg:px-8 lg:gap-4 sm:gap-[10vw] iPhone:flex">
         <Media />
 
         <div className="containers my-8 mb-12 iPhone:w-4/5 iPhone:mt-0">
-          <WhyMinimag />
+          <WhyMinimag setIsComingSoon={setIsComingSoon} />
           <Solutions />
           <Products />
           <Company />

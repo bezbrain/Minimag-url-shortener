@@ -25,7 +25,10 @@ const App = () => {
       <ScrollTop /> {/* Render ScrollToTop component */}
       {isComingSoon && <ComingSoon setIsComingSoon={setIsComingSoon} />}
       <Routes>
-        <Route path="/" element={<SharedLayouts />}>
+        <Route
+          path="/"
+          element={<SharedLayouts setIsComingSoon={setIsComingSoon} />}
+        >
           <Route
             index
             element={<HomePage setIsComingSoon={setIsComingSoon} />}

@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 
-const WhyMinimag = () => {
+interface WhyMinimagProps {
+  setIsComingSoon: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const WhyMinimag = ({ setIsComingSoon }: WhyMinimagProps) => {
   return (
     <div className="">
       <h2 className="font-semibold text-lg mb-2">Why Minimag?</h2>
@@ -9,7 +13,9 @@ const WhyMinimag = () => {
           <Link to="/learn-more">Minimag 101</Link>
         </li>
         <li>Integration & API</li>
-        <li>Pricing</li>
+        <li className="cursor-pointer" onClick={() => setIsComingSoon(true)}>
+          Pricing
+        </li>
       </ul>
     </div>
   );
