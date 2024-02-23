@@ -32,11 +32,11 @@ const CustomUrl = () => {
   };
 
   // FUNCTION TO DELETE SHORT LINK
-  const handleDeleteClick = (id: string) => {
+  const handleDeleteClick = async (id: string) => {
     if (isDeleteLoading) {
       return null;
     }
-    dispatch(deleteCustom(id));
+    await dispatch(deleteCustom(id));
     dispatch(getCusLinks()); // Call the get all custom links function to get the latest data in the db
   };
 
