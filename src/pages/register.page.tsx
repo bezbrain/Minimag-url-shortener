@@ -5,7 +5,11 @@ import { toast } from "react-toastify";
 import { register } from "../management/actions/auth";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 
-const RegisterPage = () => {
+interface RegisterPageProps {
+  setIsComingSoon: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const RegisterPage = ({ setIsComingSoon }: RegisterPageProps) => {
   const { regUser } = useSelector((store: RootState) => store.regStore);
 
   const dispatch = useDispatch<AppDispatch>();
@@ -26,7 +30,10 @@ const RegisterPage = () => {
 
   return (
     <main className="pt-[15vh] min-h-[100vh] px-4 flex justify-center">
-      <Register handleRegSubmit={handleRegSubmit} />
+      <Register
+        handleRegSubmit={handleRegSubmit}
+        setIsComingSoon={setIsComingSoon}
+      />
     </main>
   );
 };

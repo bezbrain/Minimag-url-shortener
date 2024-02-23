@@ -37,7 +37,6 @@ const ShortUrl = () => {
       return null;
     }
     await dispatch(deleteShort(id));
-    console.log("Checking");
     dispatch(getLinks()); // Call the get all short links function to get the latest data in the db
   };
 

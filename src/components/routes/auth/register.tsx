@@ -8,9 +8,10 @@ import { regInputs } from "../../../management/features/auth/registerSlice";
 
 interface RegisterProps {
   handleRegSubmit: (e: React.FormEvent) => void;
+  setIsComingSoon: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Register = ({ handleRegSubmit }: RegisterProps) => {
+const Register = ({ handleRegSubmit, setIsComingSoon }: RegisterProps) => {
   const { regUser, isLoading, isDisable } = useSelector(
     (store: RootState) => store.regStore
   );
@@ -27,7 +28,10 @@ const Register = ({ handleRegSubmit }: RegisterProps) => {
 
   return (
     <div className="text-center w-[400px]">
-      <AuthHeader authHeaderContent="Sign up with:" />
+      <AuthHeader
+        authHeaderContent="Sign up with:"
+        setIsComingSoon={setIsComingSoon}
+      />
 
       <form className="mt-8">
         <InputField

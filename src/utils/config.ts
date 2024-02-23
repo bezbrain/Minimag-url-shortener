@@ -5,5 +5,3 @@ export const config = {
 export const urlConfig = {
   urlBaseUrl: `${import.meta.env.VITE_URL_BASE_URL}`,
 };
-
-// export default config;

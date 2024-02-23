@@ -19,7 +19,6 @@ export const register = createAsyncThunk(
       }, 1500);
       return data;
     } catch (error) {
-      console.log(error);
       return thunkAPI.rejectWithValue(error);
     }
   }
@@ -43,7 +42,6 @@ export const login = createAsyncThunk(
 
       return data;
     } catch (error) {
-      console.log(error);
       return thunkAPI.rejectWithValue(error);
     }
   }
@@ -58,7 +56,6 @@ export const logout = createAsyncThunk(
       removeAuthToken(); // Remove token from storage
       return data;
     } catch (error) {
-      console.log(error);
       return thunkAPI.rejectWithValue(error);
     }
   }

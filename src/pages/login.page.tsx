@@ -5,7 +5,11 @@ import { toast } from "react-toastify";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 import { login } from "../management/actions/auth";
 
-const LoginPage = () => {
+interface LoginPageProps {
+  setIsComingSoon: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const LoginPage = ({ setIsComingSoon }: LoginPageProps) => {
   const { loginUser } = useSelector((store: RootState) => store.loginStore);
 
   const { email, password } = loginUser;
@@ -26,7 +30,10 @@ const LoginPage = () => {
 
   return (
     <main className="pt-[15vh] min-h-[100vh] px-4 flex justify-center">
-      <Login handleLoginSubmit={handleLoginSubmit} />
+      <Login
+        handleLoginSubmit={handleLoginSubmit}
+        setIsComingSoon={setIsComingSoon}
+      />
     </main>
   );
 };

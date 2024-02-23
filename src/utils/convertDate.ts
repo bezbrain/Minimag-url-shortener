@@ -1,3 +1,4 @@
+// Function to change the format date returned from the db
 export const formatDate = (dateTimeString: string) => {
   const date = new Date(dateTimeString);
   const options: Intl.DateTimeFormatOptions = {
