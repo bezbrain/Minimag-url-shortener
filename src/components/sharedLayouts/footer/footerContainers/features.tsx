@@ -6,16 +6,13 @@ const Features = () => {
       <h2 className="font-semibold text-lg mb-2">Features</h2>
       <ul>
         <li>
-          <Link to="">Branded Links</Link>
-        </li>
-        <li>
-          <Link to="">Mobile Links</Link>
+          <Link to="/my-urls/custom-urls">Branded Links</Link>
         </li>
         <li>
           <Link to="">Analytics</Link>
         </li>
         <li>
-          <Link to="">QR Code generation</Link>
+          <Link to="/my-urls/short-urls">QR Code generation</Link>
         </li>
       </ul>
     </div>
