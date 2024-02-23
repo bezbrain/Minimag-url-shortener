@@ -27,7 +27,7 @@ const TableRow = ({
       <td className="py-4 px-2 w-[15%] text-center font-semibold">
         {createdAt}
       </td>
-      <td className="py-4 px-2 w-[45%]">
+      <td className="py-4 px-2 w-[45%] text-center">
         <a
           href={originalUrl}
           target="_blank"
