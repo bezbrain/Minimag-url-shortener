@@ -34,7 +34,10 @@ const App = () => {
             element={<HomePage setIsComingSoon={setIsComingSoon} />}
           />
           <Route path="register" element={<RegisterPage />} />
-          <Route path="login" element={<LoginPage />} />
+          <Route
+            path="login"
+            element={<LoginPage setIsComingSoon={setIsComingSoon} />}
+          />
           <Route path="learn-more" element={<LearnMorePage />} />
 
           {/* Protected Routes */}

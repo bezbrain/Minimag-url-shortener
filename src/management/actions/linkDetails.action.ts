@@ -11,10 +11,8 @@ export const getLinks = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const { data } = await getAllUrl();
-      console.log(data);
       return data;
     } catch (error) {
-      console.log(error);
       return thunkAPI.rejectWithValue(error);
     }
   }
@@ -25,10 +23,8 @@ export const getCusLinks = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const { data } = await getAllCusUrl();
-      console.log(data);
       return data;
     } catch (error) {
-      console.log(error);
       return thunkAPI.rejectWithValue(error);
     }
   }
@@ -39,10 +35,8 @@ export const deleteShort = createAsyncThunk(
   async (id: string, thunkAPI) => {
     try {
       const { data } = await deleteShortUrl(id);
-      console.log(data);
       return data;
     } catch (error) {
-      console.log(error);
       return thunkAPI.rejectWithValue(error);
     }
   }
@@ -53,10 +47,8 @@ export const deleteCustom = createAsyncThunk(
   async (id: string, thunkAPI) => {
     try {
       const { data } = await deleteCustomUrl(id);
-      console.log(data);
       return data;
     } catch (error) {
-      console.log(error);
       return thunkAPI.rejectWithValue(error);
     }
   }

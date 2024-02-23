@@ -4,15 +4,19 @@ import { FaApple } from "react-icons/fa";
 
 interface AuthHeaderProps {
   authHeaderContent: string;
+  setIsComingSoon: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const AuthHeader = ({ authHeaderContent }: AuthHeaderProps) => {
+const AuthHeader = ({
+  authHeaderContent,
+  setIsComingSoon,
+}: AuthHeaderProps) => {
   const handleGoogleClick = () => {
-    //
+    setIsComingSoon(true);
   };
 
   const handleAppleClick = () => {
-    //
+    setIsComingSoon(true);
   };
 
   return (

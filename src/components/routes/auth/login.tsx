@@ -8,9 +8,10 @@ import { loginInputs } from "../../../management/features/auth/loginSlice";
 
 interface LoginProps {
   handleLoginSubmit: (e: React.FormEvent) => void;
+  setIsComingSoon: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Login = ({ handleLoginSubmit }: LoginProps) => {
+const Login = ({ handleLoginSubmit, setIsComingSoon }: LoginProps) => {
   const { loginUser, isLoading, isDisable } = useSelector(
     (store: RootState) => store.loginStore
   );
@@ -27,7 +28,10 @@ const Login = ({ handleLoginSubmit }: LoginProps) => {
 
   return (
     <div className="text-center w-[400px]">
-      <AuthHeader authHeaderContent="Log in with:" />
+      <AuthHeader
+        authHeaderContent="Log in with:"
+        setIsComingSoon={setIsComingSoon}
+      />
 
       <form className="mt-8">
         <InputField
