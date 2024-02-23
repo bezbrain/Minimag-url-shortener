@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 const Media = () => {
   return (
     <div className="iPhone:w-1/10">
-      <img src={minimagLogo} alt="Minimag" className="w-[150px]" />
+      <Link to="/">
+        <img src={minimagLogo} alt="Minimag" className="w-[150px]" />
+      </Link>
 
       <div className="flex text-xl space-x-4 mt-8">
         <Link to="">
