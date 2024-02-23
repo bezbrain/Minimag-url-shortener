@@ -3,30 +3,35 @@ import styled from "styled-components";
 const NoUrls = () => {
   return (
     <NoUrlWrapper className="w-fit absolute right-[50%] top-[40vh] translate-x-[50%] text-center">
-      <p className="text-3xl text-red-900 font-semibold">No URLs</p>
-      <img
-        src="https://th.bing.com/th/id/OIP.wcqMAgXJcsFC8Ba5ndfY7QHaEY?w=297&h=180&c=7&r=0&o=5&pid=1.7"
-        alt="No URL"
-      />
+      <tr className="no__url__row">
+        <td>
+          <p className="text-3xl text-red-900 font-semibold">No URLs</p>
+          <img
+            src="https://th.bing.com/th/id/OIP.wcqMAgXJcsFC8Ba5ndfY7QHaEY?w=297&h=180&c=7&r=0&o=5&pid=1.7"
+            alt="No URL"
+          />
+        </td>
+      </tr>
     </NoUrlWrapper>
   );
 };
 
 export default NoUrls;
 
-const NoUrlWrapper = styled.div`
+const NoUrlWrapper = styled.tbody`
   @media screen and (max-height: 640px) {
     /* border: 2px solid red; */
     top: 250px !important;
-    > p {
+
+    .no__url__row > td p {
       font-size: 25px !important;
     }
-    > img {
+    .no__url__row > td img {
       width: 200px;
     }
   }
 
-  > img {
+  .no__url__row > td img {
     /* border: 2px solid red; */
     margin-top: 10px;
     animation: rotateImg ease-in-out 2s infinite;
