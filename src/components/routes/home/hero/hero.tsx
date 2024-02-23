@@ -23,7 +23,7 @@ const Hero = () => {
           ) : (
             <LinkBtn btnContent="Sign Up" link="/register" />
           )}
-          <LinkBtn btnContent="Learn More" link="" />
+          <LinkBtn btnContent="Learn More" link="/learn-more" />
         </div>
 
         <div className="hero__img mt-12 max-w-[600px] mx-auto shadow-lg shadow-slate-800 rounded-md">
