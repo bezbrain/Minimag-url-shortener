@@ -17,7 +17,7 @@ import { useState } from "react";
 import { ComingSoon } from "./components/helpers";
 
 const App = () => {
-  const [isComingSoon, setIsComingSoon] = useState<boolean>(true);
+  const [isComingSoon, setIsComingSoon] = useState<boolean>(false);
 
   return (
     <BrowserRouter>

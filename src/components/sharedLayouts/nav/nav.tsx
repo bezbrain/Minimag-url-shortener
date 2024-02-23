@@ -9,7 +9,6 @@ import {
   isCloseNav,
   isOpenNav,
 } from "../../../management/features/shared/sharedSlice";
-import { LinkBtn } from "../../general";
 import { getAuthToken } from "../../../utils/authToken";
 import { useRef } from "react";
 import { logout } from "../../../management/actions/auth";
@@ -136,7 +135,13 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-            <LinkBtn btnContent="Try for free" link="" />
+            <a
+              href="/#features"
+              onClick={() => dispatch(isCloseNav())}
+              className="bg-[#005ae2cc] px-[1.5rem] py-[0.5rem] text-[#fff] block hover:scale-[1.05] hover:border-none rounded-[1.5rem]"
+            >
+              Try for free
+            </a>
           </li>
         </ul>
       </nav>
