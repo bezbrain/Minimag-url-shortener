@@ -9,7 +9,7 @@ import {
   Solutions,
   WhyMinimag,
 } from "..";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 interface FooterProps {
   setIsComingSoon: React.Dispatch<React.SetStateAction<boolean>>;
@@ -32,9 +32,19 @@ const Footer = ({ setIsComingSoon }: FooterProps) => {
         </div>
 
         <div className="absolute flex right-[50%] translate-x-[50%] w-full px-2 bottom-12 text-[13px] smallPhone:text-md smallPhone:w-[290px] surfaceDuo:right-4 surfaceDuo:translate-x-[0%]">
-          <Link to="">Terms of Service</Link>{" "}
+          <span
+            className="cursor-pointer"
+            onClick={() => setIsComingSoon(true)}
+          >
+            Terms of Service
+          </span>{" "}
           <span className="w-[3px] h-[20px] bg-slate-400 block mx-2"></span>
-          <Link to="">Security</Link>{" "}
+          <span
+            className="cursor-pointer"
+            onClick={() => setIsComingSoon(true)}
+          >
+            Security
+          </span>{" "}
           <span className="w-[3px] h-[20px] bg-slate-400 block mx-2"></span>
           <span className="">Minimag 2024</span>
         </div>
