@@ -99,12 +99,12 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-            <a href="#features" onClick={() => dispatch(isCloseNav())}>
+            <a href="/#features" onClick={() => dispatch(isCloseNav())}>
               Features
             </a>
           </li>
           <li>
-            <a href="#pricing" onClick={() => dispatch(isCloseNav())}>
+            <a href="/#pricing" onClick={() => dispatch(isCloseNav())}>
               Pricing
             </a>
           </li>
@@ -114,7 +114,7 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-            <a href="#faq" onClick={() => dispatch(isCloseNav())}>
+            <a href="/#faq" onClick={() => dispatch(isCloseNav())}>
               FAQs
             </a>
           </li>
