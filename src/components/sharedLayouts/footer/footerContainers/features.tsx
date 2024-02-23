@@ -4,7 +4,7 @@ const Features = () => {
   return (
     <div className="">
       <h2 className="font-semibold text-lg mb-2">Features</h2>
-      <ul>
+      <ul className="space-y-2">
         <li>
           <Link to="/my-urls/custom-urls">Branded Links</Link>
         </li>

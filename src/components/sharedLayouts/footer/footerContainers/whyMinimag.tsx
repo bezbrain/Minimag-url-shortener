@@ -8,7 +8,7 @@ const WhyMinimag = ({ setIsComingSoon }: WhyMinimagProps) => {
   return (
     <div className="">
       <h2 className="font-semibold text-lg mb-2">Why Minimag?</h2>
-      <ul>
+      <ul className="space-y-2">
         <li>
           <Link to="/learn-more">Minimag 101</Link>
         </li>

@@ -4,7 +4,7 @@ const Products = () => {
   return (
     <div className="">
       <h2 className="font-semibold text-lg mb-2">Products</h2>
-      <ul>
+      <ul className="space-y-2">
         <li>
           <Link to="/my-urls/short-urls">Link Management</Link>
         </li>
