@@ -28,7 +28,7 @@ const Footer = ({ setIsComingSoon }: FooterProps) => {
           <Company setIsComingSoon={setIsComingSoon} />
           <Resources setIsComingSoon={setIsComingSoon} />
           <Features />
-          <Legal />
+          <Legal setIsComingSoon={setIsComingSoon} />
         </div>
 
         <div className="absolute flex right-[50%] translate-x-[50%] w-full px-2 bottom-12 text-[13px] smallPhone:text-md smallPhone:w-[290px] surfaceDuo:right-4 surfaceDuo:translate-x-[0%]">
