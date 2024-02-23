@@ -1,18 +1,22 @@
 import { Link } from "react-router-dom";
 
-const Company = () => {
+interface CompanyProps {
+  setIsComingSoon: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Company = ({ setIsComingSoon }: CompanyProps) => {
   return (
     <div className="">
       <h2 className="font-semibold text-lg mb-2">Company</h2>
       <ul>
         <li>
-          <Link to="">About Minimag</Link>
+          <Link to="/learn-more">About Minimag</Link>
         </li>
-        <li>
-          <Link to="">Contact</Link>
+        <li className="cursor-pointer" onClick={() => setIsComingSoon(true)}>
+          Contact
         </li>
-        <li>
-          <Link to="">Reviews</Link>
+        <li className="cursor-pointer" onClick={() => setIsComingSoon(true)}>
+          Reviews
         </li>
       </ul>
     </div>

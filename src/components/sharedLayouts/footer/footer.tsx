@@ -25,7 +25,7 @@ const Footer = ({ setIsComingSoon }: FooterProps) => {
           <WhyMinimag setIsComingSoon={setIsComingSoon} />
           <Solutions setIsComingSoon={setIsComingSoon} />
           <Products />
-          <Company />
+          <Company setIsComingSoon={setIsComingSoon} />
           <Resources />
           <Features />
           <Legal />
