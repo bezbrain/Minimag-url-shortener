@@ -6,6 +6,7 @@ import SharedLayouts from "./sharedLayouts";
 import NotFound from "./notFound";
 import ShortUrl from "./urlPage/shortUrl/shortUrl";
 import CustomUrl from "./urlPage/customUrl/customUrl";
+import LearnMorePage from "./learnMore.page";
 
 export {
   HomePage,
@@ -16,4 +17,5 @@ export {
   NotFound,
   ShortUrl,
   CustomUrl,
+  LearnMorePage,
 };

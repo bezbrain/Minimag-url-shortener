@@ -6,14 +6,10 @@ const WhyMinimag = () => {
       <h2 className="font-semibold text-lg mb-2">Why Minimag?</h2>
       <ul>
         <li>
-          <Link to="">Minimag 101</Link>
+          <Link to="/learn-more">Minimag 101</Link>
         </li>
-        <li>
-          <Link to="">Integration & API</Link>
-        </li>
-        <li>
-          <Link to="">Pricing</Link>
-        </li>
+        <li>Integration & API</li>
+        <li>Pricing</li>
       </ul>
     </div>
   );

@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {
   CustomUrl,
   HomePage,
+  LearnMorePage,
   LoginPage,
   MyUrlsPage,
   NotFound,
@@ -31,6 +32,7 @@ const App = () => {
           />
           <Route path="register" element={<RegisterPage />} />
           <Route path="login" element={<LoginPage />} />
+          <Route path="learn-more" element={<LearnMorePage />} />
 
           {/* Protected Routes */}
           <Route path="/" element={<ProtectedRoutes />}>
