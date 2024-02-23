@@ -8,7 +8,7 @@ interface ComingSoonProps {
 const ComingSoon = ({ setIsComingSoon }: ComingSoonProps) => {
   return (
     <ComingSoonWrapper onClick={() => setIsComingSoon(false)}>
-      <p className="text-white border-2 max-w-[320px] text-center">
+      <p className="text-white max-w-[320px] text-center">
         This feature will be implemented soon
       </p>
       <img
@@ -37,6 +37,15 @@ const ComingSoonWrapper = styled.div`
 
   > p {
     font-size: 2rem;
+    animation: scaleText ease-in-out 1s 1;
+  }
+  @keyframes scaleText {
+    0% {
+      transform: scale(0.5);
+    }
+    100% {
+      transform: scale(1.05);
+    }
   }
 
   > img {

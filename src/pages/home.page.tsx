@@ -8,13 +8,17 @@ import {
   WhyMinimag,
 } from "../components/routes/home";
 
-const HomePage = () => {
+interface ComingSoonProps {
+  setIsComingSoon: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const HomePage = ({ setIsComingSoon }: ComingSoonProps) => {
   return (
     <main className="pt-[60px]">
       <Hero />
       <Usage />
       <WhyMinimag />
-      <Price />
+      <Price setIsComingSoon={setIsComingSoon} />
       <TrimUrl />
       <Faqs />
       <LinkOpt />

@@ -2,7 +2,11 @@ import styled from "styled-components";
 import { PriceCard } from "..";
 import { Button } from "../../../general";
 
-const Price = () => {
+interface PriceProps {
+  setIsComingSoon: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Price = ({ setIsComingSoon }: PriceProps) => {
   const handleCustomClick = () => {
     //
   };
@@ -37,6 +41,7 @@ const Price = () => {
           planThree={"Customizable Short Links"}
           planFour={"Standard Support"}
           planFive={"Ad-supported"}
+          setIsComingSoon={setIsComingSoon}
         />
         <PriceCard
           type={"Professional"}
@@ -47,6 +52,7 @@ const Price = () => {
           planThree={"Advanced Link Customization"}
           planFour={"Priority Support"}
           planFive={"Ad-free Experience"}
+          setIsComingSoon={setIsComingSoon}
         />
         <PriceCard
           type={"Teams"}
@@ -57,6 +63,7 @@ const Price = () => {
           planThree={"Enhanced Security"}
           planFour={"API Access"}
           planFive={"Dedicated Account Manager"}
+          setIsComingSoon={setIsComingSoon}
         />
       </div>
 

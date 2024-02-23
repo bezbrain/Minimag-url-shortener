@@ -25,7 +25,10 @@ const App = () => {
       {isComingSoon && <ComingSoon setIsComingSoon={setIsComingSoon} />}
       <Routes>
         <Route path="/" element={<SharedLayouts />}>
-          <Route index element={<HomePage />} />
+          <Route
+            index
+            element={<HomePage setIsComingSoon={setIsComingSoon} />}
+          />
           <Route path="register" element={<RegisterPage />} />
           <Route path="login" element={<LoginPage />} />
 
