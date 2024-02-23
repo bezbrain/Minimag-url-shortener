@@ -1,18 +1,22 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
-const Resources = () => {
+interface ResourcesProps {
+  setIsComingSoon: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Resources = ({ setIsComingSoon }: ResourcesProps) => {
   return (
     <div className="">
       <h2 className="font-semibold text-lg mb-2">Resources</h2>
       <ul>
-        <li>
-          <Link to="">Blog</Link>
+        <li className="cursor-pointer" onClick={() => setIsComingSoon(true)}>
+          Blog
         </li>
-        <li>
-          <Link to="">Developers</Link>
+        <li className="cursor-pointer" onClick={() => setIsComingSoon(true)}>
+          Developers
         </li>
-        <li>
-          <Link to="">Support</Link>
+        <li className="cursor-pointer" onClick={() => setIsComingSoon(true)}>
+          Support
         </li>
       </ul>
     </div>

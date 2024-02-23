@@ -26,7 +26,7 @@ const Footer = ({ setIsComingSoon }: FooterProps) => {
           <Solutions setIsComingSoon={setIsComingSoon} />
           <Products />
           <Company setIsComingSoon={setIsComingSoon} />
-          <Resources />
+          <Resources setIsComingSoon={setIsComingSoon} />
           <Features />
           <Legal />
         </div>
