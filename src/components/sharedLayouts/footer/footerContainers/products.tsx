@@ -6,10 +6,10 @@ const Products = () => {
       <h2 className="font-semibold text-lg mb-2">Products</h2>
       <ul>
         <li>
-          <Link to="">Link Management</Link>
+          <Link to="/my-urls/short-urls">Link Management</Link>
         </li>
         <li>
-          <Link to="">QR Codes</Link>
+          <Link to="/my-urls/short-urls">QR Codes</Link>
         </li>
       </ul>
     </div>
