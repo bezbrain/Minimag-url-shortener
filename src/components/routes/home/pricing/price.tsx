@@ -8,11 +8,11 @@ interface PriceProps {
 
 const Price = ({ setIsComingSoon }: PriceProps) => {
   const handleCustomClick = () => {
-    //
+    setIsComingSoon(true);
   };
 
   const handleSelectClick = () => {
-    //
+    setIsComingSoon(true);
   };
 
   return (
