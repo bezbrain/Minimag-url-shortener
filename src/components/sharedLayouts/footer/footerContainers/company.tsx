@@ -8,7 +8,7 @@ const Company = ({ setIsComingSoon }: CompanyProps) => {
   return (
     <div className="">
       <h2 className="font-semibold text-lg mb-2">Company</h2>
-      <ul>
+      <ul className="space-y-2">
         <li>
           <Link to="/learn-more">About Minimag</Link>
         </li>

@@ -8,7 +8,7 @@ const Solutions = ({ setIsComingSoon }: SolutionsProps) => {
   return (
     <div className="">
       <h2 className="font-semibold text-lg mb-2">Solutions</h2>
-      <ul>
+      <ul className="space-y-2">
         <li>
           <Link to="">Social Media</Link>
         </li>

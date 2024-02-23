@@ -8,7 +8,7 @@ const Legal = ({ setIsComingSoon }: LegalProps) => {
   return (
     <div className="">
       <h2 className="font-semibold text-lg mb-2">Legal</h2>
-      <ul>
+      <ul className="space-y-2">
         <li className="cursor-pointer" onClick={() => setIsComingSoon(true)}>
           Privacy Policy
         </li>
