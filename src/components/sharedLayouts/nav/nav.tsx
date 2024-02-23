@@ -93,7 +93,10 @@ const Nav = () => {
           className={`first__nav__items space-y-4 font-semibold iPad:space-y-0`}
         >
           <li>
-            <Link to="/my-urls/short-urls" onClick={handleFetchShortUrlsClick}>
+            <Link
+              to={getAuthToken() ? "/my-urls/short-urls" : ""}
+              onClick={handleFetchShortUrlsClick}
+            >
               My URLs
             </Link>
           </li>
