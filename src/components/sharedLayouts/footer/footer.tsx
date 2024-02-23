@@ -23,7 +23,7 @@ const Footer = ({ setIsComingSoon }: FooterProps) => {
 
         <div className="containers my-8 mb-12 iPhone:w-4/5 iPhone:mt-0">
           <WhyMinimag setIsComingSoon={setIsComingSoon} />
-          <Solutions />
+          <Solutions setIsComingSoon={setIsComingSoon} />
           <Products />
           <Company />
           <Resources />
