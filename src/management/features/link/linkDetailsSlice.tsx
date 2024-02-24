@@ -43,6 +43,9 @@ const linkDetailsSlice = createSlice({
     dropdownList: (state, { payload }) => {
       state.dropdownIndex = payload;
     },
+    closeDrowdown: (state) => {
+      state.dropdownIndex = null;
+    },
   },
 
   extraReducers: (builder) => {
@@ -103,4 +106,4 @@ const linkDetailsSlice = createSlice({
 
 export default linkDetailsSlice.reducer;
 
-export const { dropdownList } = linkDetailsSlice.actions;
+export const { dropdownList, closeDrowdown } = linkDetailsSlice.actions;
