@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../store";
 import { useEffect } from "react";
 import { clearFullShortLink } from "../management/features/link/linkSlice";
+import { isCloseNav } from "../management/features/shared/sharedSlice";
 
 interface SharedLayoutsProps {
   setIsComingSoon: React.Dispatch<React.SetStateAction<boolean>>;
@@ -12,9 +13,18 @@ interface SharedLayoutsProps {
 
 const SharedLayouts = ({ setIsComingSoon }: SharedLayoutsProps) => {
   const { isModal } = useSelector((store: RootState) => store.QrCodeStore);
+  const { isOpen } = useSelector((store: RootState) => store.sharedStore);
 
   const pathname = useLocation().pathname;
   const dispatch = useDispatch<AppDispatch>();
+
+  // CLOSE NAV BAR
+  const handleCloseNavClick = () => {
+    // Close nav bar only if nav bar is open
+    if (isOpen) {
+      dispatch(isCloseNav());
+    }
+  };
 
   // CLEAR THE FULLSHORTURL FIELD WHEN NOT ON EITHER SHORT OR CUSTOM LINK PAGE
   useEffect(() => {
@@ -27,7 +37,7 @@ const SharedLayouts = ({ setIsComingSoon }: SharedLayoutsProps) => {
   }, [pathname]);
 
   return (
-    <>
+    <main onClick={handleCloseNavClick}>
       {/* QR Code component */}
       {isModal && <QrCode />}
       <section>
@@ -35,7 +45,7 @@ const SharedLayouts = ({ setIsComingSoon }: SharedLayoutsProps) => {
         <Outlet />
         <Footer setIsComingSoon={setIsComingSoon} />
       </section>
-    </>
+    </main>
   );
 };
 

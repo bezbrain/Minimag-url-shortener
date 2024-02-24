@@ -31,11 +31,6 @@ const Nav = () => {
     dispatch(isOpenNav());
   };
 
-  // CLOSE NAV BAR
-  const handleCloseNavClick = () => {
-    dispatch(isCloseNav());
-  };
-
   const handleLogoClick = () => {
     dispatch(isCloseNav());
     window.scrollTo(0, 0);
@@ -84,10 +79,7 @@ const Nav = () => {
           isOpen ? "add__nav" : ""
         }`}
       >
-        <TiTimesOutline
-          className="absolute right-[5vw] top-[15px] text-3xl iPad:hidden cursor-pointer text-white"
-          onClick={handleCloseNavClick}
-        />
+        <TiTimesOutline className="absolute right-[5vw] top-[15px] text-3xl iPad:hidden cursor-pointer text-white" />
 
         <ul
           className={`first__nav__items space-y-4 font-semibold iPad:space-y-0`}
@@ -101,24 +93,16 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-            <a href="/#features" onClick={() => dispatch(isCloseNav())}>
-              Features
-            </a>
+            <a href="/#features">Features</a>
           </li>
           <li>
-            <a href="/#pricing" onClick={() => dispatch(isCloseNav())}>
-              Pricing
-            </a>
+            <a href="/#pricing">Pricing</a>
           </li>
           <li>
-            <Link to="" onClick={() => dispatch(isCloseNav())}>
-              Analytics
-            </Link>
+            <Link to="">Analytics</Link>
           </li>
           <li>
-            <a href="/#faq" onClick={() => dispatch(isCloseNav())}>
-              FAQs
-            </a>
+            <a href="/#faq">FAQs</a>
           </li>
         </ul>
 
@@ -140,7 +124,6 @@ const Nav = () => {
           <li>
             <a
               href="/#features"
-              onClick={() => dispatch(isCloseNav())}
               className="bg-[#005ae2cc] px-[1.5rem] py-[0.5rem] text-[#fff] block hover:scale-[1.05] hover:border-none rounded-[1.5rem]"
             >
               Try for free
