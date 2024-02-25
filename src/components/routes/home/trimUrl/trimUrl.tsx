@@ -112,7 +112,8 @@ const TrimUrl = () => {
         />
 
         <p className="text-[#005ae2] text-xs">
-          By clicking <span className="font-semibold">Shorten URL</span>, I
+          By clicking{" "}
+          <span className="font-semibold">Shorten URL or Customize URL</span>, I
           agree to the <span className="font-semibold">Terms of Service</span>,{" "}
           <span className="font-semibold">Privacy Policy</span> and Use of
           Cookies.
