@@ -81,7 +81,7 @@ const LearnMore = () => {
             shortened or customized URL. The QR code can be downloaded on you
             device for later usage
           </li>
-          <li>
+          <li className="w-fit mx-auto">
             <img src={QRCodeImg} alt="QR Code" className="h-[200px]" />
           </li>
         </ul>
