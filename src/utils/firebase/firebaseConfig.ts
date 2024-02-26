@@ -21,4 +21,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const analytics = getAnalytics(app);
 
-export const event = logEvent(analytics, "notification received");
+export const eventFunction = (shortUrl: string) => {
+  logEvent(analytics, shortUrl);
+};

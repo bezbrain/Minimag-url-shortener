@@ -4,6 +4,7 @@ export interface TableRowProps {
   originalUrl: string;
   slicedOriginalUrl: string;
   shortUrl?: string;
+  short: string;
   customUrl?: string;
   handleDropdown: () => void;
   handleGenCodeClick: () => void;
