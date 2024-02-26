@@ -7,6 +7,7 @@ import NotFound from "./notFound";
 import ShortUrl from "./urlPage/shortUrl/shortUrl";
 import CustomUrl from "./urlPage/customUrl/customUrl";
 import LearnMorePage from "./learnMore.page";
+import AnalyticsPage from "./analytics.page";
 
 export {
   HomePage,
@@ -18,4 +19,5 @@ export {
   ShortUrl,
   CustomUrl,
   LearnMorePage,
+  AnalyticsPage,
 };
