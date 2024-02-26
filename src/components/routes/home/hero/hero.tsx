@@ -38,13 +38,13 @@ export default Hero;
 
 const HeroWrapper = styled.section`
   background: radial-gradient(#73a4ee, #005ae2cc);
-  min-height: 90vh;
+  min-height: 100vh;
 
   .hero__con > h1 {
     line-height: 2.5cm !important;
   }
   @media screen and (max-width: 640px) {
-    min-height: 70vh;
+    min-height: 90vh;
   }
   @media screen and (max-width: 1280px) {
     .hero__con > h1 {
