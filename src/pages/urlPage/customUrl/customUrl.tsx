@@ -47,7 +47,7 @@ const CustomUrl = () => {
   return (
     <tbody>
       {cusLinks.map((each, i) => {
-        const { createdAt, originalUrl, fullUrl, _id }: any = each;
+        const { createdAt, originalUrl, fullUrl, shortUrl, _id }: any = each;
 
         return (
           <TableRow
@@ -56,6 +56,7 @@ const CustomUrl = () => {
             slicedOriginalUrl={limitOriginalUrl(originalUrl)}
             originalUrl={originalUrl}
             customUrl={fullUrl}
+            short={shortUrl}
             _id={_id}
             handleDropdown={() => handleDropdown(_id)}
             handleGenCodeClick={() => handleGenCodeClick(i)}
