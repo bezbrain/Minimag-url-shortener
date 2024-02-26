@@ -6,6 +6,7 @@ import { AppDispatch, RootState } from "../store";
 import { useEffect } from "react";
 import { clearFullShortLink } from "../management/features/link/linkSlice";
 import { isCloseNav } from "../management/features/shared/sharedSlice";
+import { analytics, event } from "../utils/firebase/firebaseConfig";
 
 interface SharedLayoutsProps {
   setIsComingSoon: React.Dispatch<React.SetStateAction<boolean>>;

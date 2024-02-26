@@ -99,7 +99,7 @@ const Nav = () => {
             <a href="/#pricing">Pricing</a>
           </li>
           <li>
-            <Link to="">Analytics</Link>
+            <Link to="/analytics">Analytics</Link>
           </li>
           <li>
             <a href="/#faq">FAQs</a>

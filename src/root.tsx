@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {
+  AnalyticsPage,
   CustomUrl,
   HomePage,
   LearnMorePage,
@@ -49,6 +50,7 @@ const App = () => {
               <Route path="short-urls" element={<ShortUrl />} />
               <Route path="custom-urls" element={<CustomUrl />} />
             </Route>
+            <Route path="analytics" element={<AnalyticsPage />} />
           </Route>
 
           <Route path="/*" element={<NotFound />} />
