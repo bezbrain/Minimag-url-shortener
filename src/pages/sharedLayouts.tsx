@@ -19,9 +19,6 @@ const SharedLayouts = ({ setIsComingSoon }: SharedLayoutsProps) => {
   const pathname = useLocation().pathname;
   const dispatch = useDispatch<AppDispatch>();
 
-  // console.log(analytics.app);
-  console.log(event);
-
   // CLOSE NAV BAR
   const handleCloseNavClick = () => {
     // Close nav bar only if nav bar is open
