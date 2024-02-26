@@ -13,6 +13,7 @@ const TableRow = ({
   originalUrl,
   slicedOriginalUrl,
   shortUrl,
+  short,
   customUrl,
   handleDropdown,
   handleGenCodeClick,
@@ -26,11 +27,11 @@ const TableRow = ({
 
   // FUNCTION TO LOG EVENT WHEN SHORTURL IS VISITED
   const logShortUrlVisitEvent = () => {
-    eventFunction("shortUrlVisited");
+    eventFunction(`shortUrlVisited: ${short}`);
   };
   // FUNCTION TO LOG EVENT WHEN CUSTOMURL IS VISITED
   const logCustomUrlVisitEvent = () => {
-    eventFunction("CustomUrlVisited");
+    eventFunction(`CustomUrlVisited ${short}`);
   };
 
   useEffect(() => {
