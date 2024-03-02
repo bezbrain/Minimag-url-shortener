@@ -16,9 +16,10 @@ const WhyMinimag = () => {
           </h2>
           <p className="mt-4">
             Minimag Shortener is one of those few outstanding URL shortener you
-            would see out there with not just the shortening feature but also
-            with additional feature like getting all previous links you have
-            shortened with their respective short links.
+            would see out there with easy way of shortening URLs. It also allows
+            you you personalize your URL by customizing the URL for your brand.
+            Either shortened or customized URL, you can generate QR code for
+            any.
           </p>
         </div>
 
@@ -27,28 +28,28 @@ const WhyMinimag = () => {
             icon={<MdOutlineInsertLink />}
             title={"URL Shortening"}
             summary={
-              "With little to no stress, you can get your short URLs for long links and enjoy better experience personally and with your virtual customers."
+              "With no stress, you can generate short URLs for long links and enjoy better personal experience with your virtual customers."
             }
           />
           <WhyMinimagCon
             icon={<FaRegEdit />}
             title={"Custom URLs"}
             summary={
-              "With Scissor, you can create custom URLs, with the length you want! A solution for socials and businesses."
+              "With Minimag, you can create custom URLs, for your brand. This is quite a solution for socials and businesses."
             }
           />
           <WhyMinimagCon
             icon={<PiSquaresFourLight />}
             title={"QR Codes"}
             summary={
-              "Generate QR codes to your business, events. Bring your audience and customers to your doorstep with this scan and go solution."
+              "Whether shortened or customized URLs, generate their QR codes for your business, events and others. Bring your customers closer to you with this scan solution."
             }
           />
           <WhyMinimagCon
             icon={<SiNormalizedotcss />}
             title={"Data Analytics"}
             summary={
-              "Receive data on the usage of either your shortened URL, custom URLs or generated QR codes. Embedded to monitor progress."
+              "Receive data on the usage of your URLs. Either your shortened URL, custom URLs or generated QR codes. This is an embedded monitoring solution."
             }
           />
         </div>
