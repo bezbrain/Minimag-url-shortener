@@ -25,10 +25,10 @@ export default LinkOpt;
 
 const LinkOptWrapper = styled.section`
   background: radial-gradient(
-    circle at 100%,
+    circle at 50%,
     #304a63,
     #304a63 50%,
-    #eee 75%,
+    #eee 50%,
     #304a63 75%
   );
   padding: 7rem 1rem;
