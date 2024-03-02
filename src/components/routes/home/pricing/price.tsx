@@ -22,12 +22,12 @@ const Price = ({ setIsComingSoon }: PriceProps) => {
     >
       <header className="max-w-[500px] mx-auto text-center">
         <h2 className="font-bold text-3xl md:text-[3vw] lg:text-3xl mb-4">
-          A <span className="text-[#005ae2cc]">price perfect</span> for your
-          needs.
+          A <span className="text-[#005ae2cc]">easy pricing</span> for your use.
         </h2>
         <p className="text-sm lg:text-[16px]">
-          From catering for your personal, business, event, socials needs, you
-          can be rest assured we have you in mind in our pricing.
+          Fiting price for different plans; from catering for your personal
+          needs to your business and your team, prices are made convenient for
+          you.
         </p>
       </header>
 
