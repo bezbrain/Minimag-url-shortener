@@ -18,7 +18,7 @@ const MyUrls = ({ handleShortUrlClick, handleCustomUrlClick }: MyUrlsProps) => {
 
   return (
     <MyUrlsWrapper className="max-w-[1400px] mx-auto px-4 py-[10vh] lg:px-8">
-      <p>All URLS</p>
+      <h1 className="text-2xl font-bold text-[#005ae2cc]">MY URLS</h1>
 
       <div className="w-fit text-[#005ae2cc] text-xl font-semibold flex gap-8 my-4">
         <Link
@@ -70,6 +70,14 @@ const MyUrls = ({ handleShortUrlClick, handleCustomUrlClick }: MyUrlsProps) => {
 export default MyUrls;
 
 const MyUrlsWrapper = styled.div`
+  /* background: radial-gradient(
+    circle at 100%,
+    #304a63,
+    #304a63 50%,
+    #eee 75%,
+    #304a63 75%
+  ); */
+
   .table__container {
     width: 100%;
   }

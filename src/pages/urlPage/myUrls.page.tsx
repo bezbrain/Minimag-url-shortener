@@ -8,6 +8,7 @@ import {
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { closeDrowdown } from "../../management/features/link/linkDetailsSlice";
+import styled from "styled-components";
 
 const MyUrlsPage = () => {
   const { dropdownIndex } = useSelector(
@@ -45,7 +46,7 @@ const MyUrlsPage = () => {
   }, [dispatch, pathname]);
 
   return (
-    <main
+    <MyUrlWrapper
       className="pt-[60px] min-h-[100vh]"
       onClick={handleCloseDropdownClick}
     >
@@ -53,8 +54,18 @@ const MyUrlsPage = () => {
         handleShortUrlClick={handleFetchShortUrlsClick}
         handleCustomUrlClick={handleFetchCustomUrlClick}
       />
-    </main>
+    </MyUrlWrapper>
   );
 };
 
 export default MyUrlsPage;
+
+const MyUrlWrapper = styled.main`
+  background: radial-gradient(
+    circle at 100%,
+    #cdd4da 20%,
+    #eee 40%,
+    #becad4 100%,
+    #eee 75%
+  );
+`;
