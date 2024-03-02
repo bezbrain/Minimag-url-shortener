@@ -1,8 +1,4 @@
-import { useLayoutEffect, useRef } from "react";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
-import gsap from "gsap";
-import { useInView } from "react-intersection-observer";
-import { viewPortAnimation } from "../../../../../utils/animations/viewportAnim";
 
 interface PriceCardProps {
   type: string;
@@ -33,24 +29,8 @@ const PriceCard = ({
   planFive,
   setIsComingSoon,
 }: PriceCardProps) => {
-  const priceCardRef = useRef<HTMLDivElement | null>(null);
-  const { ref, inView } = useInView({
-    triggerOnce: false,
-  });
-
-  useLayoutEffect(() => {
-    viewPortAnimation(inView, priceCardRef, gsap);
-  }, [inView]);
-
   return (
-    <div
-      className={cardContainer}
-      onClick={() => setIsComingSoon(true)}
-      ref={(el) => {
-        ref(el);
-        priceCardRef.current = el;
-      }}
-    >
+    <div className={cardContainer} onClick={() => setIsComingSoon(true)}>
       <p>{type}</p>
       <h2 className="text-xl font-semibold mt-2 surfaceDuo:mt-8 surfaceDuo:text-3xl">
         {price}

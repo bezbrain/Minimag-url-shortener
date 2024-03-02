@@ -1,12 +1,21 @@
 import styled from "styled-components";
 import { PriceCard } from "..";
 import { Button } from "../../../general";
+import { useLayoutEffect, useRef } from "react";
+import { viewPortAnimation } from "../../../../utils/animations/viewportAnim";
+import { useInView } from "react-intersection-observer";
+import gsap from "gsap";
 
 interface PriceProps {
   setIsComingSoon: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Price = ({ setIsComingSoon }: PriceProps) => {
+  const priceCardRef = useRef<HTMLDivElement | null>(null);
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+  });
+
   const handleCustomClick = () => {
     setIsComingSoon(true);
   };
@@ -14,6 +23,10 @@ const Price = ({ setIsComingSoon }: PriceProps) => {
   const handleSelectClick = () => {
     setIsComingSoon(true);
   };
+
+  useLayoutEffect(() => {
+    viewPortAnimation(inView, priceCardRef, gsap);
+  }, [inView]);
 
   return (
     <PriceWrapper
@@ -32,7 +45,13 @@ const Price = ({ setIsComingSoon }: PriceProps) => {
         </p>
       </header>
 
-      <div className="flex w-full flex-wrap justify-center mx-auto mt-12 gap-[20px] md:flex-nowrap surfaceDuo:w-fit">
+      <div
+        className="flex w-full flex-wrap justify-center mx-auto mt-12 gap-[20px] md:flex-nowrap surfaceDuo:w-fit"
+        ref={(el) => {
+          ref(el);
+          priceCardRef.current = el;
+        }}
+      >
         <PriceCard
           type={"Basic"}
           price={"Free"}
