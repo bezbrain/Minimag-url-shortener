@@ -99,6 +99,7 @@ export default LearnMore;
 
 const LearnMoreWrapper = styled.div`
   > header > img {
+    border-radius: 40%;
     animation: howItWorksImg ease-in-out 3s infinite;
   }
 
