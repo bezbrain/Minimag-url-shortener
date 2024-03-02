@@ -5,11 +5,12 @@ import { RootState } from "../../../../../store";
 
 interface FaqCardProps {
   heading: string;
+  content: string;
   handleClick: () => void;
   id: number;
 }
 
-const FaqCard = ({ heading, handleClick, id }: FaqCardProps) => {
+const FaqCard = ({ heading, content, handleClick, id }: FaqCardProps) => {
   const { openIndex } = useSelector((store: RootState) => store.faqStore);
 
   return (
@@ -27,12 +28,7 @@ const FaqCard = ({ heading, handleClick, id }: FaqCardProps) => {
       </div>
 
       {openIndex === id && (
-        <p className="pb-2 text-sm surfaceDuo:text-md">
-          URL shortening works by taking a long URL and creating a shorter,
-          condensed version that redirects to the original URL. When a user
-          clicks on the shortened link, they are redirected to the intended
-          destination.
-        </p>
+        <p className="pb-2 text-sm surfaceDuo:text-lg">{content}</p>
       )}
     </div>
   );
