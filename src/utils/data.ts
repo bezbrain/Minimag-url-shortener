@@ -16,7 +16,7 @@ export const faqData = [
     id: 3,
     heading: "Are the shortened links permanent? Will they expire?",
     content:
-      "When shorten links are created, they do not expire until you delete them youself.",
+      "When shortened links are created, they do not expire until you delete them youself.",
   },
   {
     id: 4,
@@ -29,13 +29,13 @@ export const faqData = [
     heading:
       "Can I customize the shortened URLs to reflect my brand or content?",
     content:
-      "Yes, you can shorten a URL to reflect your branch content. This is done by customizing the long URL in the feature form section of the home page.",
+      "Yes, you can shorten a URL to reflect your brand content. This is done by customizing the long URL in the feature form section of the home page.",
   },
   {
     id: 6,
     heading: "Can I track the performance of my shortened URLs?",
     content:
-      "Under the analytics page, you can track and know the performance of your shortened, customized and QR Codes",
+      "Under the analytics page, you can track and know the performance of your shortened URLs, customized URLs and QR Codes",
   },
   {
     id: 7,
@@ -48,7 +48,7 @@ export const faqData = [
     id: 8,
     heading: "What is a QR code and what can it do?",
     content:
-      "The Quick Response code, otherwise known as QR Code is a scannable pictorial respresentation of your shortened or customized URLs. It is a way of replacing your URLs with a scannable picture. This reduces the stress of tying to remember your shortened or customized URLs.",
+      "The Quick Response code, otherwise known as QR Code is a scannable pictorial respresentation of your shortened or customized URLs. It is a way of replacing your URLs with a scannable picture. This reduces the stress of trying to remember your shortened or customized URLs.",
   },
   {
     id: 9,

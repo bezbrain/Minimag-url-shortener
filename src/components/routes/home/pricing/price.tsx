@@ -22,7 +22,8 @@ const Price = ({ setIsComingSoon }: PriceProps) => {
     >
       <header className="max-w-[500px] mx-auto text-center">
         <h2 className="font-bold text-3xl md:text-[3vw] lg:text-3xl mb-4">
-          A <span className="text-[#005ae2cc]">easy pricing</span> for your use.
+          An <span className="text-[#005ae2cc]">easy pricing</span> for your
+          use.
         </h2>
         <p className="text-sm lg:text-[16px]">
           Fiting price for different plans; from catering for your personal
