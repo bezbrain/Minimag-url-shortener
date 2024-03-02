@@ -1,4 +1,8 @@
+import { useLayoutEffect, useRef } from "react";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+import gsap from "gsap";
+import { useInView } from "react-intersection-observer";
+import { viewPortAnimation } from "../../../../../utils/animations/viewportAnim";
 
 interface PriceCardProps {
   type: string;
@@ -11,6 +15,9 @@ interface PriceCardProps {
   planFive: string;
   setIsComingSoon: React.Dispatch<React.SetStateAction<boolean>>;
 }
+
+const cardContainer =
+  "w-full p-2 rounded-md cursor-pointer border-2 border-[#bdd3f4cc] px-[2vw] hover:z-10 shadow-md shadow-slate-700 lg:hover:scale-[1.20] iPad:hover:scale-[1.10] md:hover:scale-[1.10] iPad:px-10 md:hover:bg-[#1E3448] md:hover:border-0 md:hover:text-white transition-transform surfaceDuo:w-fit surfaceDuo:pt-4 surfaceDuo:pb-8";
 
 const listStyle = "flex items-center gap-1 mt-1 surfaceDuo:mt-4";
 const textSize = "text-sm";
@@ -26,10 +33,23 @@ const PriceCard = ({
   planFive,
   setIsComingSoon,
 }: PriceCardProps) => {
+  const priceCardRef = useRef<HTMLDivElement | null>(null);
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+  });
+
+  useLayoutEffect(() => {
+    viewPortAnimation(inView, priceCardRef, gsap);
+  }, [inView]);
+
   return (
     <div
-      className="w-full p-2 rounded-md cursor-pointer border-2 border-[#bdd3f4cc] px-[2vw] shadow-md shadow-slate-700 lg:hover:scale-[1.20] iPad:hover:scale-[1.10] md:hover:scale-[1.10] iPad:px-10 md:hover:bg-[#1E3448] md:hover:border-0 md:hover:text-white transition-transform surfaceDuo:w-fit surfaceDuo:pt-4 surfaceDuo:pb-8"
+      className={cardContainer}
       onClick={() => setIsComingSoon(true)}
+      ref={(el) => {
+        ref(el);
+        priceCardRef.current = el;
+      }}
     >
       <p>{type}</p>
       <h2 className="text-xl font-semibold mt-2 surfaceDuo:mt-8 surfaceDuo:text-3xl">

@@ -4,7 +4,7 @@ import { shortenerImg } from "../../../../assets/images";
 import { getAuthToken } from "../../../../utils/authToken";
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
-import { useEffect, useRef, useLayoutEffect } from "react";
+import { useRef, useLayoutEffect } from "react";
 import { textAnimation } from "../../../../utils/animations/textAnimation";
 
 gsap.registerPlugin(TextPlugin);
