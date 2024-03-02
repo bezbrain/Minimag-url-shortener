@@ -66,9 +66,7 @@ const TableRow = ({
 
   return (
     <tr className="border-b-2">
-      <td className="py-4 px-2 w-[15%] text-center font-semibold">
-        {createdAt}
-      </td>
+      <td className="py-4 px-2 w-[15%] text-center">{createdAt}</td>
       <td className="py-4 px-2 w-[45%] text-center">
         <a
           href={originalUrl}
