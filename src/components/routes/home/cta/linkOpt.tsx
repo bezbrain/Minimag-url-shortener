@@ -7,7 +7,7 @@ const LinkOpt = () => {
     <LinkOptWrapper>
       <div className="max-w-[600px] mx-auto text-center">
         <h2 className="text-white text-xl font-bold mix-blend-overlay sm:text-4xl">
-          Revolutionizing Link Optimization
+          Modernizing Link Optimization
         </h2>
         {!getAuthToken() && (
           <LinkBtn
