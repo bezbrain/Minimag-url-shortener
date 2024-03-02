@@ -27,8 +27,8 @@ const LinkOptWrapper = styled.section`
   background: radial-gradient(
     circle at 50%,
     #304a63,
-    #304a63 50%,
-    #eee 50%,
+    #45617c 50%,
+    #50677e 50%,
     #304a63 75%
   );
   padding: 7rem 1rem;
