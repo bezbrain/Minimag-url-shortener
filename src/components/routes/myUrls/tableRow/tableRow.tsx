@@ -4,10 +4,7 @@ import { TableRowProps } from "../type";
 import { Dropdown } from "..";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../store";
-import {
-  analytics,
-  eventFunction,
-} from "../../../../utils/firebase/firebaseConfig";
+import { eventFunction } from "../../../../utils/firebase/firebaseConfig";
 import { useEffect } from "react";
 
 const TableRow = ({
