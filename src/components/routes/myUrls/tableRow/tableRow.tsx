@@ -4,7 +4,10 @@ import { TableRowProps } from "../type";
 import { Dropdown } from "..";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../store";
-import { eventFunction } from "../../../../utils/firebase/firebaseConfig";
+import {
+  analytics,
+  eventFunction,
+} from "../../../../utils/firebase/firebaseConfig";
 import { useEffect } from "react";
 
 const TableRow = ({
@@ -24,6 +27,18 @@ const TableRow = ({
   );
 
   const pathname = useLocation().pathname;
+
+  // console.log(analytics);
+  // analytics
+  //   .getReports({
+  //     shortUrl,
+  //   })
+  //   .then((response: any) => {
+  //     console.log(response);
+  //   })
+  //   .catch((error: any) => {
+  //     console.error("Error fetching analytics data", error);
+  //   });
 
   // FUNCTION TO LOG EVENT WHEN SHORTURL IS VISITED
   const logShortUrlVisitEvent = () => {
