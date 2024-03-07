@@ -13,7 +13,7 @@ const TableRow = ({
   originalUrl,
   slicedOriginalUrl,
   shortUrl,
-  short,
+  // short,
   customUrl,
   handleDropdown,
   handleGenCodeClick,

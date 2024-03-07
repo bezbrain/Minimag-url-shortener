@@ -47,7 +47,7 @@ const ShortUrl = () => {
   return (
     <tbody>
       {shortLinks.map((each, i) => {
-        const { _id, createdAt, originalUrl, fullUrl, shortUrl }: any = each;
+        const { _id, createdAt, originalUrl, fullUrl }: any = each;
 
         return (
           <TableRow
@@ -56,7 +56,7 @@ const ShortUrl = () => {
             originalUrl={originalUrl}
             slicedOriginalUrl={limitOriginalUrl(originalUrl)}
             shortUrl={fullUrl}
-            short={shortUrl}
+            // short={shortUrl}
             handleDropdown={() => handleDropdown(_id)}
             _id={_id}
             handleGenCodeClick={() => handleGenCodeClick(i)}

@@ -48,7 +48,7 @@ const BarCharts = ({ data, yAxisTicks }: ChartsProp) => {
           fill="#005ae2cc"
           className="cursor-pointer"
         >
-          {data.map((entry, index) => (
+          {data.map((_entry, index) => (
             <Cell key={`cell-${index}`} fill={"#005ae2cc"} />
           ))}
         </Bar>

@@ -3,5 +3,5 @@ export interface ChartsProp {
     name: string;
     count: number;
   }[];
-  yAxisTicks: number[];
+  yAxisTicks?: number[];
 }
