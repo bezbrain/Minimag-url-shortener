@@ -25,25 +25,13 @@ const TableRow = ({
 
   const pathname = useLocation().pathname;
 
-  // console.log(analytics);
-  // analytics
-  //   .getReports({
-  //     shortUrl,
-  //   })
-  //   .then((response: any) => {
-  //     console.log(response);
-  //   })
-  //   .catch((error: any) => {
-  //     console.error("Error fetching analytics data", error);
-  //   });
-
   // FUNCTION TO LOG EVENT WHEN SHORTURL IS VISITED
   const logShortUrlVisitEvent = () => {
-    eventFunction(`shortUrlVisited: ${short}`);
+    eventFunction(`shortUrlVisited`);
   };
   // FUNCTION TO LOG EVENT WHEN CUSTOMURL IS VISITED
   const logCustomUrlVisitEvent = () => {
-    eventFunction(`CustomUrlVisited: ${short}`);
+    eventFunction(`CustomUrlVisited`);
   };
 
   useEffect(() => {
