@@ -12,11 +12,12 @@ const AnalyticsPage = () => {
 export default AnalyticsPage;
 
 const AnalyticsWrapper = styled.main`
-  background: radial-gradient(
+  /* background: radial-gradient(
     circle at 100%,
     #738697,
     #eee 80%,
     #b3bdc7 95%,
     #dae3eb 25%
-  );
+  ); */
+  background: radial-gradient(circle at 100%, #738697, #eee 80%, #738697);
 `;
