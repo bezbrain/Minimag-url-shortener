@@ -1,8 +1,27 @@
+import { useLayoutEffect, useRef } from "react";
+import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
+import { viewPortAnimation } from "../../../../utils/animations/viewportAnim";
+import gsap from "gsap";
 
 const Usage = () => {
+  const usageRef = useRef<HTMLElement | null>(null);
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+  });
+
+  useLayoutEffect(() => {
+    viewPortAnimation(inView, usageRef, gsap);
+  }, [inView]);
+
   return (
-    <UsageWrapper className="bg-[#F9FBFD]">
+    <UsageWrapper
+      className="bg-[#F9FBFD]"
+      ref={(el) => {
+        ref(el);
+        usageRef.current = el;
+      }}
+    >
       <div className="max-w-[1400px] p-4 mx-auto py-16 justify-between gap-[10vw] lg:px-8 lg:gap-4 sm:gap-[3vw] sm:flex">
         <h2 className="font-bold text-3xl text-center md:text-[3vw] lg:text-3xl md:w-[30%] sm:text-left">
           One URL. <br />
