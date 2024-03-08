@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import {
   Faqs,
   Hero,
@@ -14,7 +15,7 @@ interface ComingSoonProps {
 
 const HomePage = ({ setIsComingSoon }: ComingSoonProps) => {
   return (
-    <main className="pt-[60px]">
+    <HomePageWrapper className="pt-[60px]">
       <Hero />
       <Usage />
       <WhyMinimag />
@@ -22,8 +23,18 @@ const HomePage = ({ setIsComingSoon }: ComingSoonProps) => {
       <TrimUrl />
       <Faqs />
       <LinkOpt />
-    </main>
+    </HomePageWrapper>
   );
 };
 
 export default HomePage;
+
+const HomePageWrapper = styled.main`
+  background: radial-gradient(
+    circle at 100%,
+    #586d80,
+    #eee 75%,
+    #536a7f 50%,
+    #dae3eb 75%
+  );
+`;
