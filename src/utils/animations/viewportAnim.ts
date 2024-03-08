@@ -1,13 +1,13 @@
 export const viewPortAnimation = (
   inView: any,
-  priceCardRef: any,
+  containerRef: any,
   gsap: any
 ) => {
-  if (inView && priceCardRef.current) {
+  if (inView && containerRef.current) {
     gsap.fromTo(
-      priceCardRef.current,
+      containerRef.current,
       {
-        y: -200,
+        y: -150,
         opacity: 0,
       },
       {

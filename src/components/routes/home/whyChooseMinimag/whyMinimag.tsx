@@ -4,10 +4,30 @@ import { SiNormalizedotcss } from "react-icons/si";
 import { PiSquaresFourLight } from "react-icons/pi";
 import { MdOutlineInsertLink } from "react-icons/md";
 import { WhyMinimagCon } from "..";
+import { useInView } from "react-intersection-observer";
+import { useLayoutEffect, useRef } from "react";
+import { viewPortAnimation } from "../../../../utils/animations/viewportAnim";
+import gsap from "gsap";
 
 const WhyMinimag = () => {
+  const whyChooseRef = useRef<HTMLElement | null>(null);
+
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+  });
+
+  useLayoutEffect(() => {
+    viewPortAnimation(inView, whyChooseRef, gsap);
+  }, [inView]);
+
   return (
-    <WhyMinimagWrapper className="bg-[#fff]">
+    <WhyMinimagWrapper
+      className="bg-[#fff]"
+      ref={(el) => {
+        ref(el);
+        whyChooseRef.current = el;
+      }}
+    >
       <div className="max-w-[1400px] p-4 mx-auto py-16 justify-between gap-[5vw] lg:px-8 lg:gap-[4vw] md:flex">
         <div className="text-center md:w-[35%] sm:text-left">
           <h2 className="font-bold text-3xl md:text-[3vw] lg:text-3xl">
