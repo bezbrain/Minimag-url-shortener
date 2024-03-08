@@ -29,10 +29,7 @@ const Price = ({ setIsComingSoon }: PriceProps) => {
   }, [inView]);
 
   return (
-    <PriceWrapper
-      className="max-w-[1400px] p-4 mx-auto py-16 bg-[#fff]"
-      id="pricing"
-    >
+    <PriceWrapper className="max-w-[1400px] p-4 mx-auto py-16" id="pricing">
       <header className="max-w-[500px] mx-auto text-center">
         <h2 className="font-bold text-3xl md:text-[3vw] lg:text-3xl mb-4">
           An <span className="text-[#005ae2cc]">easy pricing</span> for your

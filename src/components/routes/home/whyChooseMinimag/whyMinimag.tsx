@@ -22,7 +22,7 @@ const WhyMinimag = () => {
 
   return (
     <WhyMinimagWrapper
-      className="bg-[#fff]"
+      className=""
       ref={(el) => {
         ref(el);
         whyChooseRef.current = el;
