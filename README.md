@@ -49,7 +49,7 @@ To install any of these librabries, just run: `npm install <library name>` eg. T
 
 ## Project Goals
 
-1. Implement the ecommerce functionalities:
+1. Implement the URL manipulation functionalities:
 
 - Implement user authentication:
   - The user should be able to register with username, email and password
