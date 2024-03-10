@@ -13,6 +13,10 @@ const Analytics = () => {
 
   return (
     <section className="max-w-[1400px] p-4 mx-auto pt-16 overflow-x-auto">
+      <h1 className="text-center max-w-[500px] mx-auto mb-10 text-xl sm:text-3xl sm:leading-[3rem]">
+        Join other thousand users in using the unlimited and customizable URL
+        manipulator
+      </h1>
       <BarCharts data={data} yAxisTicks={yAxisTicks} />
       <PieChartComp data={data} yAxisTicks={yAxisTicks} />
     </section>
