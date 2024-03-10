@@ -32,6 +32,7 @@ const Analytics = () => {
     }
   }, []);
 
+  // X and Y axes data
   const data: Analytics[] = [
     { name: "Total Users", count: Number(analyze?.totalUsers) * 1000 },
     { name: "Page Views", count: Number(analyze?.screenPageViews) * 1000 },
@@ -40,18 +41,16 @@ const Analytics = () => {
     { name: "Custom URL", count: Number(analyze?.CustomUrlVisited) * 1000 },
   ];
 
-  // Dynamically have the y axis numbers
-  // useEffect(() => {
-  //   const countArr = data.map((each) => {
-  //     return each.count;
-  //   });
+  // Calculate the maximum count value from the data array
+  const maxCount = Math.max(...data.map((each) => each.count));
 
-  //   if (!isLoading) {
-  //     console.log(Math.max(...countArr));
-  //   }
-  // }, [isLoading]);
+  // Generate yAxisTicks dynamically based on the maximum count value
+  const yAxisTicks = Array.from(
+    { length: Math.ceil(maxCount / 5000) + 1 },
+    (_, index) => index * 5000
+  );
 
-  const yAxisTicks = [0, 5000, 10000, 15000, 20000, 25000];
+  // const yAxisTicks = [0, 5000, 10000, 15000, 20000, 25000];
 
   return (
     <section className="max-w-[1400px] p-4 mx-auto pt-16 overflow-x-auto">
