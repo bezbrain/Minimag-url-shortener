@@ -7,6 +7,7 @@ import {
   allCusAnalytics,
 } from "../../../management/actions/analytics.action";
 import { useLocation } from "react-router-dom";
+import { Loader } from "../../helpers";
 
 interface Analytics {
   name: string;
@@ -47,8 +48,14 @@ const Analytics = () => {
         Join other thousand users in using the unlimited and customizable URL
         manipulator
       </h1>
-      <BarCharts data={data} yAxisTicks={yAxisTicks} />
-      <PieChartComp data={data} yAxisTicks={yAxisTicks} />
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          <BarCharts data={data} yAxisTicks={yAxisTicks} />
+          <PieChartComp data={data} yAxisTicks={yAxisTicks} />
+        </>
+      )}
     </section>
   );
 };
