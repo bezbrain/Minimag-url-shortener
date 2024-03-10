@@ -40,6 +40,17 @@ const Analytics = () => {
     { name: "Custom URL", count: Number(analyze?.CustomUrlVisited) * 1000 },
   ];
 
+  // Dynamically have the y axis numbers
+  // useEffect(() => {
+  //   const countArr = data.map((each) => {
+  //     return each.count;
+  //   });
+
+  //   if (!isLoading) {
+  //     console.log(Math.max(...countArr));
+  //   }
+  // }, [isLoading]);
+
   const yAxisTicks = [0, 5000, 10000, 15000, 20000, 25000];
 
   return (

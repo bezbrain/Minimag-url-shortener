@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { allAnalytics, allCusAnalytics } from "../../actions/analytics.action";
+import { serverMessage } from "../../../utils/serverMessage";
+import { toast } from "react-toastify";
 
 interface Analytics {
   analyze: {
@@ -36,11 +38,12 @@ const analyticsSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(allAnalytics.fulfilled, (state, { payload }) => {
-        state.isLoading = false;
+        // state.isLoading = false;
         // console.log(payload.urlAnalyticsData);
         state.analyze = payload.urlAnalyticsData;
       })
-      .addCase(allAnalytics.rejected, (state) => {
+      .addCase(allAnalytics.rejected, (state, { payload }: any) => {
+        serverMessage(payload, toast);
         state.isLoading = false;
       })
       // Custom get analytics extrareducer
@@ -55,7 +58,8 @@ const analyticsSlice = createSlice({
           ...payload.urlAnalyticsData,
         };
       })
-      .addCase(allCusAnalytics.rejected, (state) => {
+      .addCase(allCusAnalytics.rejected, (state, { payload }: any) => {
+        serverMessage(payload, toast);
         state.isLoading = false;
       });
   },
