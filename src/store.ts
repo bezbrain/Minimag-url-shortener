@@ -8,6 +8,7 @@ import faqReducer from "./management/features/faq/faqSlice";
 import shortenUrlReducer from "./management/features/link/shortenUrlSlice";
 import QrCodeReducer from "./management/features/link/qrCodeSlice";
 import linkDetailsReducer from "./management/features/link/linkDetailsSlice";
+import analyticsReducer from "./management/features/analytics/analyticsSlice";
 
 export const store = configureStore({
   reducer: {
@@ -20,6 +21,7 @@ export const store = configureStore({
     shortenUrlStore: shortenUrlReducer,
     QrCodeStore: QrCodeReducer,
     linkDetailsStore: linkDetailsReducer,
+    analyticsStore: analyticsReducer,
   },
 
   middleware: (getDefaultMiddleware) =>
