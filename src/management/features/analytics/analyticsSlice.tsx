@@ -9,7 +9,7 @@ interface Analytics {
     screenPageViews: string;
     userEngagement: string;
     shortUrlVisited: string;
-    CustomUrlVisited: string;
+    customUrlVisited: string;
   };
   isLoading: boolean;
 }
@@ -20,7 +20,7 @@ const initialState: Analytics = {
     screenPageViews: "",
     userEngagement: "",
     shortUrlVisited: "",
-    CustomUrlVisited: "",
+    customUrlVisited: "",
   },
   isLoading: false,
 };

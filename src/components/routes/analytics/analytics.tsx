@@ -38,7 +38,7 @@ const Analytics = () => {
     { name: "Page Views", count: Number(analyze?.screenPageViews) * 1000 },
     { name: "Engagement", count: Number(analyze?.userEngagement) * 1000 },
     { name: "Short URL", count: Number(analyze?.shortUrlVisited) * 1000 },
-    { name: "Custom URL", count: Number(analyze?.CustomUrlVisited) * 1000 },
+    { name: "Custom URL", count: Number(analyze?.customUrlVisited) * 1000 },
   ];
 
   // Calculate the maximum count value from the data array

@@ -31,7 +31,7 @@ const TableRow = ({
   };
   // FUNCTION TO LOG EVENT WHEN CUSTOMURL IS VISITED
   const logCustomUrlVisitEvent = () => {
-    eventFunction(`CustomUrlVisited`);
+    eventFunction(`customUrlVisited`);
   };
 
   useEffect(() => {
