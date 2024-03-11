@@ -20,7 +20,7 @@ const SharedLayouts = ({ setIsComingSoon }: SharedLayoutsProps) => {
 
   // CLOSE NAV BAR
   const handleCloseNavClick = () => {
-    // Close nav bar only if nav bar is open
+    // Close nav bar only if it is opened
     if (isOpen) {
       dispatch(isCloseNav());
     }

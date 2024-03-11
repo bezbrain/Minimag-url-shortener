@@ -56,6 +56,12 @@ const Nav = () => {
     if (getAuthToken()) {
       dispatch(getLinks());
     } else {
+      noToken();
+    }
+  };
+
+  const noToken = () => {
+    if (!getAuthToken()) {
       toast.error("Please login to access this page");
     }
   };
@@ -99,7 +105,9 @@ const Nav = () => {
             <a href="/#pricing">Pricing</a>
           </li>
           <li>
-            <Link to="/analytics">Analytics</Link>
+            <Link to={getAuthToken() ? "/analytics" : ""} onClick={noToken}>
+              Analytics
+            </Link>
           </li>
           <li>
             <a href="/#faq">FAQs</a>
