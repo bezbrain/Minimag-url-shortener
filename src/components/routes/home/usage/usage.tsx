@@ -30,17 +30,17 @@ const Usage = () => {
 
         <div className="summary__con mt-6 sm:mt-0 sm:w-[70%]">
           <div>
-            <h2 className="font-semibold text-2xl">3M</h2>
+            <h2 className="font-semibold text-2xl">2H+</h2>
             <p>Active users</p>
           </div>
           <div>
-            <h2 className="font-semibold text-2xl">60M</h2>
+            <h2 className="font-semibold text-2xl">4T+</h2>
             <p>
               Links & QR <br /> codes created
             </p>
           </div>
           <div>
-            <h2 className="font-semibold text-2xl">1B</h2>
+            <h2 className="font-semibold text-2xl">25T+</h2>
             <p>Clicked Links</p>
           </div>
         </div>
