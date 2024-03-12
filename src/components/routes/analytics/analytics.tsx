@@ -54,7 +54,7 @@ const Analytics = () => {
 
   return (
     <section className="max-w-[1400px] p-4 mx-auto pt-16 overflow-x-auto">
-      <h1 className="text-center max-w-[500px] mx-auto mb-10 text-xl sm:text-3xl sm:leading-[3rem]">
+      <h1 className="text-center max-w-[500px] mx-auto mb-4 text-xl sm:text-3xl sm:leading-[3rem]">
         Join other thousand users in using the unlimited and customizable URL
         manipulator
       </h1>
@@ -63,6 +63,9 @@ const Analytics = () => {
       ) : (
         <>
           <BarCharts data={data} yAxisTicks={yAxisTicks} />
+          <p className="text-center text-xl uppercase">
+            Users analytic data within a specific period
+          </p>
           <PieChartComp data={data} yAxisTicks={yAxisTicks} />
         </>
       )}

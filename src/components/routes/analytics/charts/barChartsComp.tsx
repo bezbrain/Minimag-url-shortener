@@ -8,6 +8,7 @@ import {
   CartesianGrid,
   Tooltip,
   Cell,
+  Label,
 } from "recharts";
 import { ChartsProp } from "../chartTypes";
 
@@ -32,11 +33,23 @@ const BarCharts = ({ data, yAxisTicks }: ChartsProp) => {
     <ResponsiveContainer
       width={isWindow <= 660 ? 800 : "100%"}
       height={isWindow >= 1130 || isWindow <= 990 ? 400 : 500}
+      className="pt-8"
     >
       <BarChart data={data}>
         <CartesianGrid vertical={false} strokeDasharray="2 2" />
-        <XAxis dataKey="name" tickLine={false} axisLine={false} />
-        <YAxis ticks={yAxisTicks} tickLine={false} axisLine={false} />
+        <XAxis dataKey="name" tickLine={false} axisLine={false}>
+          {/* X Axis Title */}
+          {/* <Label value="X Axis Title" position="insideBottom" offset={-10} /> */}
+        </XAxis>
+        <YAxis ticks={yAxisTicks} tickLine={false} axisLine={false}>
+          {/* Y Axis Title */}
+          <Label
+            value="VALUE OF EACH METRIC"
+            angle={-90}
+            position="insideLeft"
+            offset={-20}
+          />
+        </YAxis>
 
         <Tooltip cursor={{ fill: "transparent" }} />
         {/* <defs /> */}
