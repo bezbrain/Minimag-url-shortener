@@ -6,7 +6,7 @@ module.exports = {
   moduleNameMapper: {
     "\\.(css|less|scss|sass)$": "identity-obj-proxy",
     "\\.(jpg|jpeg|png|gif|svg|ico|webp)$": "identity-obj-proxy", // This is to map over images and use the 'identity-obj-proxy' to let the test recognize images
-    gsap: "<rootDir>/src/__mocks__/gsap.js",
+    gsap: "<rootDir>/src/__mocks__/gsap.ts",
   },
   transform: {
     "^.+\\.tsx?$": "ts-jest",

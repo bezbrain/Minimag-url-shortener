@@ -1,9 +1,9 @@
-const gsap = {
+export const gsap = {
   registerPlugin: jest.fn(), // Mocking the registerPlugin method
 };
 
-const TextPlugin = {
+export const TextPlugin = {
   // Mock any properties or methods you're using from TextPlugin
 };
 
-module.exports = { gsap, TextPlugin };
+// module.exports = { gsap, TextPlugin };
