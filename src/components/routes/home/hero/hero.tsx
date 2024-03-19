@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { LinkBtn } from "../../../general";
 import { shortenerImg } from "../../../../assets/images";
 import { getAuthToken } from "../../../../utils/authToken";
-import { gsap } from "gsap";
+import gsap from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 import { useRef, useLayoutEffect } from "react";
 import { textAnimation } from "../../../../utils/animations/textAnimation";
@@ -17,7 +17,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <HeroWrapper>
+    <HeroWrapper data-testid="hero-section">
       <div className="hero__con max-w-[1400px] mx-auto px-4 py-[10vh] text-center">
         <h1
           className="text-[5vw] font-bold  text-[#cfcece] xl:text-6xl"

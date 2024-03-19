@@ -6,8 +6,14 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
+    // Just added after installing Jest
+    "types": ["jest", "node"],
+    "esModuleInterop": true,
+    "allowJs": true,
+    "incremental": true,
+
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -20,6 +26,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "__tests__/homepage.test.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
