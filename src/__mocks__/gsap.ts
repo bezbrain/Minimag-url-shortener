@@ -1,9 +1,15 @@
-export const gsap = {
+const gsap = {
   registerPlugin: jest.fn(), // Mocking the registerPlugin method
 };
 
-export const TextPlugin = {
-  // Mock any properties or methods you're using from TextPlugin
+const TextPlugin = {
+  fromTo: jest.fn(), // Mocking a method "fromTo" of TextPlugin
 };
 
-// module.exports = { gsap, TextPlugin };
+const CopyToClipboard = {
+  CopyToClipboard: jest.fn(),
+};
+
+export default gsap;
+
+export { TextPlugin, CopyToClipboard };

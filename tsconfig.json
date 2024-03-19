@@ -8,7 +8,9 @@
 
     // Just added after installing Jest
     "types": ["jest", "node"],
-    // "esModuleInterop": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "incremental": true,
 
     /* Bundler mode */
     "moduleResolution": "node",
@@ -24,6 +26,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "__tests__/pageRenders.test.tsx"],
+  "include": ["src", "__tests__/homepage.test.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

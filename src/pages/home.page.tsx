@@ -15,7 +15,7 @@ interface ComingSoonProps {
 
 const HomePage = ({ setIsComingSoon }: ComingSoonProps) => {
   return (
-    <HomePageWrapper className="pt-[60px]" data-testid="home-page">
+    <HomePageWrapper className="pt-[60px]">
       <Hero />
       <Usage />
       <WhyMinimag />

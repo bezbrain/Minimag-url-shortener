@@ -1,9 +1,8 @@
-module.exports = {
+export default {
   preset: "ts-jest",
-  testEnvironment: "node",
-  // setupFiles: ["<rootDir>/src/__mocks__/mockImportMeta.ts"],
   setupFilesAfterEnv: ["<rootDir>/__tests__/setupTests.ts"],
   snapshotSerializers: ["jest-styled-components"],
+  testEnvironment: "jest-environment-jsdom",
   moduleNameMapper: {
     "\\.(css|less|scss|sass)$": "identity-obj-proxy",
     "\\.(jpg|jpeg|png|gif|svg|ico|webp)$": "identity-obj-proxy", // This is to map over images and use the 'identity-obj-proxy' to let the test recognize images
@@ -11,16 +10,16 @@ module.exports = {
     "^import\\.meta$": "<rootDir>/src/__mocks__/mockEnv.ts",
   },
   transform: {
-    "^.+\\.tsx?$": "babel-jest",
+    "^.+\\.tsx?$": "ts-jest",
   },
-  extensionsToTreatAsEsm: [".ts", ".tsx"],
+  extensionsToTreatAsEsm: [".ts", ".tsx", ".jsx"],
   globals: {
     "ts-jest": {
       useESM: true,
+      babelConfig: true,
     },
   },
   transformIgnorePatterns: [
-    "/node_modules/",
     "/src/utils/config.ts", // Add the path to your config.ts file
   ],
 };
