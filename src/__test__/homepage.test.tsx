@@ -1,8 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom";
-import { describe, expect, it } from "vitest";
-import { Hero } from "../src/components/routes/home";
-import React from "react";
+// import "@testing-library/jest-dom";
+// import { describe } from "vitest";
+import { Hero } from "../components/routes/home";
 
 describe("Homepage", () => {
   // Test if hero section renders correctly
