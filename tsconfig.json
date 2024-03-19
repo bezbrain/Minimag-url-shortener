@@ -7,7 +7,7 @@
     "skipLibCheck": true,
 
     // Added when Vitest is installed
-    "types": ["vitest/importMeta"],
+    "types": ["vitest/globals"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
