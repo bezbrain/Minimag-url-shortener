@@ -17,7 +17,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <HeroWrapper>
+    <HeroWrapper data-testid="hero-section">
       <div className="hero__con max-w-[1400px] mx-auto px-4 py-[10vh] text-center">
         <h1
           className="text-[5vw] font-bold  text-[#cfcece] xl:text-6xl"
