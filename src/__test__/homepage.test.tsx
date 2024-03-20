@@ -1,6 +1,12 @@
 import "intersection-observer"; // Import the polyfill for react-intersection-observer
 import { render, screen } from "@testing-library/react";
-import { Hero, Price, TrimUrl, WhyMinimag } from "../components/routes/home";
+import {
+  Faqs,
+  Hero,
+  Price,
+  TrimUrl,
+  WhyMinimag,
+} from "../components/routes/home";
 import { MemoryRouter } from "react-router-dom"; // Use this to handle the error thrown because react-router-dom
 import { Provider } from "react-redux";
 import { store } from "../store";
@@ -47,6 +53,18 @@ describe("Homepage", () => {
 
     const trimUrlSection = screen.getByTestId("trim-url-section");
     expect(trimUrlSection).toBeInTheDocument();
+  });
+
+  // Test to check if faq section renders
+  it("renders Faq section", () => {
+    render(
+      <Provider store={store}>
+        <Faqs />
+      </Provider>
+    );
+
+    const faqSection = screen.getByTestId("faq-section");
+    expect(faqSection).toBeInTheDocument();
   });
 
   // Test to check if footer section renders
