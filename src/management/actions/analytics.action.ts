@@ -6,11 +6,10 @@ export const allAnalytics = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const { data } = await getAnalytics();
-      //   console.log(data);
       return data;
     } catch (error) {
       console.log(error);
-      thunkAPI.rejectWithValue(error);
+      return thunkAPI.rejectWithValue(error);
     }
   }
 );
@@ -24,7 +23,7 @@ export const allCusAnalytics = createAsyncThunk(
       return data;
     } catch (error) {
       console.log(error);
-      thunkAPI.rejectWithValue(error);
+      return thunkAPI.rejectWithValue(error);
     }
   }
 );
