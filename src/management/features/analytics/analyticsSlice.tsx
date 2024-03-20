@@ -36,6 +36,7 @@ const analyticsSlice = createSlice({
     builder
       .addCase(allAnalytics.pending, (state) => {
         state.isLoading = true;
+        console.log("Pending");
       })
       .addCase(allAnalytics.fulfilled, (state, { payload }) => {
         // state.isLoading = false;
@@ -43,6 +44,7 @@ const analyticsSlice = createSlice({
         state.analyze = payload.urlAnalyticsData;
       })
       .addCase(allAnalytics.rejected, (state, { payload }: any) => {
+        console.log("Error");
         serverMessage(payload, toast);
         state.isLoading = false;
       })
