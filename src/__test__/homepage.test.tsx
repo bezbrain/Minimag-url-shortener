@@ -4,6 +4,7 @@ import { Hero, Price, TrimUrl, WhyMinimag } from "../components/routes/home";
 import { MemoryRouter } from "react-router-dom"; // Use this to handle the error thrown because react-router-dom
 import { Provider } from "react-redux";
 import { store } from "../store";
+import { Footer } from "../components/sharedLayouts";
 
 describe("Homepage", () => {
   // Test if hero section renders correctly
@@ -46,5 +47,19 @@ describe("Homepage", () => {
 
     const trimUrlSection = screen.getByTestId("trim-url-section");
     expect(trimUrlSection).toBeInTheDocument();
+  });
+
+  // Test to check if footer section renders
+  it("renders Footer section", () => {
+    const setIsComingSoonMock = vi.fn(); // Mock function for setIsComingSoon prop
+
+    render(
+      <MemoryRouter>
+        <Footer setIsComingSoon={setIsComingSoonMock} />
+      </MemoryRouter>
+    );
+
+    const footerSection = screen.getByTestId("footer-section");
+    expect(footerSection).toBeInTheDocument();
   });
 });
