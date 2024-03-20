@@ -17,7 +17,7 @@ interface FooterProps {
 
 const Footer = ({ setIsComingSoon }: FooterProps) => {
   return (
-    <FooterWrapper>
+    <FooterWrapper data-testid="footer-section">
       <section className="max-w-[1400px] relative p-4 mx-auto py-16 justify-between gap-[15vw] lg:px-8 lg:gap-4 sm:gap-[10vw] iPhone:flex">
         <Media />
 
