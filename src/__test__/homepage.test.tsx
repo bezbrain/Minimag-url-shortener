@@ -47,16 +47,4 @@ describe("Homepage", () => {
     const trimUrlSection = screen.getByTestId("trim-url-section");
     expect(trimUrlSection).toBeInTheDocument();
   });
-
-  // Test to check if trimUrl section renders
-  it("renders trimUrl section", () => {
-    render(
-      <Provider store={store}>
-        <TrimUrl />
-      </Provider>
-    );
-
-    const trimUrlSection = screen.getByTestId("trim-url-section");
-    expect(trimUrlSection).toBeInTheDocument();
-  });
 });
