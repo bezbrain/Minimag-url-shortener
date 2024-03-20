@@ -27,6 +27,7 @@ const WhyMinimag = () => {
         ref(el);
         whyChooseRef.current = el;
       }}
+      data-testid="why-choose"
     >
       <div className="max-w-[1400px] p-4 mx-auto py-16 justify-between gap-[5vw] lg:px-8 lg:gap-[4vw] md:flex">
         <div className="text-center md:w-[35%] sm:text-left">

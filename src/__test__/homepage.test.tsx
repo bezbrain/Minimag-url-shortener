@@ -1,5 +1,6 @@
+import "intersection-observer"; // Import the polyfill for react-intersection-observer
 import { render, screen } from "@testing-library/react";
-import { Hero } from "../components/routes/home";
+import { Hero, WhyMinimag } from "../components/routes/home";
 import { MemoryRouter } from "react-router-dom"; // Use this to handle the error thrown because react-router-dom
 
 describe("Homepage", () => {
@@ -15,5 +16,13 @@ describe("Homepage", () => {
 
     const heroSection = screen.getByTestId("hero-section");
     expect(heroSection).toBeInTheDocument();
+  });
+
+  // Test to check if why-choose-minimag section renders
+  it("renders Why-choose section", () => {
+    render(<WhyMinimag />);
+
+    const whyChooseSection = screen.getByTestId("why-choose");
+    expect(whyChooseSection).toBeInTheDocument();
   });
 });
