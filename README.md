@@ -13,8 +13,9 @@ To start working on the project, follow these steps:
 5. Review the existing code in the src directory to understand the initial structure and components hierarchy.
 6. Implement the shortener and customization functionalities by modifying the necessary components.
 7. Run the application using `npm run dev`
-8. Commit you changes when significant changes are made, then push them to a branch in your forked repository.
-9. Once you have completed the project goals, create a pull request to merge your changes into the main repositiory.
+8. Run test using `npm test`
+9. Commit you changes when significant changes are made, then push them to a branch in your forked repository.
+10. Once you have completed the project goals, create a pull request to merge your changes into the main repositiory.
 
 ## Technical Instruction
 
@@ -44,6 +45,9 @@ There are many librabries used for the projects and the ones that might look obs
 5. react-intersection-observer - for animations
 6. react-toastify - for pop up notification
 7. recharts - for handling all charts
+8. vitest - for writing test
+9. @testing-library/react - to use screen, render etc methods
+10. @testing-library/jest-dom - to use Jest testing properties
 
 To install any of these librabries, just run: `npm install <library name>` eg. To install gsap: `npm install gsap`
 
