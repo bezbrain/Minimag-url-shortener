@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { PriceCard } from "..";
 import { Button } from "../../../general";
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { viewPortAnimation } from "../../../../utils/animations/viewportAnim";
 import { useInView } from "react-intersection-observer";
 import gsap from "gsap";
@@ -27,6 +27,18 @@ const Price = ({ setIsComingSoon }: PriceProps) => {
   useLayoutEffect(() => {
     viewPortAnimation(inView, priceCardRef, gsap);
   }, [inView]);
+
+  // HANDLE SCROLL TO SECTION WHEN ON ANOTHER PAGE OTHER THAN HOME
+  useEffect(() => {
+    // Scroll to the specified section when the page mounts
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, []);
 
   return (
     <PriceWrapper

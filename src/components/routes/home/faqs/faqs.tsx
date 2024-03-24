@@ -3,6 +3,7 @@ import { FaqCard } from "..";
 import { faqData } from "../../../../utils/data";
 import { AppDispatch, RootState } from "../../../../store";
 import { openFaq } from "../../../../management/features/faq/faqSlice";
+import { useEffect } from "react";
 
 const Faqs = () => {
   const { openIndex } = useSelector((store: RootState) => store.faqStore);
@@ -11,6 +12,18 @@ const Faqs = () => {
   const handleFaqClick = (id: number) => {
     dispatch(openFaq(openIndex === id ? null : id));
   };
+
+  // HANDLE SCROLL TO SECTION WHEN ON ANOTHER PAGE OTHER THAN HOME
+  useEffect(() => {
+    // Scroll to the specified section when the page mounts
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, []);
 
   return (
     <section
