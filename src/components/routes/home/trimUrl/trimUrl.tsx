@@ -9,7 +9,7 @@ import {
   shortUrlInput,
   urlSelect,
 } from "../../../../management/features/link/linkSlice";
-import { ChangeEvent } from "react";
+import { ChangeEvent, useEffect } from "react";
 import { toast } from "react-toastify";
 import {
   createCusLink,
@@ -48,6 +48,18 @@ const TrimUrl = () => {
       dispatch(createCusLink({ originalUrl, fullShortUrl }));
     }
   };
+
+  // HANDLE SCROLL TO SECTION WHEN ON ANOTHER PAGE OTHER THAN HOME
+  useEffect(() => {
+    // Scroll to the specified section when the page mounts
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, []);
 
   return (
     <TrimUrlWrapper
